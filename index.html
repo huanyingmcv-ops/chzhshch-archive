@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="缠中说禅博客全集，数字遗产保护项目，收录2006-2008年全部1136篇博文">
+    <meta name="keywords" content="缠中说禅,缠论,教你炒股票,论语详解,禅宗">
+    <title>缠中说禅 · 全球第一博客 | 数字遗产保护</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .header-content { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+        
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 12px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: var(--gold-light);
+            letter-spacing: 6px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .divider {
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 30px auto;
+        }
+        
+        .desc {
+            font-size: 1.15em;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 2;
+        }
+        
+        .curator {
+            display: inline-block;
+            padding: 20px 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .curator-label {
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .curator-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            color: var(--gold);
+            letter-spacing: 8px;
+        }
+        
+        .stats-bar {
+            background: white;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5em;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 5px;
+        }
+        
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        
+        .section-title span {
+            display: block;
+            font-size: 0.5em;
+            color: var(--text-light);
+            font-family: 'Noto Sans SC', sans-serif;
+            letter-spacing: 4px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        
+        .learning-path {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 60px 20px;
+        }
+        
+        .path-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .path-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .path-step {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--gold);
+        }
+        
+        .path-step h4 {
+            color: var(--primary);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .path-step p {
+            color: var(--text-light);
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        .categories-section {
+            background: white;
+        }
+        
+        .category-group {
+            margin-bottom: 60px;
+        }
+        
+        .group-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .group-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--gold);
+            margin-right: 20px;
+            line-height: 1;
+        }
+        
+        .group-info h3 {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+        
+        .group-info p {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.2em;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .card-desc {
+            color: var(--text-light);
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+        }
+        
+        .card-count {
+            background: var(--bg);
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: var(--text-light);
+        }
+        
+        .card-arrow {
+            color: var(--gold);
+        }
+        
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.8);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            color: white;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+        
+        .footer-divider {
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+        
+        footer p {
+            font-size: 0.95em;
+            line-height: 2;
+            margin-bottom: 10px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.2em;
+            letter-spacing: 4px;
+            margin-top: 30px;
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .version-info {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; letter-spacing: 6px; }
+            .subtitle { font-size: 1em; }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .path-steps { grid-template-columns: 1fr; }
+            .categories-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>缠中说禅</h1>
+            <p class="subtitle">全球第一博客 · 数字遗产保护</p>
+            <div class="divider"></div>
+            <p class="desc">
+                一位跨越哲学、经济、文学、艺术等多个领域的思想者<br>
+                以其独特的视角和深刻的洞见，影响了无数人
+            </p>
+            <div class="curator">
+                <p class="curator-label">全库整理 · 数字传承</p>
+                <p class="curator-name">元 白</p>
+                <div class="version-info">
+                    数据版本: 2026-03-23 | 1136篇完整版 | Markdown格式
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>1136</h3>
+                <p>篇原创文章</p>
+            </div>
+            <div class="stat-item">
+                <h3>108</h3>
+                <p>课股票教程</p>
+            </div>
+            <div class="stat-item">
+                <h3>2.5</h3>
+                <p>年思想精华</p>
+            </div>
+            <div class="stat-item">
+                <h3>2006-2008</h3>
+                <p>时间跨度</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="learning-path">
+        <div class="path-container">
+            <h2 class="section-title">推荐阅读路径<span>Learning Path</span></h2>
+            <div class="path-steps">
+                <div class="path-step">
+                    <h4>📚 第一步：建立框架</h4>
+                    <p>先读《教你炒股票》108课，理解缠论技术体系的核心框架：分型、中枢、背驰、买卖点。</p>
+                </div>
+                <div class="path-step">
+                    <h4>📊 第二步：实战印证</h4>
+                    <p>对照《每日解盘》系列，看缠师如何将理论应用于实际市场分析，学习思维方式。</p>
+                </div>
+                <div class="path-step">
+                    <h4>🧠 第三步：提升境界</h4>
+                    <p>阅读《论语详解》《缠中说禅》，理解缠师的哲学根基，从技术上升级到心法上。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="categories-section">
+        <h2 class="section-title">博文分类<span>Categories</span></h2>
+        
+        <div class="category-group">
+            <div class="group-header">
+                <div class="group-number">01</div>
+                <div class="group-info">
+                    <h3>核心投资体系</h3>
+                    <p>缠论技术 + 市场实战 + 宏观视野</p>
+                </div>
+            </div>
+            <div class="categories-grid">
+                <a href="01-stocks/" class="category-card">
+                    <div class="card-icon">📈</div>
+                    <div class="card-title">教你炒股票</div>
+                    <div class="card-desc">108课完整技术体系。分型、中枢、背驰、买卖点，从零开始构建市场操作系统。</div>
+                    <div class="card-meta">
+                        <span class="card-count">180 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+                <a href="02-market/" class="category-card">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">每日解盘</div>
+                    <div class="card-desc">2006-2008年大盘实时分析。看缠师如何将理论应用于实战，最珍贵的教学案例。</div>
+                    <div class="card-meta">
+                        <span class="card-count">542 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+                <a href="03-economics/" class="category-card">
+                    <div class="card-icon">🌍</div>
+                    <div class="card-title">时政经济</div>
+                    <div class="card-desc">货币战争、人民币战略、经济危机。超越技术，从政治经济学高度理解市场。</div>
+                    <div class="card-meta">
+                        <span class="card-count">82 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="category-group">
+            <div class="group-header">
+                <div class="group-number">02</div>
+                <div class="group-info">
+                    <h3>思想与哲学</h3>
+                    <p>缠师的思想根基，投资背后的心法</p>
+                </div>
+            </div>
+            <div class="categories-grid">
+                <a href="04-confucius/" class="category-card">
+                    <div class="card-icon">📚</div>
+                    <div class="card-title">论语详解</div>
+                    <div class="card-desc">给所有曲解孔子的人。逐字逐句解读，还原真正的儒家思想，理解"君子不器"。</div>
+                    <div class="card-meta">
+                        <span class="card-count">72 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+                <a href="05-zen/" class="category-card">
+                    <div class="card-icon">🧘</div>
+                    <div class="card-title">缠中说禅</div>
+                    <div class="card-desc">枯木龙吟照大千。禅宗智慧，打坐指导，心性修养，直指人心，见性成佛。</div>
+                    <div class="card-meta">
+                        <span class="card-count">72 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+                <a href="06-philosophy/" class="category-card">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-title">文史哲学</div>
+                    <div class="card-desc">历史、哲学、文化思考。顶翻东西经济学，纵论古今，横跨中西。</div>
+                    <div class="card-meta">
+                        <span class="card-count">若干</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="category-group">
+            <div class="group-header">
+                <div class="group-number">03</div>
+                <div class="group-info">
+                    <h3>文艺创作</h3>
+                    <p>诗词、音乐、杂文，才华与真性情</p>
+                </div>
+            </div>
+            <div class="categories-grid">
+                <a href="07-poems/" class="category-card">
+                    <div class="card-icon">✒️</div>
+                    <div class="card-title">诗词曲赋</div>
+                    <div class="card-desc">古体诗、现代诗、歌词创作。才华横溢，意境深远，不让古人。</div>
+                    <div class="card-meta">
+                        <span class="card-count">82 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+                <a href="08-music/" class="category-card">
+                    <div class="card-icon">🎵</div>
+                    <div class="card-title">音乐艺术</div>
+                    <div class="card-desc">周末音乐会，古典音乐赏析。舒伯特、贝多芬、莫扎特、萧邦，用音乐说禅。</div>
+                    <div class="card-meta">
+                        <span class="card-count">54 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+                <a href="09-essays/" class="category-card">
+                    <div class="card-icon">📝</div>
+                    <div class="card-title">白话杂文</div>
+                    <div class="card-desc">社会观察，犀利点评。那一夜系列，文化批判，嬉笑怒骂皆文章。</div>
+                    <div class="card-meta">
+                        <span class="card-count">35 篇</span>
+                        <span class="card-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-title">缠中说禅</h3>
+            <div class="footer-divider"></div>
+            <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+            <p>仅供学习交流使用，如有侵权请联系删除</p>
+            <p>本站为数字遗产保护项目，由爱好者整理维护</p>
+            <p class="footer-curator">全库整理 · 元白</p>
+            <div class="footer-bottom">
+                <p>愿缠师的智慧，照亮有缘人</p>
+                <p>2006 - 2008 · 1136篇文章 · Markdown格式</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
