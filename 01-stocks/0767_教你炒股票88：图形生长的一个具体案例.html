@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你炒股票88：图形生长的一个具体案例 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">股票技术</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>教你炒股票88：图形生长的一个具体案例</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>教你炒股票88：图形生长的一个具体案例</h1>
+<hr />
+<p>教你炒股票88：图形生长的一个具体案例</p>
+<p>2007/11/6 22:38:43</p>
+<p>本ID的理论，对所有的走势，进行了一个最明确的分解，所有的分解，本质上只有两类，就是延续与转折，用残酷一点的词语，就是生和死。一个走势类型的死，必然意味着一个走势类型的生，走势，就在这样一个生死的轮回中，如同众生的生命，生死轮回不断。看明白了股票的走势，对人生，也大概应该有点领悟了。一个走势类型确立后，同时就确认了前一个走势类型的死，同时也开始了自己面向死亡的生存。如同众生的轮回生死，在死与生之间，有一段被称为中阴身的阶段，股票的走势，同样存在着这个阶段。如果说前一个走势类型的背驰或盘整背驰宣告了前一个走势类型的死亡，那么到新的走势类型确立，这里有一个模糊的如同中阴般的阶段。要把握这阶段的走势，必须把前一段走势的部分走势结合起来分析。也就是说，前一段走势的业力在发挥着作用，这个业力与市场当下的新合力构成了最终决定市场方向的最终合力。用一个例子，就很好地能说明这个问题。下图中，191的背弛宣告前一走势类型的死亡。按道理，新的走势类型，是从191开始分析的，但这时候，新的走势类型连第一段线段都没走出来，甚至走到193的位置，也依然轮廓不明，因此，这时候，就是典型的中阴身阶段，必须借助前面189开始形成的中枢来完成分析与相应的操作。如果从191开始，192、193都很难说有什么可依据的。当然，可以说193就是第二类卖点，这个自然没错，但站在189开始中枢的角度，这就存在一个中枢震荡的问题，这样，这个干瘪的第二类卖点，就有一个更大的可依靠的分析基础。一切关于中枢震荡的分析，都可以利用到关于192、193以及后面走势的分析中，这等于有了双重的分析保证。当然，后面的195的第三类卖点，也是站在中阴阶段的角度说的。但这一点是一个中阴阶段与新的走势类型确立阶段的分界点，195出来以后，新的走势类型最开始的形态就确立了，也就是至少是一个线段的类下跌走势。  这时候，分析的重心，就可以移到191开始的新走势类型上了。这时候，就可以基本在这个线段级别上，不用考虑191之前的事情。但191之前的走势并不是没有用了，而是在更大级别上，例如在1分钟、5分钟等等级别上发挥作用了。191后面出现的走势，就和191之前的，结合出大级别的走势形态。因此，当各位熟练以后，标记上就不一定要不断地标记下去了，例如，如果你是按1分钟级别操作的，那么，前面191个线段记号，可能就可以一下简化为10个不到的1分钟级别相关的记号。当191后面的走势演化出的1分钟走势结束后，这1分钟级别的记号才再增加一个，这样，记号的数目就很有限了。当然，如果是5分钟级别、30分钟、日线等等，就更少了。为了方便明确起见，还是把记号的级别进行分类，例如，用Xn代表线段的记号，用Yn代表1分钟的级别，Wn代表5分钟的记号，Sn代表30分钟记号。日、周、月、季、年，分别也可以用Rn、Zn、Mn、Jn、Nn来表示。其中的n都是具体的数字，这样，所有的走势，都可以被这个标号体系所标记而清楚异常了。例如，对于191这个点位，站在线段上，就是X191的标号，站在1分钟级别，可能就是某个Yn的标号，而189这个点，就只有线段的标号，这同时也显示了，191这点和189点的重要性是不同的。什么是最牛的点？就是从线段一直到年，同时都有标号的那个点，如果是顶，那就是百年大顶，当然，是否有幸碰到这样的点，就看各位的运气了。这个标号体系，不单单为了方便阅读、记号，首先就培养了各位一种综合的、系统的习惯。看一个走势，就要知道，不是单单是一个线段，而是在一个大的多层次系统里，这样才不会被每天的波动所迷失。其次，这个标记的过程，意味着什么？既  然线段有中阴阶段，那么其他级别当然也有。所以无论任何级别，在一个顶点出来后，都有对应级别长度的中阴阶段。注意，一定要注意。为什么很多人逃了顶，最后还是被套住了；抄了底，最终还是没赚到钱，被震出来了。这就是被相应级别的中阴阶段给搞死的，而且，越大级别转折后的中阴阶段，越能搞死人。就如同人的中阴，非人非鬼；行情走势的中阴阶段，也是多空齐杀，不断折腾转换。等最后转折确认时，就如同已经重新投胎，饭熟了，还找米，能有戏吗？有些蠢人，经常在行情转折的中阴阶段，觉得世界又美好了，或者世界又恶劣了，结果都是被业力所牵引。中阴阶段，无一例外，都是表现为不同级别的盘整（注意，这是只从截取这一阶段的形态说，并不是说新的走势类型一定是盘整）。也就是围绕前一走势的某一部分所构成的中枢震荡，即使是所谓的V型反转，也一样，只是震荡的区域回得更深而已。其实任何转折，也就是第一类买卖点之后，都对应着某一级别的V型反转，例如，191的转折，190-191与191-192，其实就是一个V型反转，只是级别特别小。这个V型反转的级别，决定了中阴的级别与力度。例如，站在日线图上看6124点前后N天的走势，其实就是某级别的V型反转，然后就同时进入中阴阶段。注意，中阴阶段结束后，不一定就是真正的反转，也可以是继续延续前一走势类型的方向，例如上涨+盘整+上涨，这样的结构是完全合理的。例如，人的中阴后，不一定就要变鬼之类的，也可以成所谓的神仙，如果你前一世是从鬼来的，鬼到人是上涨，中阴盘整后，从人到神仙，也是上涨。但，上涨+盘整+下跌，上涨+下跌等等，同样是可能的选择。这时候，唯一正确的操作，只有一点：  如果你技术好的，就在这个大的中枢震荡中中枢震荡操作一把，如果技术不好的，就拿着小板凳看戏，看它最后是升天还是下地狱，等市场自己去选择，然后再决定操作。不过，站在本ID理论的角度，最大效率的，就是利用这个震荡去中枢震荡操作一把，学了本ID理论，就是要把技术练好，练好了，就自然不用整天小板凳了，上台自己票友一把不是更爽？当然，没这本事的时候，还是别玩这一招，为什么？这就如同，在中阴身的阶段，还是可以去修炼去证悟，但你总不能因此说，我现在就不修炼了，等中阴再说。真等那时候，业力牵引着，你修什么鬼呀。所以，有真本事，什么情况都不怕，都可以折腾。关键，是要有真本事。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0765_说说大盘中期走势的演化.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">说说大盘中期走势的演化...</div>
+                </a>
+            <a href="0771_如期决战，多头不堪一击.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">如期决战，多头不堪一击...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回股票技术列表</a></p>
+    </footer>
+</body>
+</html>

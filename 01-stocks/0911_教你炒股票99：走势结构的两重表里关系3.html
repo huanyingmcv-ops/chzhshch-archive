@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你炒股票99：走势结构的两重表里关系3 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">股票技术</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>教你炒股票99：走势结构的两重表里关系3</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>教你炒股票99：走势结构的两重表里关系3</h1>
+<hr />
+<p>教你炒股票99：走势结构的两重表里关系3</p>
+<p>2008/2/18 16:19:16</p>
+<p>走势结构，最重要的就是有中阴部分的存在。有人可能认为，中阴存在是理论不完善的结果，其实，这是典型的一根筋思维，对于这种思维，世界就是机械的，任何时候都只有一个机械精确的结果，而实际上，世界更多是量子化的，是测不准的，中阴的存在恰好客观地反映了走势的这种特性。中阴状态的存在，反映了行情走势生长阶段的未确定性，这种未确定性，不会对操作有任何的影响，因为中阴状态都可以看成是一个中枢震荡的整理，根据中枢震荡的操作就可以了。很多人，一碰到中阴状态就晕，因为这时候，你不能对走势给出明确的划分。注意，这里不是指同级别的划分，而是一般性的划分。例如，一个线段性类上涨类背驰后，必然首先出现一个1分钟的中枢，也同时进入一种中阴状态，但你不能说这走势必然就是1分钟类型的，因为，最极端情况下，两个年中枢之间也可以是一个线段连接，甚至就是缺口连接，这在实际上都是完全可能发生的。因此，理论必须包括这些情况，而且这些情况太常见了，并不是一个古怪的问题。另外，根据结合律，连接中枢的走势，并不一定是完全的趋势类型，也就是说，一个线段类上涨后，可能第二类类中枢就消融在中阴状态的那个中枢里了。也就是说，a+b+c+d+e+f= a+b+c+（d+e+f），a+b+c+d+e是一个线段类上涨，c+d+e的重合部分构成最后的一个类中枢，f是类背驰后的回调，这时候，就可以马上构成一个1分钟的中枢，然后后面直接继续上涨，构成1分钟的上涨是完全合理的。因为，最终的划分，就必须把a+b+c+d+e给拆开了。因此，一般划分中，如果中阴状态中从前面的背驰点开始已经构成相应的中枢，例如在a+b+c+d+e+f后又有g\h，f\g\h构成1分钟中枢，那么整个的划分就可以变成a+b+c+d+e+（f+g+h），这样，原来的线段类上涨就可以保持了。如果后面包括d+e+f延伸出9段，然后又直接上去了，划分中，必须首先保证5分钟中枢的成立。换言之，划分的原则很明确，就是必须保证中枢的确立，在这前提下，可以根据结合律，使得连接中枢  的走势保持最完美的形态。由此可见，因为划分中的这种情况，我们就很明确地知道，走势的最大特点就是，连接中枢的走势级别一定小于中枢，换言之，一个走势级别完成后必然面临至少大一级别的中枢震荡。例如，一个5分钟的上涨结束后，必然至少要有一个30分钟的中枢震荡，这就是任何走势的必然结论，没有任何走势可以逃脱。有了这个必然的结论，对于任何走势，其后的走势都有着必然的预见性，也就是其后走势的级别是至少要大于目前走势的级别。这里，一个很关键的问题就是，这个大的走势级别的第一个中枢震荡的位置，极为关键，这是诊断行情的关键。首先，任何一个后续的更大级别中枢震荡，必然至少要落在前一走势类型的最后一个中枢范围里，这是一个必然结论。换言之，只要这中枢震荡落在最后一个范围里，就是正常行为，就是正常的，也就是说，这种中阴状态是健康的。但，一旦其中枢震荡回到原走势类型的第二甚至更后中枢里，那么，对应的中阴状态就是不健康的，是危险的，而原来走势的最后一个中枢，就成了一个关键的指标位置。注意，危险是相对的，对于原下跌走势的中阴危险，就是意味着回升的力度够强，对多头意味着好事情。结合分型，例如，一个日分型的出现，意味着笔中对应的小级别走势里出现大的中枢，因此，这个分型对应的中枢位置，就很关键了，这几乎决定了这分型是否是最后真正的顶或底。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0902_教你炒股票98：中医、兵法、诗歌、操作2.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">教你炒股票98：中医、兵法、诗歌、操作2...</div>
+                </a>
+            <a href="0917_下周初决定大盘中线形态.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">下周初决定大盘中线形态...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回股票技术列表</a></p>
+    </footer>
+</body>
+</html>

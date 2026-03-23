@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>声明 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">市场分析</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>声明</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>声明</h1>
+<hr />
+<p>声明</p>
+<p>2007/2/7 21:02:45</p>
+<p>刚上来，发现下午本ID的所有回帖都没有了。这里受到攻击甚至最后被关闭都是很正常的，因为这里的存在至少会让庄家、汉奸等等很不高兴，当然，在现实中，本ID是不怕他们的，他们能找的人，本ID也能找，他们想玩什么游戏，本ID都可以陪他们玩，但在虚拟的空间里，这一切就很难说了，最主要是本ID暂时不想抛头露脸。最近这里捣乱的人越来越多，这都是很正常的，本ID没义务也没兴趣去制止或干涉他们，在本ID这里，爱怎样都可以。不过，如果真想学习的，就快点把这里的帖子都复制下去，说不好哪天这里被汉奸给删了，也一定不奇怪的。各位看着办吧。如果这里被删，就是和各位的缘分到此了，本ID唯一可以承诺的，就是只要这里不被删，本ID还会尽量发帖子，只此而已。下午的回帖不可能再一一来过了，各位先看吧。关键是自己学好本事，就算是本ID也靠不住的，例如，这里突然被删掉了，那就不可能再找到了。学习，快点小学毕业吧，然后是初中、高中、大学、硕士、博士、博士后等等，这样，才是真正的立足。
+回复​
+缠中说禅 2007/2/7 21:12:52
+各位有问题请问，10点本ID要下了。
+缠中说禅 2007/2/7 21:14:15把今天对大盘的评价重写5分钟背驰引发的5分钟上涨在今早11点后的1分钟背驰中结束，然后进入一个5分钟中枢的震荡，该震荡后能否构成第二类买点，有待今后两日的走势，无须预测。本ID所言个股，777无须多论，其他因前期抗跌，在大盘确认真正站稳前，盲目突破是冲动的。至于前晚说的000938，有人说本ID有阴谋，本ID的阴谋只是让各位挣点钱好安心学习，就如同6元说999，8元说777一样。没买的千万别买，免得像那些6元不买999，12元才买还算在本ID头上说本ID坏话的。今天之后，谁买938的，自己负责，别在这里嚷嚷，爱胡闹的，各位就看着办吧。
+缠中说禅 2007/2/7 21:19:20
+[匿名] 笨笨猪 2007-02-07 21:15:32 
+这里要是关了，还可以去国外的blog啊，比如MSN，现在提供空间的还不是到处都是。还是预先做个准备吧。
+而且如果用MS office 2007，直接在wｏｒd 2007里面就可以发布文章，不用登陆网站，比这里还方便。==
+本ID对电脑不大清楚，只会用。如果这里被删，也就意味着缘分到了，那本ID很有可能就走到前面来了。虽然暂时还不想露面，但如果真发生这种事情，那也无所谓了。
+缠中说禅 2007/2/7 21:20:07
+[匿名] 戈石 2007-02-07 21:18:55 
+尊敬的女王：
+2007-02-07 20:51:46 
+刚上来，发现下午所有回帖都没有了。这里受到攻击甚至最后被关闭都是很正常的，因为这里的存在至少会让庄家、汉奸等等很不高兴=======================================
+难怪下午明明看到了女王的回帖晚上回来却看不见了，但请女王放心，您所有的正帖我全都分类收录，甚至您的所有回帖我都已编辑成《教科书》，现《教科书》已编辑成初级、中级、高级三本300多页。==
+谢谢
+缠中说禅 2007/2/7 21:21:51
+[匿名] 满目山河 2007-02-07 21:16:50 
+缠妹妹，要不我留个邮箱，把学习内容发一份，可以吗？==
+对不起，本ID都是随写随发的，没有新的，都在这里了。自己复制一下吧。
+缠中说禅 2007/2/7 21:23:12
+[匿名] 笨笨猪 [匿名] wsmrzw ==
+你们那网址的没用，等一下就当广告给删了，这好象  是自动的。对本ID下午那些肯定是人工的，否则不可能那么精确的。
+缠中说禅 2007/2/7 21:25:57
+[匿名] 拜读者 2007-02-07 21:20:09 
+缠MM~
+首先感谢你的理论~ 我是新手 有幸能在学股票的初期遇到你~
+你说的小学毕业的标准我已经知道了~ 正在努力~
+但初中、高中、大学...的标准呢？至少要让我有个目标啊~ 谢谢回复~==
+现在还说不了，因为有些概念还没说到。在本ID这里小学毕业，对比外面的人已经很厉害了。不过可以告诉你，例如，到了硕士，可以开些专门的班，例如怎么坐庄，还有如何阻击庄家等等。
+缠中说禅 2007/2/7 21:33:46
+[匿名] 诚诚 2007-02-07 21:24:46 
+亲爱的LZ:强烈谴责那些胆小的庄家和软骨头的汉奸!
+我们都支持你对他们予以痛击!
+再想请教一个问题:30分钟背弛下来的下跌,反弹后的卖点要在同一级别还是下一级别找?谢谢!==你的问题表达不大清楚，一般，按本ID的术语，30分钟背驰就制造了一个至少30分钟级别的第一类卖点，如果这30分钟级别的卖点刚好在日线的背驰段，那就同时也是日线的第一类卖点。背驰出现后，首先会有一个5分钟级别的向下走势完成，然后有一个反抽，一个5分钟级别的向上走势，注意，这些走势都不一定是趋势，盘整也可以的。第二个5分钟的背驰就构成了第二类卖点。第三类卖点，一般是没有马上形成下跌形成一个盘整，最后盘不住了，跌破中枢，次级别反抽不上中枢后形成的。因此，对卖货来说，最好还是在上涨中抓住背驰，这样的技巧要求当然很高，但其效益与回报也是最高的。要达到这，必须进行艰苦的学习与实践，没有捷径。
+缠中说禅 2007/2/7 21:35:15
+[匿名] 白玉兰 2007-02-07 21:27:02 
+[匿名] 白玉兰2007-02-07 21:18:30 
+缠中说禅2007-02-07 20:51:42 
+下午的回帖不可能再一一来过了，各位先看吧。关键是自己学好本事，就算是本ID也靠不住的，例如，这里突然被删掉了，那就不可能再找到了。学习，快点小学毕业吧，然后是初中、高中、大学、硕士、博士、博士后等等，这样，才是真正的立足。如果这里被删，就是和各位的缘分到此了，本ID唯一可以承诺的，就是只要这里不被删，本ID还会尽量发帖子，只此而已。+++++++++++++++++++++++++++++++++++++++
+某些人太无耻了。。。禅妹妹你到哪里我们支持你。。。能否有一些保护措施呢？==不要带地址，会被删除的。
+缠中说禅 2007/2/7 21:36:56
+[匿名] 酿酒制药 2007-02-07 21:34:36 
+缠姐好!这里人气正旺,大家都在努力学习.希望缠姐能够坚持,我们支持你!!!==只要这里不被删，那没问题。
+缠中说禅 2007/2/7 21:44:54
+[匿名] 白玉兰 2007-02-07 21:38:29 
+有点象白色恐怖。。。不要怕，星星之火可以燎原的。。。禅妹妹，我们一直会支持你的。。。。我是在上海的东北人。。。有用得着的说一声。。
+==
+谢谢，估计是一个恐吓，这也太小儿科了，这群人还真不知道本ID的厉害。说实在，现在的庄家、基金经理，基本都是本ID的后辈，他们年龄可能比本ID大，但资历就差远了，这些事就不说了。
+缠中说禅 2007/2/7 21:48:12
+[匿名] 并不完美 2007-02-07 21:25:41 
+601600路安,是一个大牛股,从日线上看它的中枢是向上的奔走型的调整.我以小学毕业的成绩向大家汇报这只股票...哈哈!!我把它从12月4号到今天都算在一个大的中枢里,LZ这样对吗?是否体现了中枢的精神呢==
+601600？有这股票？本ID怎么找不到的？
+缠中说禅 2007/2/7 21:54:03对不起，本ID要下了。现实中，本ID当然可以找人警告一下某些人，不过这样就会让本ID抛头露脸，所以暂时没必要了。希望这些人看到声明，收敛一下，别把脸撕破了，把虚拟空间现实化，那就不好玩了。那些在阴暗角落的人，看着办吧。下了，再见。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0447_来这里,首先要洗心革面!.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">来这里,首先要洗心革面!...</div>
+                </a>
+            <a href="0462_放假公告.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">放假公告...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回市场分析列表</a></p>
+    </footer>
+</body>
+</html>

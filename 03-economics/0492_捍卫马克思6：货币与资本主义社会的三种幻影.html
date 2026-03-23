@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捍卫马克思6：货币与资本主义社会的三种幻影 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">时政经济</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>捍卫马克思6：货币与资本主义社会的三种幻影</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>捍卫马克思6：货币与资本主义社会的三种幻影</h1>
+<hr />
+<p>捍卫马克思6：货币与资本主义社会的三种幻影</p>
+<p>2007/3/29 12:39:50</p>
+<p>从某种程度上说，货币不过是一个交易的凭证，一种最基础的具有某种股票性质的东西。就像实质上只是废纸的股票，可以用所谓的基本面编织出一幅泡沫的图画，货币也一样，只不过是那赤裸裸的资本主义生产关系的皇帝新衣。货币所遮盖的，就是这样一种血腥的关系，里面充满着压迫与奴役。
+任  何货币的确立，都以对某种奴役与压迫的社会关系的承认为前提。当你用劳动去换取货币时，只不过是在以承认这种雇佣劳动的所谓合法性为前提。所谓资本主义社会的合法，本质上不过是这种奴役与压迫的社会关系面首法则所立的贞洁牌坊。在一个虚拟化的资本主义社会里，一切虚拟化的游戏，例如股票市场，用各种本质是废纸的玩意来玩弄货币转移的游戏，而货币同样不过是一种以承认资本主义压迫关系为前提的废纸，这里是双重的虚幻、双重的压迫。
+而国与国之间货币的游戏，本质上不过是这种资本主义虚拟化游戏的群交化，最终还是那资本主义生产关系的幻影，但这幻影是吸血的幽灵，它吸取的是所有人的灵魂、血肉与生存。所有资本主义社会里的人，其实都在这吸血幽灵的蚕食中乐此不疲，消费主义的泛滥成就这物欲的狂欢，问题不是这狂欢是否符合所谓的道德标准，而是这狂欢的无限扩展不可避免地以一个无限可能的上帝式假设为前提。
+而现实中，无限只能被虚拟，消费化在虚拟中被无限，但却永远改变不了这无限的幻梦不过依然在一个有限的蚁槐之中。对着一个无处不在的幻影，咒骂、打倒是没用的，只能以幻制幻，在这幻影之中生出无穷的纠缠，让欲望更欲望，让血腥更血腥、让压迫更压迫、让奴役更奴役，让资本主义的摇头丸、迷幻药无限地泛滥，这样，即使有梦破的一天，依然在梦中。
+所有垃圾西方经济学，企图用所谓的公式、法则的迷幻还掩盖资本主义生产关系的现实，让所谓定律的虚幻真实来掩盖现实，并把这些所谓定律虚幻的逻辑起点一同掩盖。摧毁他们，就要直接挖出他们所有理论的逻辑起点，让其虚幻性在现实中破裂。更重要的是，这种以虚幻逻辑构造的谎话，却又成为  现实社会中真实的上层建筑话语在编制世界的所谓真实。这种被资本主义上层建筑话语所编制的现实关系，构成了这资本主义迷幻最基础的部分。从现实出发，不是以现实为起点，而是要揭示现实起点的荒谬性、虚幻性，这才是真正的从现实出发。
+货币的虚幻构造了虚幻的货币现实，当你打破被货币所交易的虚幻是不足够的，那不过是幻影的第三重幻影，要捣毁的是那第一种的幻影，那资本主义现实社会关系的本身，不如此，一切都是瞎掰。
+附录今天的争斗对于散户来说，确实是一个心理考验，但这是必须的。对于本ID来说，正如中午所说，对金融股先买后卖是唯一正确的选择。汉奸这一招本在预计之中，也是汉奸唯一能使用的招数。如果汉奸连今天这一招都使不出来，本ID会更加蔑视他们。汉奸要阻击上涨，唯一的途径就是昨天说的，让月、季留下长上影，关于最后这两天的斗争，本ID已经提前预告。大部队打仗，伤及无辜，那是没办法的事情。明天是最后一天，汉奸当然希望就势打出长阴，其实，无论什么走势，对于本ID来说都无所谓，因为本ID今天采取了最正确的策略，先买后卖金融股，同时从昨天起对二、三线股进行清洗。对于本ID来说，明天以静制动，先让汉奸出手，大不了再来一次如3000点下的反复震荡，这种活动，汉奸们已经输过一次，不妨再来一次。现在，争夺的市场控制权，丧失筹码不行，唯一正确的就是通过震荡把筹码成本降低，由此可见，本ID理论，其实对大资金一样有效。股票都是废纸，只是吸血凭证，关键是能本成本降低为0才是真正的安全，0以下的，才是真正的利润，才是真正的血。无论散户还是主力，这都是一样的。
+回复​
+缠中说禅 2007/3/29 12:41:24下午收盘有事，不能上来，先说两句。这两天关系月、季收盘，激烈的争斗本在计划中。今天出现如此走势，就是这种争斗的结果。打不下去，先拉起来，这也是汉奸唯一的途径，如果换了本ID，也会这样。对银行股不可能压盘，本ID不可能在今天去压制中行，只可能顺势而为，先买后卖也是对的。当然，大盘股打仗，其他股票就要受累，这是不可避免的，市场不是慈善场所，如果看不懂的，就看深圳指数，以此为进出，上海指数在这段时间的失真是不可避免的。个股要习惯根据个股本身的图形进出，特别股指期货出来后，指数对个股的指导意义更弱。对于本ID来说，中行、联通就是其中的组合而已。等大盘股的争斗有方向了，其他股票自然重新走好，其实，完全可以以板块轮动来看。晚上9点再来，再见。
+缠中说禅 2007/3/29 21:31:54
+对不起，来晚了。
+缠中说禅 2007/3/29 21:44:58今天的争斗对于散户来说，确实是一个心理考验，但这是必须的。对于本ID来说，正如中午所说，对金融股先买后卖是唯一正确的选择。汉奸这一招本在预计之中，也是汉奸唯一能使用的招数。如果汉奸连今天这一招都使不出来，本ID会更加蔑视他们。汉奸要阻击上涨，唯一的途径就是昨天说的，让月、季留下长上影，关于最后这两天的斗争，本ID已经提前预告。大部队打仗，伤及无辜，那是没办法的事情。明天是最后一天，汉奸当然希望就势打出长阴，其实，无论什么走势，对于本ID来说都无所谓，因为本ID今天采取了最正确的策略，先买后卖金融股，同时从昨天起对二、三线股进行清洗。对于本ID来说，明天以静制动，先让汉奸出手，大不了再来一次如3000点下的反复震荡，这种活动，汉奸们已经输过一次，不妨再来一次。现在，争夺的市场控制权，丧失筹码不行，唯一正确的就是通过震荡把筹码成本降低，由此可见，本ID理论，其实对大资金一样有效。股票都是废纸，只是吸血凭证，关键是能本成本降低为0才是真正的安全，0以下的，才是真正的利润，才是真正的血。无论散户还是主力，这都是一样的。
+缠中说禅 2007/3/29 21:57:54
+突然进不来，有点奇怪，各位可好？
+缠中说禅 2007/3/29 22:06:35
+[匿名] 新浪网友 2007-03-29 21:52:03 
+照妹妹的意思，明天是一场血战，大盘明天有可能会大跌？ 
+=
+不排除这种可能，特别如果是本ID来做空，明天是最好的机会，一个长上影K线后，拉一条长阴，至少可以让很多所谓的技术派痛苦半个月。当然，汉奸有没有这本事是另外的事，市场不是一个人、一个派别的市场，而且市场的走势，很多都是当下发生的，这如同打仗，战机难道能预先知道吗？像今天，汉奸突然发疯，这时候如果去压盘，那就傻了，而是要比汉奸更疯，而当汉奸想回砸时比他砸得更快，这就如同剑客过招，错一步就是万劫不复。里面的工夫深着，哪里有这么简单。
+缠中说禅 2007/3/29 22:11:51
+[匿名] 新 浪网友 2007-03-29 21:58:43 
+999还有希望吗?-
+999是某汉奸基金在出货，该汉奸基金，在几元时拿了5000万股，11元上下被赎回，出了2000万，然后这次想出清，换600607，该股票也是该汉奸基金的重仓股票。本ID从来都是顺势而为，别人砸，想让本ID接，门都没有，你想出，可以，低出吧。
+缠中说禅 2007/3/29 22:14:21
+[匿名] 漂泊 2007-03-29 22:09:26 
+禅主，您给说说600238，已经底背驰了，昨天进的，怎么还是被套了那-
+不明白级别，永远也不可能真正明白市场，先想清楚是什么级别的背驰。
+缠中说禅 2007/3/29 22:20:48
+[匿名] 麒麟 2007-03-29 22:05:02 
+同时从昨天起对二、三线股进行清洗???二线蓝筹近期还有戏吗?我是刚换到这个板块的,刚冲了一下,就给套住了.妹妹辛苦了!--只要不是过度炒作的题材股，当然没有问题。不过请注意，任何被套的，肯定都不是在买点买的。本ID反复强调过，心态最重要。很多人，明明知道不是买点，就是手痒忍不住，这就是心态问题，不解决这个，任何理论都没用。股票只有两种，买点上的股票都是好股票，否则就是垃圾股票。大级别买点的就是最好的绩优股，耐心等待股票成为真正的绩优股，这才是真正的心态。
+缠中说禅 2007/3/29 22:26:46
+[匿名] 波波 2007-03-29 22:09:35 
+那仙女姐姐,我们手里的股票怎么办啊
+没有金融股票啊 
+==
+这种心态，怎么在市场上生存。本ID大张旗鼓地介入中行、联通，如果你真喜欢这种股票的，你早就拥有。这些股票，本质上根本不适合散户，因为波动太小，没什么意义。本ID说10元附近的二线股，像000802，难道中行、联通最近还能和他比？先把心态放好，关键不是什么股票，而是买点与卖点，例如，即使是000802，17元上买，至少在这两天就是垃圾股，卖点买点才是最重要的。
+缠中说禅 2007/3/29 22:30:11
+[匿名] 摇篮 2007-03-29 22:25:35 
+缠主，那对手下次不是反过来阻击你？==
+只要你能按照节奏来，没有人能阻击你。像中行、联通，汉奸怎么阻击？本ID筹码不少，成本越来越低，他阻击什么？汉奸有本事就阻击上10元，本ID全部给他们。砸就更没用，你问问他们，今天的高位他们能出多少？市场是有节奏的，把握当下节奏，没有人能战胜你。
+缠中说禅 2007/3/29 22:33:37
+[匿名] 新浪网友 2007-03-29 22:21:02 
+看禅主的意思 ,明天难道要割肉斩仓出局吗?==
+你需要检讨的是，为什么在卖点没卖，而不是去斩什么仓。注意节奏，卖点没卖，活该斩仓，斩在买点，正好瘦身。那些喜欢逆着市场节奏的人，什么时候变皮包骨了，可以上来广而告之，以此警戒后人。
+缠中说禅 2007/3/29 22:37:58
+[匿名] 轻风吹断 2007-03-29 22:33:07博主今天有点激动了。您说过修、养、齐、治、平。明天还等着您平呢。离子时不远了，早点休息吧。==本ID喜欢有点水平的对手，今天，汉奸能采取正确的选择，本ID更高兴，这是做空者唯一正确的选择，不过，他们的时机已经不好，所以，只能算垂死一战。至于散户，震荡，正是短差最好的机会，先卖后买，先买后卖，根据向下向上段的节奏来，这是市场考验的机会。
+缠中说禅 2007/3/29 22:39:45
+[匿名] 麒麟 2007-03-29 22:36:56 
+缠妹妹,问个傻问题,就是砸盘时,买单为什么不撤了啊?为什么还要傻傻地接别人的货啊?==那你就要问那些喜欢填买单的人了，本ID从来不这样，对手盘这种无聊玩意，本ID从来不干。
+缠中说禅 2007/3/29 22:43:40
+[匿名] 粉丝 2007-03-29 22:39:20 
+楼主,您好!忍不住出来冒个泡,,看来汉奸很清楚楼主的这个BLOG也有心来捣乱,我们很担心真的哪天我们在这里见不着您了,咋办呢?或者又如何再去追随您?
+还有一个低级的问题,39我也有大部分仓位,持它的理由因为前面的贴子和对楼主的信任,而今天,楼主却公开地告诉大家汉奸的动向,我的担心又有了(主要是自己分析得不好):假如汉奸出完货了,是不是也意味着楼主也会将它放了呢?---我们更没得希望了呢?==
+就算按跌破5日线减仓这最简单的方法，你看看你该什么时候就出点这股票？且不说16.5高开低走的长阴，做股票不讲技术，怎么可能应付？当然，如果你真是中长线持有，那就没必要问那么多，去分析这股票的基本面，你看他该在什么位置？
+缠中说禅 2007/3/29 22:46:03必须下了，太晚。最后给各位一句话。节奏，永远是市场的节奏，一个没有节奏感的市场参与者，等待他的永远都是折磨，抛开你的贪婪、恐惧，去倾听市场的节奏。再见。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0472_《货币战争和人民币战略》续四：中国崛起的真正秘密.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">《货币战争和人民币战略》续四：中国崛起的...</div>
+                </a>
+            <a href="0495_相对流动性过剩与经济转型及金融重构.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">相对流动性过剩与经济转型及金融重构...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回时政经济列表</a></p>
+    </footer>
+</body>
+</html>

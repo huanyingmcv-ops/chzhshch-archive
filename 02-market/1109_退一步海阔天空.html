@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>退一步海阔天空 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">市场分析</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>退一步海阔天空</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>退一步海阔天空</h1>
+<hr />
+<p>退一步海阔天空</p>
+<p>2008/9/1 15:56:14</p>
+<p>关于本ID坐骨神经的最新进展，后面有附录。来本ID这里，首先就要有最基本的科学精神，科学精神你都做不到，还如何能破科学而进入更高的境界？本ID这里一是一、二是二，只看实际效果。至于股市，周末搏消息的又一次失望，因此就自然有了今天的走势。对消息，不能急，你想大爷们的工作效率，就算真想干点什么，能快得了吗？退一步海阔天空，没什么不好的。纯技术的角度，已经明确分析过了，就是要有较大行情，必须月线闹出底分型来。如果本月初破上月底，并不是什么世界末日，反而使得这底分型更有力点，行情早一月晚一月其实并没什么大不了的。试想，如果本月不破底而硬搞一个分型，那么本月就需要拉一长阳，你凑在图上看看，总让人感觉不舒服不塌实，现在硬上去，弄成包含关系的可能更大，这样，后面反而会使得真正底分型来临时间更遥远。所以，有时候急了并不是什么好事情。从纯美学的角度，10月见底是最美的，因为刚好对应一年周期，顶和底一个完美的周期，当然，9月其实也可以，因为周期是可以正负一两个月的。站在这个角度，在月初砸一次破一次，对长期走势来说是件大好事。当然，这只是从美的角度说，至于市场怎么选择，市场说了算，实际操作中，根本可以不搭理这些事情。下午有朋友打电话过来，说他到了一中央级最重要之一的经济管理部门的杂志当头，那杂志是每个大国企以及大企业的头都会看的，希望本ID给他们写点什么。本ID有更好的渠道，本对这事没兴趣，想想，这可能也有点用处，专门写就算了，有些老东西改装一下弄过去就可以。各位有什么好的想法，也可以说说。本ID和他明确说了，他也知道本ID从来很少给什么杂志写东西，就算偶尔为了加大吹风力量弄的，也是闹着玩的，所以和他的合作不可能固定，本ID也不要他的稿费，反正想到有东西给他，他能用就用，不用就算，这样比较自然点。他专门问了本ID对调整的看法，因为他知道本ID6100点做空以后一直不感冒这市场，所以问本ID调整还有多长时间。因为是朋友，就直说了。如  果真要重新来过，那是N年以后的事了，现在唯一可以等待的是MACD在月线上回0轴后产生的中级回拉，这时间也快到了，狠的，就等17、18月，也就是明年3、4月开始；不太狠的就是10月前后了，这关系到周期运行的问题。至于是什么时候，关键是看管理层的作为，如果吊儿郎当的，那就狠吧，一切都是因缘和合，可没有任何必须的东西现在就规定行情如何如何。这里说的是大的走势，至于周线以下级别的走势，更没什么可分析，以前都说得很明白了，没必要预测什么，看图，那里什么都有。
+好，关心本ID坐骨神经的朋友，请看过来。奇人那一下很有效果，但效果没有持续到足够让本ID满意的程度。这里有一个客观因素，就是酒店的床太软，本ID要求更换木板床，说没有，晕。什么治疗后，一睡那床估计都要反复。闹不好，本ID要在地上睡了，在地上铺好了，可能会好点。昨晚，比较痛苦，打了两针竟然也没起作用，后来还是本ID自己解决了问题，把穴位用东西封上，结果一晚安稳，当然，奇人把一些东西弄回去了也是很关键的，否则本ID的招数也用不上。总结一下，奇人弄好后，一是没睡到正确的床上，二是大采购过于劳累，把刚弄正确的位置又搞偏了，所以这次先用本ID的招数控制着，等奇人两天后来再最终处理一下。至于今晚如何，天知道，不过本ID已经开始喜欢这游戏，就是如何当下地处理好这问题，然后得到一晚的安睡，这是多有趣的事情，目前状态可以，就看晚上了。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="1107_太对不起了，被坐骨神经折腾了一晚。.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">太对不起了，被坐骨神经折腾了一晚。...</div>
+                </a>
+            <a href="1111_不破不立，反弹可期.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">不破不立，反弹可期...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回市场分析列表</a></p>
+    </footer>
+</body>
+</html>

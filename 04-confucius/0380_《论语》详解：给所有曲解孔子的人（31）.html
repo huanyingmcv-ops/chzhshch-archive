@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（31） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">论语详解</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>《论语》详解：给所有曲解孔子的人（31）</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（31）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（31）</p>
+<p>2006/11/17 12:02:12</p>
+<p>子曰：“不患人之不己知；患不知人也。”
+杨伯峻：孔子说：“别人不了解我，我不急；我急的是自己不了解别人” 
+钱穆：先生说：“不要愁别人不知我，该愁我不知人。” 
+李泽厚：孔子说：“不要怕别人不知道自己，怕的是自己不知道别人。”
+详解：以前所有解《论语》的人，看到这几章“不患”、“患”的来回折腾都要晕，面对几乎一致的话，最终所有人都只能用一招，就是说这是重出，应该是孔子反复丁宁，所以《论语》就记了好几次。但这种解释荒谬透顶，请问，难道孔子几十年就说了这500多句话？难道相应的话，就这几条反复说，其它都只说一次？难道编辑的人就不知道这些话都差不多，就不会筛选一下？其实，所有的原因都是以前解《论语》的人根本就自己糊涂，搞不懂，分不清，硬找些理由来下台阶。就像这章，这三位也就采取相同态度。其实，《论语》里没有什么重出、多余的话，银碗盛雪，分不清是眼拙，怪得了谁？眼拙还编故事掩盖，就不是眼拙那么简单了，那是心有问题了。如果不对《论语》完全通晓无误，又有什么资格解《论语》？
+这一章并不是什么重出，而是就着上一章来，在一个更具体的问题上展开讨论。如果说前面两章分别站在根本性以及人类社会的一般性角度讨论问题，那这一章就在人类社会的内部结构上揭示其“不患”与“患”。在人类社会的内部结构上，“人之不己知”是其“不患”，正因为有了“人之不己知”的“不患”，才有了“不知人”的“患”。“人之不己知”，在人类社会结构内部是无位次的，人类社会，必然由人构成，而只要是人，就是“不己知”的，正因为“不己知”的无位次，才有了“不知人”的位次。
+“不己知”是社会中所有人存在的必然状态，如果真有什么“人性”，唯一可能的“人性”就是“不己知”。任何理论，如果违背了这个“不己知”，就是荒谬可笑的。例如，有某种上世纪被无数人吹捧的主流经济学，以所谓人的理性为前提，这种经济学只能是垃圾经济学。因为“不己知”，在人类理性的层次上， “非理性”是无位次的，人类的理性因“非理性”的无位次而位次，叫嚣人类理性的，根本上从来都是“非理性”的。
+“不知人”，就是前面反复提到的“人不知”，“圣人之道”，就是要把“人不知”的世界变成“人不愠”的世界。为什么有这个可能？就是因为“不己知”的无位次而有“不知人”、即“人不知”的位次。正因为有了“人不知”的位次，才有可能把“人不知”的世界变成“人不愠”的世界。但这改变，不可能通过改变“不己知”的状态而达到，因为“不己知”是无位次的，任何涉及“不己知”改变的都是“不己知”，“不己知”在人类社会的结构下是无可改变的。换言之，一切企图通过改造人从而达到改造人类社会的运动都是荒谬可笑的，任何希望通过灵魂深处爆发革命而达到改造社会的运动都是荒谬可笑的。
+孔子在两千多年前已经宣判了诸如上世纪六十年代那种类型运动失败的必然性。从“人不知”到“人不愠”，是不能从“不己知”下手的，因为无从下手。在这一点上，马克思和孔子是完全一致的。马克思从来不探讨任何人类思想的改造问题，因为人类的所谓思想位次，从根本上来源于社会“人不知”的位次，唯一需要改造的只能是“人不知”世界的现实结构。但社会的改造必须由其位次而决定，不同位次的社会有着不同的形态、规律，这里没有任何先验的、放之四海而皆准的良方，都必须从每个社会结构的现实逻辑、位次出发，这才是知其位次而行之，这才存在把“人不知”世界变成“人不愠”世界的可能，离开了现实的逻辑、位次，都是别有用心的鬼把戏。
+缠中说禅白话直译
+子曰：“不患人之不己知；患不知人也。”
+孔子说：不患人不明了自己，患“人  不知”的世界啊。
+注：“人不知”是专门术语，不翻译，具体含义看前面的文章。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/11/17 12:06:47
+明天又是周末了，音乐会就听贝多芬的吧，本ID这里有他的全集，想听什么都可以，有什么建议请跟贴。
+缠中说禅 2006/11/17 12:15:07
+关于股市的，哪天有时间继续写写如何“买股票”，注意，不是如何“选股票”，而是选择后“如何买”。
+缠中说禅 2006/11/17 12:36:02流川2006-11-17 12:23:12 
+原来阁主总在中午发帖。=================是的，中午休息，开盘就没时间了，下午、晚上经常有应酬。
+缠中说禅 2006/11/17 12:42:20[匿名] 波波2006-11-17 12:27:23 
+美女加油````多写股市`````=============谢谢，股市有时间就写，但只写方法，具体操作自己去体会。
+缠中说禅 2006/11/17 12:43:38
+要开盘了，先下。
+缠中说禅 2006/11/17 12:51:07[匿名] 命运行不？2006-11-17 12:45:24 
+最好是卡拉扬-柏林爱乐的==========真巧，正想下就看到你的帖子，可以，就卡拉扬-柏林爱乐的命运
+缠中说禅 2006/11/17 12:56:05[匿名] nn2006-11-17 12:49:53 
+先支持一下，然后请楼主将背景改回以前的好吗？我老眼昏花，在这个背景下看文字太吃力了，也许楼主喜欢这种背景，但请照顾一下老年人及色盲人士，再怎么俺也是你的支持者啊，谢谢了？=============一直没变，请再重上一次。
+缠中说禅 2006/11/17 12:59:16
+[匿名] nn2006-11-17 12:58:03 
+原来是我的电脑问题，对不起===============那就好，开盘，下了，再见。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0378_《论语》详解：给所有曲解孔子的人（30）.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（30）...</div>
+                </a>
+            <a href="0382_《论语》详解：给所有曲解孔子的人（32）.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（32）...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回论语详解列表</a></p>
+    </footer>
+</body>
+</html>

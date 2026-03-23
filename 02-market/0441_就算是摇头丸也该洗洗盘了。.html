@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>就算是摇头丸也该洗洗盘了。 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">市场分析</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>就算是摇头丸也该洗洗盘了。</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>就算是摇头丸也该洗洗盘了。</h1>
+<hr />
+<p>就算是摇头丸也该洗洗盘了。</p>
+<p>2007/1/24 15:40:48</p>
+<p>今天说点闲话，来这里的所有人都应该知道这个公告
+“关于抛弃各位两天的公告2006-12-19　21:45:00”
+剔除，元旦的放假，刚好一个月，21日的交易日，一个神奇数字，翻番了。这时候，就算是摇头丸也该洗洗盘了。
+特别好玩，刚上来看到有人这样写：
+2007-01-24 14:12:16今天的药不用说了，大家都看到了，还要继续涨，我敢打包票。呵呵可惜没钱，有钱就是砸锅卖铁也要买啊！2007-01-24 14:59:52尊敬的罗锅同学以及各位学友们:我慌慌张张跑上来问一句:我们的药咋打开了呐.俺看不懂噢...谢谢你!~~
+看来各位还需要好好学习，首先要学的是心态，当所有人都觉得无风险时，洗盘就是必须的了。市场，永远可以被利用的就是恐惧和贪婪，一定要彻底地修炼。最近本ID特忙，在大换仓，把去年的一些涨幅过大的、现在估值偏高的股票换过来。这些是老资金了，和12月19号说的不是一笔钱。这段时间的震荡，就是一直在换仓，不仅仅是本ID这样干，很多人也这样干着。其实，本ID所换的方向，在回帖里都有说过，这段时间本ID新换的，主要的如下几个板块：军工、有色、农业、环保、公用事业。前两个板块，停了大半年了，也该动动了，后三个板块，公用主要是一些低市赢率的股票，这是防守仓位；农业、环保，是以后要大力支持的，本ID最近忙着搞一件大事情，和这两方面都有关系。当然，药和钢铁，是去年就开始布局的，就不用说了。曾提过的八只股票，中线都没问题的，而且现在都离提的时候有一定涨幅了。药，就不说了，还S呢。浙江人，山东人、管子、5夹1都没什么可说的。今年那三只，直升飞机正慢慢起飞，山东那大大的环保正清扫着，还有那过年不收礼的玩意，盘中有点乱，还行。军工、有色，都是最近一两周进去的，自己看技术找买点。本ID搞的军工只搞和航天有关的，有色只搞稀有金属。以上都是梦话，大家洗洗睡吧。
+回复​
+缠中说禅 2007/1/24 15:45:50
+对不起，今天的版总是排不好，迟了，估计是新浪的问题。
+缠中说禅 2007/1/24 15:46:31
+本ID再退出一次排排，现在的字太小。
+缠中说禅 2007/1/24 15:54:43
+[匿名] 新年好 2007-01-24 15:50:37 
+缠中说禅2007-01-24 15:45:50 
+对不起，今天的版总是排不好，迟了，估计是新浪的问题。=============
+缠姐真是个完美主义者，我觉得这样就行了。==排好了，是对大家的尊重，也是对自己的尊重。
+缠中说禅 2007/1/24 15:59:16
+[匿名] 笨笨猪 2007-01-24 15:57:03 
+其实，本ID所换的方向，在回帖里都有说过，这段时间本ID新换的，主要的如下几个板块：军工、有色、农业、环保、公用事业。
+－－－－－－－－－－－－－－－－－－－
+请教一下：能源板块呢？==
+能源、汽车都可以的。关键是具体的个股的技术走势，千万别追高买股票。
+缠中说禅 2007/1/24 16:03:11
+[匿名] 笨笨猪 2007-01-24 15:52:29 
+今天博主怎么不说大盘了？
+在5分钟线上应该是已经背驰了，而且和上一次5分钟的背驰几乎是一摸一样的。===刚从0轴上来，不存在的背驰的问题。目前不是考虑5分钟的问题，而是60分钟的问题，对大盘最大杀伤力的，是60分钟 可能的背驰。这是必须密切关注的。目前60分钟要不出现背驰，就要迅速拉起来，否则在这里折腾几天，那就有问题了。注意，60分钟一天才4根，所以还有几天可以看的。大盘震荡的回试，应该在2870上站稳，这也是很重要的。
+江苏舜天（600287）​
+缠中说禅 2007/1/24 16:05:00
+[匿名] wjy885 2007-01-24 16:02:53 
+缠姐想请教一下,600287的任何线都没有发生背弛,怎么从上午4.90一直往下探到收盘4.57.谢谢您缠姐!!!===好好看看5分钟图，怎么没背驰了？
+缠中说禅 2007/1/24 16:10:00
+[匿名] 罗锅 2007-01-24 16:08:25 
+数学妹妹！！！！！！！！！！！！快给俺大红花！！！！！！！！！！！！！！！！！！！！！！！！！！你看俺中午的留言！！！！！！！！！！[匿名] 罗锅 2007-01-24 11:35:21 
+缠中说禅2007-01-23 15:28:03个股没什么说的，连军工、有色等老板块都开始再次活跃，无非说明了，这大盘即使短线有些震荡，中线还是问题不大的。BBBBBBBBBBBBBB数学妹妹！！！！！！！！！！！！！！俺知道你是在提醒军工股票！！！！！！！！！！！！！！！俺早上买啦！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！药也牛呀！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ ！俺要当面首~！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！==这么明显的事情，就不用大红花了，关键是自己真的明白了。
+缠中说禅 2007/1/24 16:13:41
+[匿名] 学校新生 2007-01-24 16:07:17 
+哪位热心的师兄告诉在下。前面提的8只股票，除了打包发梦的那5只还有个四川的酒， 另外2只是什么？谁给说一下谢谢了！==酒不算这8只的，那是老资金搞的。水酒中线还是有潜力的，毕竟收购还没完成。追高就没必要了。其他8只也是，都涨了，没必要追高了。在本ID新说的板块中找回调的买点吧。还有，金融是长线的问题，本ID是长线持有了。中国的金融是最核心的国家安全问题，这是最重要的。
+缠中说禅 2007/1/24 16:19:32
+[匿名] 大盘 2007-01-24 16:09:38 
+求助解答关于中枢理论的应用和学习难点通过楼主几次的解答自己感觉判断中枢形成的难点已经不在于概念，而是在于理解和分析清楚构成中枢的三段中任意的一段又必须是至少由次级别连续三段完成的，例如判断日线中枢的形成，首先至少要有三段连续的30分钟走势类型完成，而30分钟的每一段又要求是5分钟图表上的三段走完，5分钟的三段又要求至少1分钟图表的三段要走完，如此循环判断，感觉实际应用起来真是不太方便，不知楼主有什么实际的应用技巧可以帮助我们不用一层一层去判断每一段是否走完，而是可以只从一个次级别就可以方便的判断出来。==看日线没必要去找1分钟的，一般日线上很明显地看出三段，而且，每段中日K线有至少三根以上重合， 那基本都是30分钟的走势了。当看次级别的背驰等，才需要去看次级别的图。
+缠中说禅 2007/1/24 16:22:13
+[匿名] 空读 2007-01-24 16:18:44 
+缠禅:学了后去看图,看到000008当年的亿安科技,在2000年2月17日126元的大顶时,从日线和周线上至今都没有看到第一类卖点,因为时间久了,不知30分钟线上有没有,这么大级别的调整日线上是否应该出现卖点?===不一定，在快速拉升的最后，一个1分钟的背驰足以引发暴跌。所以，在不同的时期，对待不同的走势，关注的背驰级别也有所不同。这以后会具体说到。
+缠中说禅 2007/1/24 16:25:14对不起，要去一下望京，那破地方忒塞车，要马上走了，晚上回来聊！再见。
+缠中说禅 2007/1/24 21:03:42
+[匿名] abc 2007-01-24 20:40:18 
+LZ换仓的还是成分股吗，是不是牛市的第一阶段已经结束了？==
+基本都是成分股，但都是二、三线的成分股。
+缠中说禅 2007/1/24 21:08:08
+[匿名] 锅贴 2007-01-24 20:57:37 
+lz麻烦你看看600210.刚刚出现一个3类卖点,现在又好像五分钟备驰,我看很象背驰,请lz看看是不是?谢谢.==3类卖点？背驰如果用MACD辅助，首先要回拉0轴。
+缠中说禅 2007/1/24 21:12:27
+[匿名] 沉醉 2007-01-24 18:58:04缠子楼主请教下,,
+趋势内部的背驰/上证指数15分K线图
+从1-18 1300开始到今天收盘时.有三段连续上涨, 
+第二段红柱已小于第一段,但黄白线升高,
+而第三段 从1-23 1330到收盘.
+与第二段比. 红柱缩小的多,黄白线下降,
+意味有个回调, 但幅度多少,这回调力度则难以估计.用什么方式可以去测算回调力度?==用MACD判断背驰首先要有黄白线对0轴的回拉，这个都没有，在该级别就不存在什么背驰，其他级别要相应去看了。
+缠中说禅 2007/1/24 21:13:55
+[匿名] 勤学好问 2007-01-24 21:10:58 
+请问，是不是大盘出现６０分钟的背弛，可能预示着会有一个比较大而且是持续时间比较长的调整？　　===也不一定，往往可以用空间换时间，或相反。
+缠中说禅 2007/1/24 21:18:43各位注意了最好就是自己用技术选好股票，这才是真工夫。本ID说的股票就拿来观赏吧，除非出现明确的回调买点。先下了，再见。
+缠中说禅 2007/1/24 21:20:48
+[匿名] 楚天 2007-01-24 21:15:21 
+600523昨天13.10和今天10.00是不是形成背离?缠老师==临走回答一下，请先搞清楚背驰的条件，还有级别，没有具体的级别，光说背驰是没意义的。下了，再见。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0437_周末，给自己一小时只属于自己。.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">周末，给自己一小时只属于自己。...</div>
+                </a>
+            <a href="0442_最大的泡沫就是某些国人！.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">最大的泡沫就是某些国人！...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回市场分析列表</a></p>
+    </footer>
+</body>
+</html>

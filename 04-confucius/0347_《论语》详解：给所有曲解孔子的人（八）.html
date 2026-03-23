@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（八） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">论语详解</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>《论语》详解：给所有曲解孔子的人（八）</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（八）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（八）</p>
+<p>2006/10/19 12:02:21</p>
+<p>对首章三个“不亦”的初步了解，最终必须落在“承担”上，如果没有这种对“天地人”、对“圣人之道”、对行“圣人之道”最终达到“不愠的世界”的承担，那么就没必要继续《论语》的研读。上面也说过了，鸭子是没必要读《论语》的，虽然鸭子也有“承担”，但只有君子才需要《论语》，也才能“承担”《论语》。
+下面，本ID要干的一件事，一定是《论语》成书以来没人干过的，就是要重排《论语》各章间的顺序。《论语》，孔子及门人的语录，系统地讲述了君子如何去“闻、见、学、行”“圣人之道”的问题，但由于《论语》成书时间是在孔子等之后，历代又被腐儒折腾，因此，目前所袭用的《论语》各章间的顺序并不正确。为了能更好地把握，还《论语》以本来面目，必须对此重新排序。在后面的解释用，《论语》原有篇章都无一遗漏，只是顺序按照更合理的方式重排。这点，必须明确。而这《论语》之旅，将按照本ID新编排的次序继续进行。
+子曰：朝闻道夕死，可矣！
+详解：这句话被排在三个“不亦”总纲之后，是《论语》的第一条。所谓“闻、见、学、行”“圣人之道”，首先要“闻其道”。道不闻，则无由“学、行”。然而，就这几乎所有中国人都熟悉的话，却经常被解释成类似“早上闻“道”，晚上死了也值得”之类的搞笑玩意。如果真是这样，那么请问：晚上才死，那中午干什么去了？当鸭子还是学当鸭子去？如果早上死、中午死，那还值得不？如果真是“早上闻“道”，晚上死了”，就算值得，也是私道，不能惠及旁人的私道，又有什么值得不值得的？这些似是而非的解释流传千年，真把《论语》当成福音之类的玩意了，和儒家、《论语》的精神是完全背离的。
+其实，“死”，不是死去的意思，而是“固守”的意思。所谓“固守”，也就是“承担”。而“朝、夕”，不是单纯的“早晨、晚上”，而应该从“天、地、人”三个角度来考察。从“天”的角度，代表了时间上的“开始、最后”，从“闻其道”开始，不断地“固守”，“承担”“圣人之道”之行直到最终成就“不愠的世界”而不退转；从“地”的角度，代表了“东方、西方”，也代表了整个天下所有的地方，无论任何地方，无论条件恶劣还是优越，都要不断地“固守”，“承担”“圣人之道”之行直到最终成就“不愠的世界”而不退转；从“人”的角度，最大的承担就是生死的承担，所谓出生入死，都要不断地“固守”，“承担”“圣人之道”之行直到最终成就“不愠的世界”而不退转。只有从这三方面去理解，才是真知道“朝、夕”。
+原来的断句“子曰：朝闻道，夕死可矣！”是不对的，由于古文都没有标点，因此断句就是一个很大的问题。千古以来被惯用的这个断句，就把“死”真当死给搞死了。而从上面的分析知道，这“死”是“固守”、是“承担”，相应的断句就是“子曰：朝闻道夕死，可矣！”其实，里面的“道”字是可以省略的，因为整部《论语》就是说这圣人之道和行圣人之道，省略“道”并不会影响理解，“朝闻夕死”，这更符合古汉语的语气。光“闻”不“死”，是不能行圣人之道的，只能是口头玩意，而历史上的腐儒们，最大的弊病就是光“闻”不“死”，这“死”，是“固守”、是“承担”，而要“固守”、“承担”，就必须“死心塌地”、“痴心不改”，偷心不死，是不可能行圣人之道的。
+“朝闻道夕死，可矣”，君子从“闻其道”开始，无论任何地方，无论条件恶劣还是优越，甚至出生入死，都要不断地“固守”，“承担”“圣人之道”之行直到最终成就“不愠的世界”而不退转，只有这样，才可以行“圣人之道”呀。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/10/19 12:21:04
+请先放下陈见，再来阅读！
+缠中说禅 2006/10/19 12:22:36
+请先放下陈见，再来阅读！
+缠中说禅 2006/10/19 15:48:32公告</p>
+<p>本ID所写“《论语》详解-----给所有曲解孔子的人”皆发人所未发，已联系好写完后要出版，所以有关连载将只在本ID博客进行。请最好不要转载，如要转载，务必注明，免得以后要打版权官司。严禁抄袭，违者必究
+缠中说禅 2006/10/19 16:37:19公告本ID所写“《论语》详解-----给所有曲解孔子的人”皆发人所未发，已联系好写完后要出版，所以有关连载将只能在本ID博客进行，尽量保持每天一章的速度。一般情况下，谢绝转载；如真要转载，请务必注明，免得以后版权官司。缠中说禅</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0345_《论语》详解：给所有曲解孔子的人（七）.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（七）...</div>
+                </a>
+            <a href="0349_《论语》详解：给所有曲解孔子的人（九）.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（九）...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回论语详解列表</a></p>
+    </footer>
+</body>
+</html>

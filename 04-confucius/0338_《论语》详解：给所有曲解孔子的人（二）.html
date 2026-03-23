@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（二） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">论语详解</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>《论语》详解：给所有曲解孔子的人（二）</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（二）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（二）</p>
+<p>2006/10/14 12:23:01</p>
+<p>在人人争当经济人的年代谈论成圣人之道，也忒不靠谱了。当然，任何的不靠谱都是站在一定立场上的，而圣人的不靠谱，必须有非圣人的视角，例如：经济人、社会人、鸭子等。没有任何没有前提的逻辑是可以无条件地被证明的，没有一个视角是绝对的、不需要前提的，既然这样，这世界的喧嚣已经不缺乏经济人、社会人、鸭子们了，圣人当然也有喧嚣的必然。
+站在这个角度，没有任何视角是有永恒价值的，但也没有任何视角是永恒没有价值的，《论语》一样，孔子一样，圣人也一样。但曲解是不允许的，必须首先要弄清楚《论语》究竟在说什么，否则一切的赞誉或诋毁都无意义。当然，在喧嚣的年代，无意义就是最大的意义，那就让最大继续最大，最后阳亢而死。而继续《论语》之旅，进入《论语》之旅的前提就是，要立志成为“圣人”，或者至少要有兴趣去了解如何成为“圣人”。至于要立志当鸭子或鸭王，那就此门不通了。
+“学”的主语解决了，那“学”的宾语是什么？也就是说，“君子”要学什么才能成就“圣人”？千古以来，基本所有的解释都把这“学”当成各种一般技能、学问的学习了。如果真这样，那不妨把“房中术”当成宾语，这话就变成“（君子）学（房中术）而时习之，不亦说乎？”，这一下，孔子真成“老二”了，成了上世纪六十年代欧美“性爱革命”的先驱了，或者至少也是后来道家伍柳派的祖宗，当然，流传到今天，可以列入《鸭语》第一章了。
+但《论语》不是《鸭语》，也不是《算语》、《医语》、《文语》，《论语》不一般地探讨所谓的教育问题，孔子是教育家，但那只是他的副业，就像现在有人是教授，副业可以是叫兽，如果这种副业的通常时间都发生在凌晨前后，那就成了叫售，也就是叫卖了，至于是卖身还是卖什么其他的，并不重要。《论语》归根结底是探讨儒家的核心问题，是如何成“圣人”的问题，因此这里的“学”不是一般教育意义上的，而是“闻道”、“见道”、“学道”，“学”后面的宾语只能是成“圣人”之道。
+而这里的“学”，首先是“闻道”，不闻无以学，其次是“见道”，不见亦无以学。只有“见道”以后，才可以真正地“学道”，否则都是瞎猫对死耗子。就算在月亮永远不圆的外国、在那万恶千疮的资本主义社会，要去学当鸭子，也脱离不了这程序。首先要听说有鸭子这回事，还要听说哪里有鸭子活动的场所，即使不知道这场所的专门术语-----“鸭店”。然后，当然就是要去看看怎么回事，所谓眼见为实，不能光听别人说这行业有前途，就盲目投资，就算是“鸭子”是一很有前途的朝阳产业，也不能盲目投资，必须亲自明白无误地见到其中的好处，有什么福利呀、会不会拖欠工资呀、上班时间能否自由掌握呀，有多大风险呀，等等。把这一切都见到，看明白了，才可以去“学”当“鸭子”，这样才有信心，才有目标。试想，连当“鸭子”的“学”都包含如此程序，就不要说学成“圣人”之道了。
+和“学”同源的是“校”，也就是“效”，就是“效法”。“学”，不是一个人的瞎修盲练，而是要“效法”，“效法”什么？当然就是“圣人”了。“校”，至少要包含两个不能偏废的方面：1、对照；2、校对。“对照”“圣人”学之效之而使自己也成为“圣人”，但这种“学”和“效”不是固定不变、一劳永逸的，必须不断地“校对”。就像一块表，按报时调好后，并不是一劳永逸，而是要不断地“校对”，表才不会出现大的偏差。
+而儒家的思想是积极入世的，因此这“校对”的工夫，就不光光是“对照”“圣人”理论，而是必须针对现实，脱离了现实，就无所谓“校对”，也无所谓“学”了。而现实中的“学”，必然是群体性的，用现代术语，就是社会性的，因此，这“学”字的完整意义就是，闻“圣人之道”、见“圣人之道”、“对照”“圣人”、在现实社会中不断地“校对”，只有这，才勉强称得上“学”。
+对““学而时习之”中的“学”，概括如下，就是：
+问：什么是学？
+答：闻“圣人之道”、见“圣人之道”、“对照”“圣人”、在现实社会中不断地“校对”。
+问：谁学？
+答：君子。
+问：学什么？
+答：成“圣人”之道。
+问：学了能成什么？
+答：“圣人”。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/10/14 12:34:59
+现在抄袭之风兴盛，本ID所写皆发人所未发，如果以后有人抄袭，请各位帮忙收集证据。
+缠中说禅 2006/10/15 22:18:55
+[匿名] 5131k 
+曲解孔子还是曲解《论语》，请说明。
+==============
+孔子、《论语》，一而二、二而一。
+缠中说禅 2006/10/19 15:52:05公告</p>
+<p>本ID所写“《论语》详解-----给所有曲解孔子的人”皆发人所未发，已联系好写完后要出版，所以有关连载将只在本ID博客进行。请最好不要转载，如要转载，务必注明，免得以后要打版权官司。严禁抄袭，违者必究</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0337_《论语》详解：给所有曲解孔子的人（一）.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（一）...</div>
+                </a>
+            <a href="0339_《论语》详解：给所有曲解孔子的人（三）.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（三）...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回论语详解列表</a></p>
+    </footer>
+</body>
+</html>

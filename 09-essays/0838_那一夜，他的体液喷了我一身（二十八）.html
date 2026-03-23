@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>那一夜，他的体液喷了我一身（二十八） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">杂文</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>那一夜，他的体液喷了我一身（二十八）</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>那一夜，他的体液喷了我一身（二十八）</h1>
+<hr />
+<p>那一夜，他的体液喷了我一身（二十八）</p>
+<p>2007/12/24 16:18:19</p>
+<p>晚上有一收购的事情要谈，估计很晚回来，把帖子先贴上，抱歉。
+二十八
+[16:09:34] 【XX】对XXX说：高/重/年龄[16:09:45] XXX对【XX】说：180/80/43[16:10:00] 【XX】对XXX说：从事什么？[16:10:25] XXX对【XX】说：中文系副教授，主攻现代小说与武侠小说，鲁迅研究专家。[16:10:39] 【XX】对XXX说：哈哈，你很环保。
+[16:11:09] XXX对【XX】说：什么意思？
+[16:11:17] 【XX】对XXX说：专门进行垃圾分类呀。[16:11:30] XXX对【XX】说：胡扯！鲁夯之徒！
+[16:11:48] 【XX】对XXX说：哈哈，看来你还不算太垃圾桶，居然知道胡适尽乱扯、鲁迅是夯货，还没到不可救药的地步。
+[16:12:17] XXX对【XX】说：鲁迅是夯货？鲁迅是民族的脊梁。
+[16:13:12] 【XX】对XXX说：鸭屁！民族的脊梁是那些“一·二八事变”中为国捐躯的勇士，而不是那只马上跑到日本人那里逃避战火哀求保护的鸭子。难道你不知道那日本书店是日本的间谍机关所设立？这一点，当时早就有人揭发，你这专门研究垃圾的，难道不知道这垃圾的这点破事？请问你一个问题，为什么这鸭子在九一八以后，还让一家有日本间谍嫌疑的书店有着超乎寻常的交易？为什么这鸭子的终身朋友中，几乎无一例外都是日本人？这鸭子号称不宽恕一人，怎么日本人就不在其中？难道对九一八、一二八就可以宽恕到继续和日本人称兄道弟？这鸭子应该庆幸自己没活到南京大屠杀，否则全中国都会看清楚它的嘴脸。[16:13:27] XXX对【XX】说：歪理，道听途说。先生以笔杆子为武器，和枪杆子发挥的作用是一样的。[16:13:54] 【XX】对XXX说：脑子锈了？这鸭子在民族危难之时，天天打嘴仗把中国人描画得一团漆黑，这动摇军心的笔杆子效果确实赶得上第五纵队的枪杆子！告诉你，那些战死沙场的勇士里，绝大多数就是它所抹黑的需要改造的普通中国人。[16:14:12] XXX对【XX】说：强词夺理[16:15:19] 【XX】对XXX说：就算用最善良的动机来评估这鸭子，它和古代的文人比，也是软骨头！知道中华民族的文化脊梁是什么吗？是“北极朝廷终不改,西山寇盗莫相侵”的杜甫，是“壮志饥餐胡虏肉，笑谈渴饮匈奴血“的岳飞，是“王师北定中原日，家祭无忘告乃翁”的陆游。且不说杜甫、陆游，在国家危难之时，所写诗篇都与之息息相关，就算是郑成功的师傅、柳如是的丈夫，那曾经被看成汉奸的钱谦益，到死都为了那几个月的不坚定行为而悔改、不断地组织反清暴动、支持反清武装。为了文化上的忏悔，他史无前例地把杜甫的秋兴八首连续步韵了十几次，把他的忏悔与反清历程与最后的失败一一记录，看看这用血写成的诗句：“海角崖山一线斜，从今也不属中华。更无鱼腹捐躯地，况有龙涎泛海槎。望断关河非汉帜，吹残日月是胡笳。嫦娥老大无归处，独倚银轮哭桂花”，周树人这鸭子，有哪一句诗、哪一句话，在九一八后达到这里的万分之一？这鸭子就算有亿万分之一的机会不是汉奸、日本间谍而只是一个被日本人洗脑的蠢货，那也是一个无耻的、不配当中国人的垃圾文人！[16:15:59] XXX对【XX】说：先生关注的是人性、国民性，没有健全的人哪里有健全的国家？[16:16:38] 【XX】对XXX说：鸭屁人性、国民性，在现实中，人的第一人性就是人有国家、何谓国民？没有国家哪里来国民？国家的存在，是探讨所谓人性、国民性的第一前提，在世界大同、国家消亡之前，这个前提都不会被改变。因此，在国家利益被侵害时，在国家危亡之时，探讨鸭屁人性、国民性？前提都没有了，你探讨什么？当国际性地球村鸭子去吧，那可以只有性，被黑白棕黄消费，美圆英镑欧元人民币都可以，快去吧！[16:17:16] XXX对【XX】说：无耻，你读的什么书，真为你 感到羞耻。
+[16:17:34] 【XX】对XXX说：可笑！连周树人都可以被书被教科书，然后养你们这种垃圾桶，浪费人民币大米猪肉粉条，面首去吧！磨墙去吧！</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0804_那一夜，他的体液喷了我一身（二十五、二十六、二十七）.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">那一夜，他的体液喷了我一身（二十五、二十...</div>
+                </a>
+            <div class="nav-btn disabled"><div class="nav-label">下一篇 →</div><div class="nav-title">没有了</div></div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回杂文列表</a></p>
+    </footer>
+</body>
+</html>

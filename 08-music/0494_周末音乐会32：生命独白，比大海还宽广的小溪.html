@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周末音乐会32：生命独白，比大海还宽广的小溪 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">音乐艺术</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>周末音乐会32：生命独白，比大海还宽广的小溪</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>周末音乐会32：生命独白，比大海还宽广的小溪</h1>
+<hr />
+<p>周末音乐会32：生命独白，比大海还宽广的小溪</p>
+<p>2007/4/1 10:55:14</p>
+<p>生命独白 
+比大海还宽广的 
+小溪
+近代西方音乐，一个永不枯竭的源头，来自一条小溪，那比大海还宽广的小溪。今天，播放的这套6首《无伴奏大提琴组曲》，只是这小溪之一瓢，但足以让所有大提琴家倾其一生去演绎。这是大提琴的圣经，就如同他的《平均律》是钢琴的圣经一样。
+生命独白，没有任何伴奏，只有大提琴的孤独，如同生命在茫茫宇宙间的行走。一切绚烂归于平静，这里只有生命最透亮的直面。剥离了一切表象，却映照出整个世界。说实在，这里的音乐，比《二泉映月》还要更生命，更世界，一切哀愁、快乐都在音乐中升华，但却依然世界，与所谓的天国无关。
+在真正的音乐面前，语言永远苍白，还是去倾听吧。</p>
+<p>0:00 / 0:00周末音乐会32：《巴赫无伴奏大提琴第一组曲》10:00周末音乐会32：《巴  赫无伴奏大提琴第一组曲》20:00周末音乐会32：《巴赫无伴奏大提琴第一组曲》30:00周末音乐会32：《巴赫无伴奏大提琴第一组曲》40:00周末音乐会32：《巴赫无伴奏大提琴第一组曲》50:00周末音乐会32：《巴赫无伴奏大提琴第一组曲》60:00周末音乐会32：《巴赫无伴奏大提琴第二组曲》10:00周末音乐会32：《巴赫无伴奏大提琴第二组曲》20:00周末音乐会32：《巴赫无伴奏大提琴第二组曲》30:00周末音乐会32：《巴赫无伴奏大提琴第二组曲》40:00周末音乐会32：《巴赫无伴奏大提琴第二组曲》50:00周末音乐会32：《巴赫无伴 奏大提琴第二组曲》60:00周末音乐会32：《巴赫无伴奏大提琴第三组曲》10:00周末音乐会32：《巴赫无伴奏大提琴第三组曲》20:00周末音乐会32：《巴赫无伴奏大提琴第三组曲》30:00周末音乐会32：《巴赫无伴奏大提琴第三组曲》40:00周末音乐会32：《巴赫无伴奏大提琴第三组曲》50:00周末音乐会32：《巴赫无伴奏大提琴第三组曲》60:00周末音乐会32：《巴赫无伴奏大提琴第四组曲》10:00周末音乐会32：《巴赫无伴奏大提琴第四组曲》20:00周末音乐会32：《巴赫无伴奏大提琴第四组曲》30:00周末音乐会32：《巴赫无伴奏 大提琴第四组曲》40:00周末音乐会32：《巴赫无伴奏大提琴第四组曲》50:00周末音乐会32：《巴赫无伴奏大提琴第四组曲》60:00周末音乐会32：《巴赫无伴奏大提琴第五组曲》10:00周末音乐会32：《巴赫无伴奏大提琴第五组曲》20:00周末音乐会32：《巴赫无伴奏大提琴第五组曲》30:00周末音乐会32：《巴赫无伴奏大提琴第五组曲》40:00周末音乐会32：《巴赫无伴奏大提琴第五组曲》50:00周末音乐会32：《巴赫无伴奏大提琴第五组曲》60:00周末音乐会32：《巴赫无伴奏大提琴第六组曲》10:00周末音乐会32：《巴赫无伴奏大提琴第六组曲》20:00周末音乐会32：《巴赫无伴奏大提琴第六组曲》30:00周末音乐会32：《巴赫无伴奏大提琴第六组曲》40:00周末音乐会32：《巴赫无伴奏大提琴第六组曲》50:00周末音乐会32：《巴赫无伴奏大提琴第六组曲》60:00
+回复​
+缠中说禅 2007/4/1 11:02:25各位早上好这版本来自卡萨尔斯，最权威的版本昨天北京天气不好，今天还行，要出去走走。先下，再见。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0488_周末音乐会31：孤魂的世纪游荡.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">周末音乐会31：孤魂的世纪游荡...</div>
+                </a>
+            <a href="0500_周末音乐会33：这人，让卡拉扬成为小丑.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">周末音乐会33：这人，让卡拉扬成为小丑...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回音乐艺术列表</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（26） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">论语详解</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>《论语》详解：给所有曲解孔子的人（26）</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（26）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（26）</p>
+<p>2006/11/9 12:00:01</p>
+<p>季康子问政於孔子，孔子对曰：政者，正也，子帅以正，孰敢不正？
+详解：季康子，鲁国大夫，向孔子问政。通常的解释大概类似如下：“政的意思就是端正。统治者自己带头端正，以身作则、作出表率，谁人敢不走正道呢？”该类的解释，都是把孔子“鲁式”化的千古误解。这里，把“帅”解 释成“表率、带头、引导”，把“正”解释为“端正”等，把“为政”当成耶教的牧民之术了。这套玩意，古今中外，不知拐骗多少良家少男成为某种理念、模式的复制品，为了不同的旗帜却同一的骗术，少则成鹅为鸭，多则为奴为鬼，良可悯矣。最大的奴才就是思想上的奴才，而思想上的奴才最贱的一种就是那些赴汤蹈火、心甘情愿为了某些诸如“民主、自由、人权”之类垃圾抽象概念而炮灰的人。
+其实，这一章完全从上一章“为政以德譬，如北辰居其所而众星共之。”而来。“帅”，遵循。“帅以正”，“帅之以正之”的省略，这省略的“之”，就是人所参与其中的当下现实。能遵循的，只能是人所参与其中的当下现实；能“正”的，也只能是人所参与其中的当下现实。那种以抽象的概念、模式为起点的把戏，在现实面前都只能是把戏。“正”，指事字,上一表示方向、目标,下足(止)表示向这个方位或目标不偏不倚地走去。对于儒家、《论语》来说，这方位或目标就行“圣人之道”而成就之。“以”，和，表示并列关系。“帅”和“正”、“帅之”和“正之”，是并列的关系，表示两者不能偏废、相互相成的关系。“帅以正”，用现代术语，就是遵循现实的逻辑，从现实出发，行“圣人之道”而成就之。
+与“北辰居其所而众星共之”相仿，现实、现实的逻辑就如同北极星，当人把北极星的位置确定后，执持这位置相应就可以定出其他星星位置；当人从现实出发分析把握了现实关系的逻辑结构后，“孰敢不正？”，其它问题就会以此为基础相应地找到解决的办法。这里不需要任何的先验、抽象原则，而是“无所位而生其本、无所本而生其位”。但人不是现实的奴隶，现实必须是人参与其中的，没有了人，也无所谓现实，更无所谓现实逻辑。现实之于人，按其逻辑，有着各种不同的选择，究竟如何去选择，就构成了各色各样的政治。各种政治结构的逻辑支点，都来自现实，这逻辑支点也如同北极星，一旦确立，其它就以此为基础相应地构建。而对于儒家、《论语》来说，这个现实的逻辑支点，“正之”所在，就是行“圣人之道”而成就之。
+“政者，正也”，为政，就是要立行“圣人之道”而成就之这一逻辑支点；“子帅以正，孰敢不正？”为政的人，遵循现实的逻辑，从现实出发，行“圣人之道”而成就之，其它问题就会以此为基础相应地找到解决的办法。这里必须要明确的是，现实，是最底层的支点，行“圣人之道”而成就之这个逻辑支点必须也必然在现实支点之上，离开现实，无所谓“圣人之道”。“圣人之道”，不是离开现实的乌托邦，那种把“圣人之道”装扮成某种口号、旗帜、目标，以此而驱使人，让人为此而折腾，都和“圣人之道”、《论语》、孔子毫无关系，就像把“共产主义运动”弄成某种口号、旗帜、目标，以此而驱使人，让人为此折腾，都和马克思毫无关系一样。“人能弘道，非道弘人”，孔子和马克思，总是那样心心相印。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/11/9 12:04:22
+继续开张，各位吃好。
+缠中说禅 2006/11/9 12:06:46
+今天这个问题不是这么容易理解的，历史上无数的所谓大家都参不透这一关。现实与理想，执之两边，酿成无数悲剧。
+缠中说禅 2006/11/9 12:46:06[匿名] 常来看看2006-11-09 12:38:38 
+有点 无为既是有为 的味道.
+不知我的感觉当否,请楼主批示-----无为有为，都是名言，必须彻底打破名言陷阱，否则永远在其中打圈圈。
+缠中说禅 2006/11/9 12:48:19刚好又见到有人留言带链接了，等一下又会被新浪删掉的。请各位注意。开盘了，先下。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0371_《论语》详解：给所有曲解孔子的人（25）.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（25）...</div>
+                </a>
+            <a href="0373_《论语》详解：给所有曲解孔子的人（27）.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（27）...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回论语详解列表</a></p>
+    </footer>
+</body>
+</html>

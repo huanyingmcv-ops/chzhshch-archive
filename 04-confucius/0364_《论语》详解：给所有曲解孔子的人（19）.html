@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（19） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">论语详解</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>《论语》详解：给所有曲解孔子的人（19）</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（19）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（19）</p>
+<p>2006/11/1 12:23:21</p>
+<p>子曰：善人为邦百年，亦可以胜残去杀矣。诚哉是言也！
+详解：这一章，千古以来错解无数。最离谱的是，基本都把“善人”当成“好人”来解，“善人为邦百年”竟然可以解释成“好人为邦也要百年时间”，简直胡解到了极点，根本连文言文最基本的语法都没搞清楚。朱熹虽然知道“为邦百年，言相继而久也。”却把“去杀”解释为“民化于善，可以不用刑杀也。”实在是不得要领，把“善人”和“胜残去杀”的语法并列关系给完全搞混了。
+其实，这一章是接着上一章“子曰：好勇疾贫，乱也。人而不仁，疾之已甚，乱也。”来的。“好勇疾贫”和“人而不仁，疾之已甚”的乱相，可不是指一般的乱相。“乱”，在音乐和文学上是指乐曲的最后一章和辞赋的最后一段，引申为最后的乱相，对于国家来说，这种最后的乱相就是亡国之相。那么，怎么才能“不相”这亡国之相而“为邦百年”，让国家长治久安？必须要“善人”和“胜残去杀”。只有这样，才是“诚哉是言也！”，这话才是真实无谬。
+之所以都错解这句话，主要是没搞清楚其中的语法结构。“亦可以胜残去杀矣”，“可以”是“可”+“以”，“以”是介词，全句是“以胜残去杀亦可矣”的倒装。“善人为邦百年，亦可以胜残去杀矣。”的意思就是“善人”可“为邦百年”，“胜残去杀”亦可“为邦百年”。“胜残”、“去杀”都是动词+名词的结构，而“善人”也是。这三个词的语法结构是一样的，“残”、“杀”名词化了，而“善”是动词化了。这种词性的活用，在文言文里极为常见。
+“胜残”、“去杀”，是两个意思相仿的词并列而成，简单说就是“战胜残暴、制止杀戮”；“善人”，就是“使人善”，“善”就是好的意思。“亦”，“腋”的本字；“可”，相称；“亦可”，像人的两腋一样一体而相称。“善人”和“胜残去杀”，其并列是一体的，如两腋之于人，双翼之于鸟，钱币的两面之于钱币。“善人”和“胜残去杀”，其实就是上几章所说的对“贫富之相”的“不相”。对“好勇疾贫”和“人而不仁，疾之已甚”乱相的“不相”，也就是对“贫富之相”的“不相”，“善人、胜残去杀”，才可能“为邦百年”，让国家长治久安。
+“胜残去杀”，是针对“人而不仁，疾之已甚”，是针对为富不仁的“富者”，包括贼王暴君、贪官污吏、奸商恶霸等等，所谓杀一暴君而救亿万者乃真大仁矣；“善人”，是针对“好勇疾贫”的“贫者”，改善他们的生存条件、扩展他们的生存空间、提高他们的生存能力等等，都可以归之于“善人”之数。但必须强调的是，站在人和社会的整体角度，没有一个人是在任何方面都是“富”者，也没有一个人在任何方面都是“贫”者，但对于现实中的国家来说，经济、社会地位、权力等角度的“贫富”之相才最具有现实力量，这点也是不能忽视的。
+孔子、《论语》在两千多年前已经明确提出了让国家长治久安的六字箴言“善人、胜残去杀”，这三组字是相互相成的，不可能光“胜残去杀”而不“善人”，也不可能光“善人”而不“胜残去杀”。对于“胜残去杀”来说，只有“胜残”才能“去杀”，所谓“庆父不死、鲁难未已”，不“胜残”是不可能“去杀”的。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/11/1 12:29:46友情提醒一下请各位评论时一定不要带链接，否则新浪都会自动删除的。
+缠中说禅 2006/11/1 12:34:08[匿名] 我都说2006-11-01 12:28:34学的答案在问之中
+问的疑惑在学之外==============这犹是逃避生死之道。学问不能替代你去生死。直面生死去生死才是真学问。
+缠中说禅 2006/11/1 12:50:53[匿名] AK472006-11-01 12:45:13 
+楼主很准时呀，每天都基本一个时间。=========
+对，中午休息。但快开盘，要下了。
+缠中说禅 2006/11/1 12:57:26刑罚也属于杀戮的一种，这在后面“为政”里面会说到的。对不起，要下了，再见。
+缠中说禅 2006/11/2 12:17:59[匿名] 路过2006-11-01 12:50:02 
+小妹妹，可否把你新断句并排序的&lt;&lt;论语&gt;&gt;分批次放到网上，让大家好可以畅快一读。拜托==============最好就来这里看吧，这里不是网上？转载一多，转载又转载，到时候就乱了，都不知道谁写的，因为已经联系好要出版的，版权很重要。</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0363_《论语》详解：给所有曲解孔子的人（18）.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（18）...</div>
+                </a>
+            <a href="0365_《论语》详解：给所有曲解孔子的人（20）.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">《论语》详解：给所有曲解孔子的人（20）...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回论语详解列表</a></p>
+    </footer>
+</body>
+</html>

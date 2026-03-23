@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缠中说禅：缠非缠、禅非禅，枯木龙吟照大千（二十五） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Serif SC', Georgia, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+        .meta-label { color: var(--gold-light); font-weight: 500; }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        .article-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.05em;
+        }
+        .article-content h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 0 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+        }
+        .article-content h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 35px 0 18px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-content h3 {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin: 25px 0 12px 0;
+        }
+        .article-content p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .article-content p:first-of-type { text-indent: 0; }
+        .article-content blockquote {
+            margin: 25px 0;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+        .article-content blockquote p {
+            text-indent: 0;
+            margin-bottom: 10px;
+        }
+        .article-content blockquote p:last-child { margin-bottom: 0; }
+        .article-content ul, .article-content ol {
+            margin: 18px 0;
+            padding-left: 2em;
+        }
+        .article-content li { margin-bottom: 8px; }
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+        .article-content a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .article-content hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+        .article-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        .notice {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 0.9em;
+            color: #92400e;
+        }
+        .notice p { text-indent: 0; margin: 0; }
+        .navigation {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .nav-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .nav-title {
+            font-weight: 500;
+            color: var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .nav-btn:hover .nav-title { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4em; }
+            .article-content { padding: 25px; font-size: 1em; }
+            .meta { flex-direction: column; gap: 8px; }
+            .navigation { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="breadcrumb">
+                <a href="../../">🏠 首页</a>
+                <span>/</span>
+                <a href="../">禅宗</a>
+                <span>/</span>
+                正文
+            </div>
+            <h1>缠中说禅：缠非缠、禅非禅，枯木龙吟照大千（二十五）</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">📅 发布时间:</span>
+                    <span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">📝 原文编号:</span>
+                    <span>#</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <article class="article-content">
+            <h1>缠中说禅：缠非缠、禅非禅，枯木龙吟照大千（二十五）</h1>
+<hr />
+<p>缠中说禅：缠非缠、禅非禅，枯木龙吟照大千（二十五）</p>
+<p>2006/7/7 15:54:59</p>
+<p>世之痴人，无不于易而求不易，如溺湍流而求一苇，不知易而非易，非易不易，非乃易而不易也。易中求不易，不离意之妄测，或上帝、或救世主、或真主、或天、或道、或梵、或本体，诸如此类，一妄立、纷争起，世间宗教、信仰因异而致之浩劫者，古今多也。復有痴人，于群妄而齐异，  欲一统而趋同，妄中生妄，何有了期？或有以一法不立为宗，不知道一法不立犹意之妄测矣。
+狮子虫，披如来衣而出佛身血，或于易中求心、求空、求常、求净，皆不离我执妄想。等而下之者，妄言神通、鬼魅，贩卖如来而求世间之俗利，不知神通不离妄业，感而遂通而能感所感、能通所通皆妄也。復有痴人，以名言即言说书写，缚但有言说书写皆为虚妄之名言，执莫执名言之名言而陷虚妄泥潭，如此见解犹不及维特根斯坦等西人，实不知今古乾坤乃不出名言，而言说书写之虚妄非虚妄也，执虚为虚與执虚为实之辈皆愚矣。
+不可言说，犹是言说，而言说又何曾言说？言说，非言说，是名言说。痴人以拈花微笑、竖指吹烛为非言说，于文字声音相之有无中寻活计，良可悯矣。古云“有句无句，如藤倚树，树倒藤枯，好一堆烂柴。”有言无言又何异于此乎？一默常言，万言常默，于默言间执计，岂有了期哉！復有痴人，以机锋、转句为究竟，不知纵得机捷句圆，又有何交涉？机失句漏，又有何断离？云门、法眼以来，狮子虫伎俩百出，葛藤复生葛藤，良可叹矣。
+凡所有相皆虚妄矣，如此乃可现一切相焉；反之，世间惟定相，何言虚妄乎？痴人妄心执计，于相之出入即离间寻活计，不知出而非出、入而非入、即而非即、离而非离，復有非出而出、非入而入、非即而即、非离而离，出入即离犹相也。出入即离一切相而无所出入即离，无所出入即离而出入即离一切相，成住坏灭一切相而无所成住坏灭，无所成住坏灭而成住坏灭一切相，是乃凡所有相皆虚妄矣。
+诗曰：
+九绝危岩横鸟道，一江东去两山分。长空雁过风行水，万里波涛万里云。
+回复​
+缠中说禅 2010/3/26 16:32:28呵呵</p>
+        </article>
+        
+        <div class="navigation">
+            <a href="0189_缠中说禅：缠非缠、禅非禅，枯木龙吟照大千（二十四）.html" class="nav-btn">
+                    <div class="nav-label">← 上一篇</div>
+                    <div class="nav-title">缠中说禅：缠非缠、禅非禅，枯木龙吟照大千...</div>
+                </a>
+            <a href="0250_别把儒家的“人性自赋、佛性人成”栽赃给佛家！.html" class="nav-btn">
+                    <div class="nav-label">下一篇 →</div>
+                    <div class="nav-title">别把儒家的“人性自赋、佛性人成”栽赃给佛...</div>
+                </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>缠中说禅博客 · 数字遗产保护项目</p>
+        <p style="margin-top:10px;"><a href="../">← 返回禅宗列表</a></p>
+    </footer>
+</body>
+</html>
