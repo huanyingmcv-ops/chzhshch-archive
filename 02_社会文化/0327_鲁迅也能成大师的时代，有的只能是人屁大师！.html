@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鲁迅也能成大师的时代，有的只能是人屁大师！ | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 327</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/10/3 14:24:17</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>社会文化</span></div>
+        </div>
+        <h1 class="article-title">鲁迅也能成大师的时代，有的只能是人屁大师！</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>鲁迅也能成大师的时代，有的只能是人屁大师！</h1>
+<hr />
+<p>鲁迅也能成大师的时代，有的只能是人屁大师！</p>
+<p>2006/10/3 14:24:17</p>
+<p>世无英雄，竖子成名，这话是对20世纪中国文化最好的概括，当然也可以包括19世纪或者刚开始了几年的21世纪以及更多的世纪。大师泛滥的时代，最缺的恰好是大师！鲁迅也能成大师的时代，有的只能是人屁大师！
+当然，鲁迅也能成大师；更低几等的，李敖也可以。其实，张三李四、阿猫呵狗，谁都可  以。只要把大师的标准往大尸方向靠，谁，最后不都大师了？大尸和大师，本来毫无关联的两件事，在中国文化中，往往被关联起来。自古以来，你要成为大师，首要的前提：你是大尸。而当下中国，已不满足于大尸化的大师了。现在流行的是大虱，只要你这虱足够大，10的负30次方秒内能从张三的明处到王五的私处咬丫10的30次方个来回，那你，肯定大师了！
+鲁迅还是李敖、张三还是王五、大尸还是大虱，明处还是私处，都不是一个值得考虑的问题。但对“大师”这个词正本清源，就不是一个不值得考虑的问题了。何谓“大师”？还是要先从这“师”字说起。韩愈名文“师说”有言：“师者，所以传道受业解惑也。”达不到这“传道受业解惑”的，连“师”都算不上，更不要说“大师”了。
+就说这“解惑”吧，大师，怎么都应该能解大疑惑吧？人生在世，最大的疑惑不离生死。连生死的疑惑都解不了的，自己都在生死之海沉浮不定，能是“大师”吗？除了生死，就是生存的疑惑了，如何在世上生存，所谓“安身立命”，自己的身都安不了，命也随命运之浪颠簸，还能“大师”？一个生存都有困难的人，是不可能“大师”的，至少表明他所自以为可以“大师”的东西，是不切实际、银样蜡枪头的垃圾。
+有人可能要说，时代限制了，就算你有“大师”潜能也发挥不出来呀？这是典型的人屁逻辑！真正的“大师”，可能会困顿一时，但不可能困顿一生。而且，被时代所牵引的能是“大师”吗？大师，时代时代而不是被时代所时代，只有这样的，才有资格当大师。一个人，连当下的时代都不能勘破，被时代所困顿，能是大师吗？
+“传道受业解惑”是“师”的标准，那“大师”的标准就是“传大道受大业解大惑 ”了。何谓“大道”？大道者，大乘也。连其身都不能独善的，就不用说了；其身独善却不能兼善天下的，也不值一提。能传大道的，必先能行大道，而行大道者，无论穷达，都可、都应兼善天下。何谓“大业”？大业者，大善也。传大道，必授以“大业”；行“大道”，必受以“大业”。大善天下，方为成大业者，岂是为私业而营营者可及？
+好了，说了这么多，还是说说这鉴别大师的PH试纸。“传大道受大业解大惑”有点太空泛，就说点实际的，当下中国，如果要有大师，这大师自身至少要具备什么？不妨列举如下：
+一、国学、西学都要精通，否则如何大师得了？
+二、诗词歌赋、琴棋书画，都是小道，怎么都要懂吧？否则连小道都走不了，连简单的律诗都写不好，曲子也不会谱，还大师什么？
+三、样子要过得去，所谓相由心生，你样子都长不好，还大师什么？
+四、在如今的经济社会，至少要精通如何去合法地挣钱。否则你连自己都养活不了，还要看人脸色、仰人鼻息，还大师什么？
+五、科学时代，科学你怎么都要懂点吧？特别是基础科学，数学、物理，最基本的，怎么都应该精通吧？不要求你能解决什么特别的问题，至少你不能对科学的前沿一无所知、完全外行吧？数学、物理里最前沿的文献，至少你能看懂吧？否则，你还大师什么？
+六、政治、经济、军事、宗教等事情，至少要看得清、把得准。所谓一事不明，儒者之耻，如果你连儒者都达不到，还大师什么？
+七、身体要好，不能有大病，性能力也要强，但要解脱于性。连道家都可以还精补脑、炼精化气，你连这点道家的小玩意都搞不懂，连性欲都控制不了，还大师什么？
+八、精通于人情世故而游刃其间，你连人都处不好，还大师什么？
+所谓三大纪律八项注意，“传大道受大业解大惑”是大师的三大纪律，上面八条就是八项注意了。那些想当大师或者想装大师以及想嫖大师的，自己对照一下吧！</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/confucius/20061003" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0317_本ID一帖子，孔庆东气急败坏给了两回复。.md" class="nav-link prev">← 本ID一帖子，孔庆东气急败坏给了两回复。</a>
+            <a href="0331_那些骂北大的香肠怎么都耷拉了？！.md" class="nav-link next">那些骂北大的香肠怎么都耷拉了？！ →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

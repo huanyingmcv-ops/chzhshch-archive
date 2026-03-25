@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗杰斯，有种的和本ID来个PK | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 443</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/1/26 15:03:54</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>诗词文学</span></div>
+        </div>
+        <h1 class="article-title">罗杰斯，有种的和本ID来个PK</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>罗杰斯，有种的和本ID来个PK</h1>
+<hr />
+<p>罗杰斯，有种的和本ID来个PK</p>
+<p>2007/1/26 15:03:54</p>
+<p>在昨天中午最恶劣的情况下敢和美国佬公开叫板的，有谁？昨天明确指出“站在纯交易的角度，本ID早就及时提醒向二、三线的战略转移，但工行等控制指数的工具，是不能落入美国人的手里的，这是一个原则问题，工行可以没行情，可以继续围绕目前位置盘整，但企图想把工行打下去拣便宜货，门都没有，首先本ID就不答应！  ”，有谁？更公开“而这轮大牛市，在第三波的大重组行情出现之前，绝不会走完，这是绝对无疑的。即使出现周线中枢的震荡，个股行情机会依然不断，工行可以没有行情，但个股不会没有行情，不信就走着瞧，今天，本ID的农业股、环保股、公用事业股、军工股都创出新高，这就是先头部队！”有谁？今天，本ID的先头部队里，农业股、环保股、军工股、有色继续创出新高，而工行在有大量新股准备上来的巨大利空面前没有给美国佬任何机会，一些可耻的汉奸企图让工行跌停，门都没有！
+罗杰斯，有种的和本ID来个PK，比什么都可以，例如一起拿N亿大米在中国某个股票里互相对攻，看谁能挣钱更多，或者就用一笔钱比短线，或按一定时期比收益，怎么都可以，让你选择。方法很简单，都放到一个证券部里，人可以不出面，钱直接划过去。然后比赛就可以开始。现在传媒如此发达，本ID的战书就在这里，传播去吧！
+很高兴看到回贴里有人按照本ID的理论在今天2720点1分钟背驰时敢全仓杀入，学理论就要敢实践，否则学来干什么？但由于现在中枢扩展的现实走势，因此根据短线指标来回运动就是更关键的，这正是高手与低手的巨大区别，利用震荡，下跌就是巨大的赢利机会，那些一跌就叫爹的闹钟，死去！
+贪婪和恐惧，人的死穴，周末到了，请给自己一小时去找找自己！
+回复​
+缠中说禅 2007/1/26 15:15:47各位贪婪和恐惧，人的死穴，周末到了，请给自己一小时去找找自己！
+缠中说禅 2007/1/26 15:17:36
+[匿名] 罗锅 2007-01-26 15:14:29 
+数学妹妹！！！！！！！！！！！！！！！！！俺就是按1分钟背驰满仓啦！！！！！！！！！！！！！！帖子在下面那文章里！！！！！！！！！1大家都可以去查！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！===本ID看到了，给个大红花！大家互相之间应该多交流，本ID有时候太忙，特别在盘中，没时间关照大家了。
+缠中说禅 2007/1/26 15:20:49
+[匿名] WHQ999 2007-01-26 15:15:33 
+DING!缠妹辛苦!谢谢您!今天作了个波段,呵呵.===在盘整中，要多弄短差，不能一味死多，有短线卖点就出去，回来就补回来，现在要多注意股票的质地，因为业绩公布，这方面要多注意点。千万别追高，一定要灵活运用理论，否则学了本ID的理论，一点灵活都没有，那不白学了。和那些一跌就软的闹钟有什么区别？强硬是要靠正确的操作的，来回折腾，谁与争锋？
+航天通信（600677）​
+缠中说禅 2007/1/26 15:22:50
+[匿名] 新年好 2007-01-26 15:20:40 
+缠姐，昨天买的600677，买得太失败了，今天连30日均线都跌破了，昨天买的时候以为日线是三类买点，没等到5分钟线背驰，本来看着有背驰的迹象，这次操作失误完全是自己的胡乱猜测，没遵照缠姐的理论  等背驰出现了再说。
+缠接我现在该怎么办啊？===好好总结，第三类买点一定要等到次次级别的背驰或双次回拉确认，该股是军工里的三线，等二线把空间打开了，自然有机会。
+缠中说禅 2007/1/26 15:24:16
+[匿名] 无敌槟榔 2007-01-26 15:18:07 
+上午11时左右根据此博理论介入，可惜我是小本买卖；===也给一个大红花！但要注意出货点，在震荡中，要敢于来回动。
+缠中说禅 2007/1/26 15:25:14
+[匿名] 小鸟 2007-01-26 15:23:11 妹妹，我也是趁低价满仓了，另外我昨天就判断今天是低开低走，下午回升的，我也要大红花！
+另外，我的崇拜对象又加一个——罗锅班长！我也很喜欢你呀！===也给一个大红花！但会买一定要会卖，这样才是一轮完美的操作。
+缠中说禅 2007/1/26 15:29:09
+[匿名] 满目山河 2007-01-26 15:25:42 
+唉，我的资金管理有问题，不然按缠妹妹的方法我今天当天就可以挣10%。===好好总结，一定要有机动仓位，你看本ID上次说的8亿大米中，就特别说了机动的米，还有一个管子是用来随时变现的。这次，公用事业的那个水，也有这样的功能。这样就可以对抗市场的所有突发事件了。
+缠中说禅 2007/1/26 15:39:30大家注意了在实际操作中，光靠钱堆是最愚蠢的办法，一定要有巧力，中国文化里说的是四两拨千斤，哪里是那些愚蠢的美国佬可以明白的。站在纯资金量的角度，本ID可能没那些汉奸多，但本ID的1分钱来回用，就多出很多力量了。另外，只要有人当中流砥柱，自然有回应的，像工行这种股票，就要这样在关键位置出击，一呼百应才行，不能死打死拉，而且要有同盟军，靠一个人的力量是有限的。工行在纯理论上，本来就是要跌破5元的，工行的中线大趋势本ID早说过了，就是破前期低位也就是5元11形成走势必完美对于日线级别的第三段，然后有一个站在周线级别的第二段。目前工行的日线第三段是否走完，下周是关键，毕竟有一大堆新股要出来，这也是对大盘最大的考验，不过下周有一万多亿的资金解冻，怎么团结、引导这群资金的某些部分，就是下周成败的关键。目前工行的任务是稳定，而其他有潜力的二、三股的任务是发展，这就是目前大盘稳定与发展的关系了。
+缠中说禅 2007/1/26 15:46:09
+[匿名] 牛牛 2007-01-26 15:36:39 
+缠姐，在震荡中来回，一般就用一分钟的买卖点吧，另外今天10。30也满上了，稍微早了点，效果很好。===在快速市场中可以用这个，1分钟背驰就把机动的资金撤出来，为下次进攻当准备，而且这部分资金绝对不能追高，而下次的买点，就要看30分钟等的调整情况，要综合判断，不能光一味用1分钟。为什么今天1分钟就这么好使？因为这是一个快速变动的市场，1分钟的背驰足以引发回头。其实，按最稳健的操作，今天的尾盘就可以把机动资金的一部分退出来，先把这个差价的利润兑现一部分，因为在急剧变动的市场里，下一天的开盘是什么情况，受消息面影响很大，人的心理很浮躁，所以波动特别多。注意，本ID这里说的都是机动资金，一般这种资金应该占仓位的1/4到1/3，走势特别不好时甚至应该提高到1/2。在牛市里，即使是中期调整，也没必要完全空仓，因为在调整中，来回的次数很多，把这些都把握住，拿着比不拿住弄的钱多多了。
+缠中说禅 2007/1/26 15:48:25
+[匿名] 学习 2007-01-26 15:31:51 
+现在我可是死死地盯着一分钟，只要一个回拉，产生背离就先跑。==
+这样也太短了，在急剧变动的市场中才有必要，市场缓和下来后，还是看5分钟或30分钟比较好。
+缠中说禅 2007/1/26 15:49:39
+[匿名] 心动 2007-01-26 15:39:44 
+今天5分钟背驰是10:56-11:01吗？===今天5分钟没背驰，就是1分钟在2720点的时候明显背驰了。
+缠中说禅 2007/1/26 15:52:58
+[匿名] 新年好 2007-01-26 15:48:08 
+请问缠姐和各位同学，我对大盘1分钟背驰还有一个疑问，请帮忙解答。这个背驰是不是在10：23回抽0轴阿？真得很疑惑请一定回答一下。谢谢了==在10点17分黄白线回抽0轴，然后再破位，在10点56达到2720点，但MACD没创新低，标准的背驰。
+山大华特（000915）​
+缠中说禅 2007/1/26 15:56:49
+[匿名] 小鸟 2007-01-26 15:52:09另外，000915在5分钟出现背驰，我是赶紧出了，怎么后面还在  涨呀？===000915现在还在一个盘整里，不符合趋势两段比较的背驰，至于盘整中的背驰，现在也没有，因为这种刚上0轴的，根本就谈不上背驰，背驰是要上0轴后有一次大拉升，然后回抽0轴，再拉升，才会有背驰的。000915今天之所以不能突破，就是现在环境还很动荡，贸然突破，有些潜伏的汉奸突然发难，就给敌人以先手了打击汉奸，要比汉奸更狡猾！看到技术，按技术走就行了。
+缠中说禅 2007/1/26 16:06:47
+[匿名] 实际点 2007-01-26 15:54:25 
+新人学习中,
+楼主能否把今天1分钟的背驰情况详细说说,让我们好好学习下.==各位看好了，本ID分析给大家看1昨天1340分开始的下跌趋势把MACD黄白带到0轴之下并远远离开0轴，在今天9点30分，黄白线和柱子都是最低，然后出现三波的反抽，9点50分结束，第三波十分弱，但MACD的黄白线已经重新拉回0轴附近，其后出现第二轮下跌，一直到10点57分，和上一轮比，MACD没创新低，引起标准的背驰。注意，MACD在10点17分更靠近0轴，这叫双次拉回，一般双次拉回都上不去，一定有再次下跌的。一般这种双次来回的第二次，都是构成下跌中的第一个中枢，特别在跌破前面中枢后，这其实刚好构成一个标准的最小级别的第三类卖点。
+缠中说禅 2007/1/26 16:08:29
+[匿名] 沉醉 2007-01-26 16:02:23 
+支持缠子,偶昨天也进了000915, 一激动进高了点,,..坚决支持!!!==就算支持本ID也要在买点买，这是好习惯！否则你追高买了本ID也不乐意的，本ID最反对  任何人不在买点买！
+缠中说禅 2007/1/26 16:10:37
+[匿名] stone 2007-01-26 16:03:09 
+可不可以认为：25日13.56到26日10.57，1分钟图上形成下跌-盘整-下跌趋势？但9.30~9.36那断有点问题另外：大盘的1分钟背驰，能看出来，但个股就不行了，如000793在10.57是看不出来的，而且，绿柱面积高度均大于前面，这种情况，后面的上涨和缠中说禅趋势矛盾阿，如何理解这种情况？===各股就按照个股的走势来，有些个股早点，有些晚一点，这很正常。像600432，你根本就不能按大盘的来看，要看具体的个股。
+上证指数（1A0001）​
+缠中说禅 2007/1/26 16:17:20
+[匿名] 小鸟 2007-01-26 16:09:21 
+还有问题：
+1、根据你的第一买点和第二买点理论，现在是第一买点，下周出现第二买点，也就是说还要有一个回调的动作，是吗？
+2、第二买点应该没有第一买点低，同样，第二卖点也应该没有第一卖点高，是吗？另外：
+缠中说禅000915现在还在一个盘整里，不符合趋势两段比较的背驰，至于盘整中的背驰，现在也没有，因为这种刚上0轴的，根本就谈不上背驰，背驰是要上0轴后有一次大拉升，然后回抽0轴，再拉升，才会有背驰的。我记得你前面的课里说到第一买点是男上位最后一次缠绕产生时，说男上位后第一次缠绕通常不是背驰，那么我是不是可以理解为女上位后第一次也通常不是背驰？===有MACD就不要用上下位了，道理是一样的，而MACD更直观。大家注意了，让大家知道今天大盘上来的第二类买点在哪里，第一类买点就是10点57分的2720，第二类买点就是1330的2771，MACD对应双回抽0轴站稳。第三类买点在1分钟里是很难有的，因为1分钟就是最低的，第三类很难找到。第一类买点当然比第二类低，二比三低，卖点反过来。
+缠中说禅 2007/1/26 16:18:51
+[匿名] 戈石 2007-01-26 16:16:42 
+尊敬的楼主：
+有没有单纯根据走势和成交量看背驰的方法？上班的时候只能看到这些。===这样很难准确，上班就按大点的级别弄，例如30分钟，变动慢点。
+缠中说禅 2007/1/26 16:23:12
+[匿名] 知了 2007-01-26 16:14:26 
+[匿名] PK2007-01-26 15:59:17 
+呵呵 说的不错
+请问你能在05-06年将8万多元做成217.6万元吗?
+否则你没资格和罗PK.因为他在1000点唱多在3000点唱空.而你却在3000点唱多-------
+班门弄斧===各位注意了，本ID从2005年6月开始一直长多，最出名的文章叫“G股就是G点”，这里的人都该看过。本ID现在无所谓多空，千万别理解错了。一个中枢扩展该干什么，是有理论的唯一根据的，和本ID的喜好无关。但本ID的结论很明确，牛市的第一波没完，这个观点没变。周线中枢的震荡，不影响这个结论。
+缠中说禅 2007/1/26 16:42:36
+[匿名] gggggg 2007-01-26 16:28:54 
+缠主怎么不回答我的问题，期盼中，
+我觉得虽然个股的技术很重要，但是对于想做中线的人来说，
+学会观察板块和发现龙头更加重要。而且我想收益会更高===这都可以从技术上发现，所谓牛股，不过就是技术上走势良好的股票，这在技术上完全可以精确判断出来。
+以后会说到
+缠中说禅 2007/1/26 16:49:49今天要喝粥，大家准备了没有？先下了，各位慢慢聊，再见！</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/economics/challengerogers" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0426_叫床与歌唱.md" class="nav-link prev">← 叫床与歌唱</a>
+            <a href="0463_山中和友韵口占六言绝句恭贺新禧.md" class="nav-link next">山中和友韵口占六言绝句恭贺新禧 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
