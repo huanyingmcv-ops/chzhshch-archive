@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时政历史 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--gold-light);
+        }
+        
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 6px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        
+        .desc {
+            font-size: 1em;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .stats {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stats span {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 0 5px;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .article-list {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .article-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-item:hover {
+            background: #f8fafc;
+            padding-left: 30px;
+        }
+        
+        .article-number {
+            font-size: 0.85em;
+            color: var(--gold);
+            font-weight: 600;
+            min-width: 50px;
+            font-family: monospace;
+        }
+        
+        .article-title {
+            flex: 1;
+            font-size: 1.05em;
+            color: var(--text);
+        }
+        
+        .article-item:hover .article-title {
+            color: var(--primary);
+        }
+        
+        .article-arrow {
+            color: var(--text-light);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .article-item:hover .article-arrow {
+            opacity: 1;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            .article-item { padding: 15px 18px; }
+            .article-number { min-width: 40px; font-size: 0.8em; }
+            .article-title { font-size: 0.95em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../" class="back-link">← 返回首页</a>
+        <h1>时政历史</h1>
+        <p class="subtitle">政治 · 历史 · 经济</p>
+        <p class="desc">民国、台湾、抗战、政治制度、主权相关。货币战争、人民币战略、经济危机。</p>
+        <div class="stats">
+            <span>共 20 篇文章</span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="article-list">
+            <a href="0017_必须重新确立蒋介石在抗战中不可替代的历史功绩.md" class="article-item">
+                <span class="article-number">001</span>
+                <span class="article-title">必须重新确立蒋介石在抗战中不可替代的历史功绩</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0022_旧中国尚有“清史稿”，新中国的“民国史”呢？.md" class="article-item">
+                <span class="article-number">002</span>
+                <span class="article-title">旧中国尚有“清史稿”，新中国的“民国史”呢？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0024_民国的合法性是中国联合国地位合法性的前提.md" class="article-item">
+                <span class="article-number">003</span>
+                <span class="article-title">民国的合法性是中国联合国地位合法性的前提</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0025_不管怎样，民国就是二战的战胜国！！！.md" class="article-item">
+                <span class="article-number">004</span>
+                <span class="article-title">不管怎样，民国就是二战的战胜国！！！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0032_民国，是也只是中华民族历史上的一个朝代！.md" class="article-item">
+                <span class="article-number">005</span>
+                <span class="article-title">民国，是也只是中华民族历史上的一个朝代！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0048_右派，“毛泽东神话”的真正制造者。.md" class="article-item">
+                <span class="article-number">006</span>
+                <span class="article-title">右派，“毛泽东神话”的真正制造者。</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0050_言论自由，衡量政府自信程度的最重要指标！.md" class="article-item">
+                <span class="article-number">007</span>
+                <span class="article-title">言论自由，衡量政府自信程度的最重要指标！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0051_毁坏遗产方面，非文革与文革只是五十笑一百！.md" class="article-item">
+                <span class="article-number">008</span>
+                <span class="article-title">毁坏遗产方面，非文革与文革只是五十笑一百！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0052_本女，第一个扒了“小马哥”的内裤！.md" class="article-item">
+                <span class="article-number">009</span>
+                <span class="article-title">本女，第一个扒了“小马哥”的内裤！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0053_有些人是应该一生下来就掐死喂狗的！.md" class="article-item">
+                <span class="article-number">010</span>
+                <span class="article-title">有些人是应该一生下来就掐死喂狗的！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0060_中华民族可能面临的重大机遇（上）.md" class="article-item">
+                <span class="article-number">011</span>
+                <span class="article-title">中华民族可能面临的重大机遇（上）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0061_中华民族可能面临的重大机遇（下）.md" class="article-item">
+                <span class="article-number">012</span>
+                <span class="article-title">中华民族可能面临的重大机遇（下）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0063_本女准备领头去攻打台湾，有种有料的跟着来！.md" class="article-item">
+                <span class="article-number">013</span>
+                <span class="article-title">本女准备领头去攻打台湾，有种有料的跟着来！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0064_挑战台湾网站无门，强烈要求网络全面开放！.md" class="article-item">
+                <span class="article-number">014</span>
+                <span class="article-title">挑战台湾网站无门，强烈要求网络全面开放！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0071_面对本ID，左右派同穿一条内裤说明了什么？.md" class="article-item">
+                <span class="article-number">015</span>
+                <span class="article-title">面对本ID，左右派同穿一条内裤说明了什么？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0089_用股票技术分析的方法考察毛泽东现象！.md" class="article-item">
+                <span class="article-number">016</span>
+                <span class="article-title">用股票技术分析的方法考察毛泽东现象！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0094_必须对南怀瑾“大师”的流毒进行定点清除！.md" class="article-item">
+                <span class="article-number">017</span>
+                <span class="article-title">必须对南怀瑾“大师”的流毒进行定点清除！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0098_蒋介石当然有权利和必要对杨虎城、张学良采取强制措施.md" class="article-item">
+                <span class="article-number">018</span>
+                <span class="article-title">蒋介石当然有权利和必要对杨虎城、张学良采取强制措施</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0113_美国的政协委员，凭什么在中国晃荡？.md" class="article-item">
+                <span class="article-number">019</span>
+                <span class="article-title">美国的政协委员，凭什么在中国晃荡？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0119_从教育角度看，1949年后远比不上1949年前！.md" class="article-item">
+                <span class="article-number">020</span>
+                <span class="article-title">从教育角度看，1949年后远比不上1949年前！</span>
+                <span class="article-arrow">→</span>
+            </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+</body>
+</html>

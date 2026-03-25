@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数学科学 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--gold-light);
+        }
+        
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 6px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        
+        .desc {
+            font-size: 1em;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .stats {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stats span {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 0 5px;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .article-list {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .article-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-item:hover {
+            background: #f8fafc;
+            padding-left: 30px;
+        }
+        
+        .article-number {
+            font-size: 0.85em;
+            color: var(--gold);
+            font-weight: 600;
+            min-width: 50px;
+            font-family: monospace;
+        }
+        
+        .article-title {
+            flex: 1;
+            font-size: 1.05em;
+            color: var(--text);
+        }
+        
+        .article-item:hover .article-title {
+            color: var(--primary);
+        }
+        
+        .article-arrow {
+            color: var(--text-light);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .article-item:hover .article-arrow {
+            opacity: 1;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            .article-item { padding: 15px 18px; }
+            .article-number { min-width: 40px; font-size: 0.8em; }
+            .article-title { font-size: 0.95em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../" class="back-link">← 返回首页</a>
+        <h1>数学科学</h1>
+        <p class="subtitle">数学 · 科学 · 技术</p>
+        <p class="desc">数学、科学、技术相关。数学世界之王，闲谈现代数学的基础问题。</p>
+        <div class="stats">
+            <span>共 32 篇文章</span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="article-list">
+            <a href="0055_按数学先生扒光自己的逻辑，理工科思维就是男猿人思维.md" class="article-item">
+                <span class="article-number">001</span>
+                <span class="article-title">按数学先生扒光自己的逻辑，理工科思维就是男猿人思维</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0067_连载1：数学，世界之王：闲谈现代数学的基础问题！.md" class="article-item">
+                <span class="article-number">002</span>
+                <span class="article-title">连载1：数学，世界之王：闲谈现代数学的基础问题！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0068_连载2：数学，世界之王：闲谈现代数学的基础问题！.md" class="article-item">
+                <span class="article-number">003</span>
+                <span class="article-title">连载2：数学，世界之王：闲谈现代数学的基础问题！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0075_连载3：数学，世界之王：闲谈现代数学的基础问题！.md" class="article-item">
+                <span class="article-number">004</span>
+                <span class="article-title">连载3：数学，世界之王：闲谈现代数学的基础问题！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0108_野合，民族生命强悍之基，民族气运重振之始！.md" class="article-item">
+                <span class="article-number">005</span>
+                <span class="article-title">野合，民族生命强悍之基，民族气运重振之始！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0136_只有“红楼梦”、没有“相对论”的民族是可悲的！.md" class="article-item">
+                <span class="article-number">006</span>
+                <span class="article-title">只有“红楼梦”、没有“相对论”的民族是可悲的！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0145_听话学了点概率的数学先生等左派，是否需要再回去学点汉语？.md" class="article-item">
+                <span class="article-number">007</span>
+                <span class="article-title">听话学了点概率的数学先生等左派，是否需要再回去学点汉语？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0147_云谷子，学什么不好，竟然学数学先生的断章取义？.md" class="article-item">
+                <span class="article-number">008</span>
+                <span class="article-title">云谷子，学什么不好，竟然学数学先生的断章取义？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0173_潘石屹、任志强又没几个钱，盯着他们干啥？.md" class="article-item">
+                <span class="article-number">009</span>
+                <span class="article-title">潘石屹、任志强又没几个钱，盯着他们干啥？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0179_陈景润现象，扭曲时代过度吹捧的典型！.md" class="article-item">
+                <span class="article-number">010</span>
+                <span class="article-title">陈景润现象，扭曲时代过度吹捧的典型！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0183_第一次，中国科学取得划时代的成就！.md" class="article-item">
+                <span class="article-number">011</span>
+                <span class="article-title">第一次，中国科学取得划时代的成就！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0184_中国科学界怎么一夜间酸气弥漫？.md" class="article-item">
+                <span class="article-number">012</span>
+                <span class="article-title">中国科学界怎么一夜间酸气弥漫？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0185_从网络左派对Poincare猜想的无知解释看左派幼稚病！.md" class="article-item">
+                <span class="article-number">013</span>
+                <span class="article-title">从网络左派对Poincare猜想的无知解释看左派幼稚病！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0197_秦晖，小学数学没毕业？.md" class="article-item">
+                <span class="article-number">014</span>
+                <span class="article-title">秦晖，小学数学没毕业？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0199_卵力，创造世界！.md" class="article-item">
+                <span class="article-number">015</span>
+                <span class="article-title">卵力，创造世界！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0213_张靓颖附灵魂体_黄健翔飙海豚音.md" class="article-item">
+                <span class="article-number">016</span>
+                <span class="article-title">张靓颖附灵魂体_黄健翔飙海豚音</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0219_从网络左派的信口雌黄看左派的真面目！.md" class="article-item">
+                <span class="article-number">017</span>
+                <span class="article-title">从网络左派的信口雌黄看左派的真面目！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0260_舞男妓女，人之所以区别于动物的最大标志！.md" class="article-item">
+                <span class="article-number">018</span>
+                <span class="article-title">舞男妓女，人之所以区别于动物的最大标志！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0267_左派ID，不要把无知当有趣！.md" class="article-item">
+                <span class="article-number">019</span>
+                <span class="article-title">左派ID，不要把无知当有趣！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0269_即使临时添加编码位数有限的假设也救不了左派！.md" class="article-item">
+                <span class="article-number">020</span>
+                <span class="article-title">即使临时添加编码位数有限的假设也救不了左派！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0303_中国人的中国企业，明年还有吗？.md" class="article-item">
+                <span class="article-number">021</span>
+                <span class="article-title">中国人的中国企业，明年还有吗？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0312_捍卫马克思序：要捍卫的是马克思，而不是马克思主义！.md" class="article-item">
+                <span class="article-number">022</span>
+                <span class="article-title">捍卫马克思序：要捍卫的是马克思，而不是马克思主义！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0320_不是奇文的奇文：陈良宇：“一把手”应定期报告廉政情况.md" class="article-item">
+                <span class="article-number">023</span>
+                <span class="article-title">不是奇文的奇文：陈良宇：“一把手”应定期报告廉政情况</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0546_抓紧说两句.md" class="article-item">
+                <span class="article-number">024</span>
+                <span class="article-title">抓紧说两句</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0624_当工行都发疯后，轿夫们还有什么把戏？.md" class="article-item">
+                <span class="article-number">025</span>
+                <span class="article-title">当工行都发疯后，轿夫们还有什么把戏？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0702_关于新浪广告共享计划的建议.md" class="article-item">
+                <span class="article-number">026</span>
+                <span class="article-title">关于新浪广告共享计划的建议</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0797_人生之残酷.md" class="article-item">
+                <span class="article-number">027</span>
+                <span class="article-title">人生之残酷</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0816_今天只说点闲话.md" class="article-item">
+                <span class="article-number">028</span>
+                <span class="article-title">今天只说点闲话</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0962_卡佩罗，正走上正确的道路.md" class="article-item">
+                <span class="article-number">029</span>
+                <span class="article-title">卡佩罗，正走上正确的道路</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1027_历史循环与六道轮回的数学化证明.md" class="article-item">
+                <span class="article-number">030</span>
+                <span class="article-title">历史循环与六道轮回的数学化证明</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1049_看来受过严密数学推理训练的头脑还是少.md" class="article-item">
+                <span class="article-number">031</span>
+                <span class="article-title">看来受过严密数学推理训练的头脑还是少</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1104_等待政策与技术产生共振效应.md" class="article-item">
+                <span class="article-number">032</span>
+                <span class="article-title">等待政策与技术产生共振效应</span>
+                <span class="article-arrow">→</span>
+            </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+</body>
+</html>

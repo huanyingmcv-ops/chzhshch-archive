@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人随笔 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--gold-light);
+        }
+        
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 6px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        
+        .desc {
+            font-size: 1em;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .stats {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stats span {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 0 5px;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .article-list {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .article-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-item:hover {
+            background: #f8fafc;
+            padding-left: 30px;
+        }
+        
+        .article-number {
+            font-size: 0.85em;
+            color: var(--gold);
+            font-weight: 600;
+            min-width: 50px;
+            font-family: monospace;
+        }
+        
+        .article-title {
+            flex: 1;
+            font-size: 1.05em;
+            color: var(--text);
+        }
+        
+        .article-item:hover .article-title {
+            color: var(--primary);
+        }
+        
+        .article-arrow {
+            color: var(--text-light);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .article-item:hover .article-arrow {
+            opacity: 1;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            .article-item { padding: 15px 18px; }
+            .article-number { min-width: 40px; font-size: 0.8em; }
+            .article-title { font-size: 0.95em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../" class="back-link">← 返回首页</a>
+        <h1>个人随笔</h1>
+        <p class="subtitle">随笔 · 杂文 · 真情</p>
+        <p class="desc">那一夜系列、白话杂文、个人感想。真实、性情、不做作，缠师的另一面。</p>
+        <div class="stats">
+            <span>共 130 篇文章</span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="article-list">
+            <a href="0018_连载1：那一夜，他的体液喷了我一身.md" class="article-item">
+                <span class="article-number">001</span>
+                <span class="article-title">连载1：那一夜，他的体液喷了我一身</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0019_连载2：那一夜，他的体液喷了我一身.md" class="article-item">
+                <span class="article-number">002</span>
+                <span class="article-title">连载2：那一夜，他的体液喷了我一身</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0020_连载3：那一夜，他的体液喷了我一身.md" class="article-item">
+                <span class="article-number">003</span>
+                <span class="article-title">连载3：那一夜，他的体液喷了我一身</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0023_连载4：那一夜，他的体液喷了我一身.md" class="article-item">
+                <span class="article-number">004</span>
+                <span class="article-title">连载4：那一夜，他的体液喷了我一身</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0027_连载5：那一夜，他的体液喷了我一身.md" class="article-item">
+                <span class="article-number">005</span>
+                <span class="article-title">连载5：那一夜，他的体液喷了我一身</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0030_连载6：那一夜，他的体液喷了我一身.md" class="article-item">
+                <span class="article-number">006</span>
+                <span class="article-title">连载6：那一夜，他的体液喷了我一身</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0033_连载7：那一夜，他的体液喷了我一身.md" class="article-item">
+                <span class="article-number">007</span>
+                <span class="article-title">连载7：那一夜，他的体液喷了我一身</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0037_挑战全世界男人，本女败，马上戒网！.md" class="article-item">
+                <span class="article-number">008</span>
+                <span class="article-title">挑战全世界男人，本女败，马上戒网！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0038_连载1：“睡过”或“消费过”的男人们！.md" class="article-item">
+                <span class="article-number">009</span>
+                <span class="article-title">连载1：“睡过”或“消费过”的男人们！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0041_连载2：“睡过”或“消费过”的男人们！.md" class="article-item">
+                <span class="article-number">010</span>
+                <span class="article-title">连载2：“睡过”或“消费过”的男人们！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0042_连载1：男人进来，教你“馒头”的N种用法.md" class="article-item">
+                <span class="article-number">011</span>
+                <span class="article-title">连载1：男人进来，教你“馒头”的N种用法</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0043_网络消费男人经典实录大全.md" class="article-item">
+                <span class="article-number">012</span>
+                <span class="article-title">网络消费男人经典实录大全</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0049_昨晚，和一个“公海龟”的第一次接触！.md" class="article-item">
+                <span class="article-number">013</span>
+                <span class="article-title">昨晚，和一个“公海龟”的第一次接触！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0054_扒光一个人的前提难道不是连内裤也扒了？.md" class="article-item">
+                <span class="article-number">014</span>
+                <span class="article-title">扒光一个人的前提难道不是连内裤也扒了？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0062_男人进来，施舍一个赢本女的机会给你们！.md" class="article-item">
+                <span class="article-number">015</span>
+                <span class="article-title">男人进来，施舍一个赢本女的机会给你们！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0070_英格兰，丢弃贝壳，赢取金杯！.md" class="article-item">
+                <span class="article-number">016</span>
+                <span class="article-title">英格兰，丢弃贝壳，赢取金杯！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0079_女权宣言：科技发展使男人这臭玩意的存在变得可有可无.md" class="article-item">
+                <span class="article-number">017</span>
+                <span class="article-title">女权宣言：科技发展使男人这臭玩意的存在变得可有可无</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0080_女孩，用你身上所有器官尽情消费男人吧！.md" class="article-item">
+                <span class="article-number">018</span>
+                <span class="article-title">女孩，用你身上所有器官尽情消费男人吧！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0081_青楼怎么了，青楼是中华文化之源！.md" class="article-item">
+                <span class="article-number">019</span>
+                <span class="article-title">青楼怎么了，青楼是中华文化之源！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0093_温家宝先生发布会的最后一句话值得商榷！.md" class="article-item">
+                <span class="article-number">020</span>
+                <span class="article-title">温家宝先生发布会的最后一句话值得商榷！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0096_抹杀阶级斗争就是真正的阶级斗争！.md" class="article-item">
+                <span class="article-number">021</span>
+                <span class="article-title">抹杀阶级斗争就是真正的阶级斗争！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0099_扒了“平等神话”的内裤！.md" class="article-item">
+                <span class="article-number">022</span>
+                <span class="article-title">扒了“平等神话”的内裤！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0118_她，男人权力圈的真正斗士，中国现代史第一伟人！.md" class="article-item">
+                <span class="article-number">023</span>
+                <span class="article-title">她，男人权力圈的真正斗士，中国现代史第一伟人！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0120_连马胖都球王，那他，只能球圣了！.md" class="article-item">
+                <span class="article-number">024</span>
+                <span class="article-title">连马胖都球王，那他，只能球圣了！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0123_必要的民族主义，单纯、裸露地问题了！.md" class="article-item">
+                <span class="article-number">025</span>
+                <span class="article-title">必要的民族主义，单纯、裸露地问题了！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0128_“统一台湾”，糊涂蛋闹的混蛋假命题！.md" class="article-item">
+                <span class="article-number">026</span>
+                <span class="article-title">“统一台湾”，糊涂蛋闹的混蛋假命题！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0129_必须成立“台海戡乱办公室”督办台湾剿匪事宜！.md" class="article-item">
+                <span class="article-number">027</span>
+                <span class="article-title">必须成立“台海戡乱办公室”督办台湾剿匪事宜！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0131_在台港澳问题上，毛泽东等是有过失的！.md" class="article-item">
+                <span class="article-number">028</span>
+                <span class="article-title">在台港澳问题上，毛泽东等是有过失的！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0143_民主，政治之避孕套！.md" class="article-item">
+                <span class="article-number">029</span>
+                <span class="article-title">民主，政治之避孕套！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0149_鼓吹救世主、大救星的是真正的精神鸦片！.md" class="article-item">
+                <span class="article-number">030</span>
+                <span class="article-title">鼓吹救世主、大救星的是真正的精神鸦片！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0154_民主，比大救星还要大救星的大救星！.md" class="article-item">
+                <span class="article-number">031</span>
+                <span class="article-title">民主，比大救星还要大救星的大救星！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0158_公告：五一期间应酬太多，停写几天！.md" class="article-item">
+                <span class="article-number">032</span>
+                <span class="article-title">公告：五一期间应酬太多，停写几天！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0160_布什，2008年前后将任内被刺杀！.md" class="article-item">
+                <span class="article-number">033</span>
+                <span class="article-title">布什，2008年前后将任内被刺杀！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0162_余秋雨，鸭子煮熟了还要嘴硬？！.md" class="article-item">
+                <span class="article-number">034</span>
+                <span class="article-title">余秋雨，鸭子煮熟了还要嘴硬？！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0167_爱情，比人民、民主更无聊变态的概念！.md" class="article-item">
+                <span class="article-number">035</span>
+                <span class="article-title">爱情，比人民、民主更无聊变态的概念！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0169_男人也是可以被强奸的！.md" class="article-item">
+                <span class="article-number">036</span>
+                <span class="article-title">男人也是可以被强奸的！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0170_从鲁迅、胡适等都国学大师了，看中华文化的衰败！.md" class="article-item">
+                <span class="article-number">037</span>
+                <span class="article-title">从鲁迅、胡适等都国学大师了，看中华文化的衰败！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0172_非《达·芬奇密码》非梵蒂冈的耶稣！.md" class="article-item">
+                <span class="article-number">038</span>
+                <span class="article-title">非《达·芬奇密码》非梵蒂冈的耶稣！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0175_精卵关系与环境污染！.md" class="article-item">
+                <span class="article-number">039</span>
+                <span class="article-title">精卵关系与环境污染！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0176_中国威胁，源自威胁中国，理所当然！.md" class="article-item">
+                <span class="article-number">040</span>
+                <span class="article-title">中国威胁，源自威胁中国，理所当然！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0177_鄙视网上反对国内油价上涨的主流！.md" class="article-item">
+                <span class="article-number">041</span>
+                <span class="article-title">鄙视网上反对国内油价上涨的主流！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0180_学习日本好榜样.md" class="article-item">
+                <span class="article-number">042</span>
+                <span class="article-title">学习日本好榜样</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0200_出来混，该还的都要还！.md" class="article-item">
+                <span class="article-number">043</span>
+                <span class="article-title">出来混，该还的都要还！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0205_贾平凹、陈忠实，就算卖字也不能太特殊行业了！.md" class="article-item">
+                <span class="article-number">044</span>
+                <span class="article-title">贾平凹、陈忠实，就算卖字也不能太特殊行业了！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0218_英格兰，关于麦克白的老套故事！.md" class="article-item">
+                <span class="article-number">045</span>
+                <span class="article-title">英格兰，关于麦克白的老套故事！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0220_咒北大清华倒掉的怨男们！.md" class="article-item">
+                <span class="article-number">046</span>
+                <span class="article-title">咒北大清华倒掉的怨男们！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0223_意大利，120分钟后连射两次！.md" class="article-item">
+                <span class="article-number">047</span>
+                <span class="article-title">意大利，120分钟后连射两次！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0230_人可以没道德，但必须有底线！.md" class="article-item">
+                <span class="article-number">048</span>
+                <span class="article-title">人可以没道德，但必须有底线！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0231_天天为生计奔忙的，没资格鄙视钱！.md" class="article-item">
+                <span class="article-number">049</span>
+                <span class="article-title">天天为生计奔忙的，没资格鄙视钱！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0233_饱暖思淫欲，论性产业合法化.md" class="article-item">
+                <span class="article-number">050</span>
+                <span class="article-title">饱暖思淫欲，论性产业合法化</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0238_公告：即日删除本博客内一切锐博客标志！.md" class="article-item">
+                <span class="article-number">051</span>
+                <span class="article-title">公告：即日删除本博客内一切锐博客标志！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0244_那就让男人冒死反抗强奸吧！.md" class="article-item">
+                <span class="article-number">052</span>
+                <span class="article-title">那就让男人冒死反抗强奸吧！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0248_北京管城建的，最该下岗！.md" class="article-item">
+                <span class="article-number">053</span>
+                <span class="article-title">北京管城建的，最该下岗！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0255_公告.md" class="article-item">
+                <span class="article-number">054</span>
+                <span class="article-title">公告</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0259_“中央一套”当然可以成为避孕套商标！.md" class="article-item">
+                <span class="article-number">055</span>
+                <span class="article-title">“中央一套”当然可以成为避孕套商标！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0262_公告.md" class="article-item">
+                <span class="article-number">056</span>
+                <span class="article-title">公告</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0271_强盗逻辑也是逻辑，历史不相信眼泪！.md" class="article-item">
+                <span class="article-number">057</span>
+                <span class="article-title">强盗逻辑也是逻辑，历史不相信眼泪！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0272_阿Q的苦难永远不能通过阿Q方式解决.md" class="article-item">
+                <span class="article-number">058</span>
+                <span class="article-title">阿Q的苦难永远不能通过阿Q方式解决</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0278_普通话里带着汉语被强暴的哀号！.md" class="article-item">
+                <span class="article-number">059</span>
+                <span class="article-title">普通话里带着汉语被强暴的哀号！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0284_姚明，输球就赖裁判，丑不丑？.md" class="article-item">
+                <span class="article-number">060</span>
+                <span class="article-title">姚明，输球就赖裁判，丑不丑？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0289_迅雷不及掩耳盗铃儿响叮当仁不让之教育部！.md" class="article-item">
+                <span class="article-number">061</span>
+                <span class="article-title">迅雷不及掩耳盗铃儿响叮当仁不让之教育部！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0291_为什么汉奸几乎都是从左派蜕变出来的.md" class="article-item">
+                <span class="article-number">062</span>
+                <span class="article-title">为什么汉奸几乎都是从左派蜕变出来的</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0294_五古两首：浮世多拙意_无生尽日欢.md" class="article-item">
+                <span class="article-number">063</span>
+                <span class="article-title">五古两首：浮世多拙意_无生尽日欢</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0297_禽兽，岂是人屁道德主义者所能企及！.md" class="article-item">
+                <span class="article-number">064</span>
+                <span class="article-title">禽兽，岂是人屁道德主义者所能企及！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0298_公告：.md" class="article-item">
+                <span class="article-number">065</span>
+                <span class="article-title">公告：</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0302_搞科研的都是“鸭子”！.md" class="article-item">
+                <span class="article-number">066</span>
+                <span class="article-title">搞科研的都是“鸭子”！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0310_捍卫马克思5：马克思，时代精神、世界良心！（连载一）.md" class="article-item">
+                <span class="article-number">067</span>
+                <span class="article-title">捍卫马克思5：马克思，时代精神、世界良心！（连载一）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0313_捍卫马克思5：马克思，时代精神、世界良心！（连载二）.md" class="article-item">
+                <span class="article-number">068</span>
+                <span class="article-title">捍卫马克思5：马克思，时代精神、世界良心！（连载二）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0324_那一夜，他的体液喷了我一身（八、九）.md" class="article-item">
+                <span class="article-number">069</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（八、九）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0328_天仙算什么棍子？又有什么棍子配得上本ID？.md" class="article-item">
+                <span class="article-number">070</span>
+                <span class="article-title">天仙算什么棍子？又有什么棍子配得上本ID？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0329_那一夜，他的体液喷了我一身（十）.md" class="article-item">
+                <span class="article-number">071</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（十）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0330_那一夜，他的体液喷了我一身（十一、十二）.md" class="article-item">
+                <span class="article-number">072</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（十一、十二）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0333_那一夜，他的体液喷了我一身（十三）.md" class="article-item">
+                <span class="article-number">073</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（十三）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0334_那一夜，他的体液喷了我一身（十四）.md" class="article-item">
+                <span class="article-number">074</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（十四）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0336_公告：出差一周，博客只能回来再更新了。.md" class="article-item">
+                <span class="article-number">075</span>
+                <span class="article-title">公告：出差一周，博客只能回来再更新了。</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0350_为鲁迅摆一擂台：所有挺鲁迅的男人进来！.md" class="article-item">
+                <span class="article-number">076</span>
+                <span class="article-title">为鲁迅摆一擂台：所有挺鲁迅的男人进来！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0391_那一夜，他的体液喷了我一身（十五、十六）.md" class="article-item">
+                <span class="article-number">077</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（十五、十六）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0417_那一夜，他的体液喷了我一身（十七）.md" class="article-item">
+                <span class="article-number">078</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（十七）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0491_那一夜，他的体液喷了我一身（十八、十九）.md" class="article-item">
+                <span class="article-number">079</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（十八、十九）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0501_那一夜，他的体液喷了我一身（二十、二十一）.md" class="article-item">
+                <span class="article-number">080</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（二十、二十一）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0548_周末腐败去吧!.md" class="article-item">
+                <span class="article-number">081</span>
+                <span class="article-title">周末腐败去吧!</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0568_必须和企图捣毁共和国基础的舆论进行坚决斗争.md" class="article-item">
+                <span class="article-number">082</span>
+                <span class="article-title">必须和企图捣毁共和国基础的舆论进行坚决斗争</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0597_正在去机场的路上.md" class="article-item">
+                <span class="article-number">083</span>
+                <span class="article-title">正在去机场的路上</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0608_今晚，天空的名字就是你--伊拉克！.md" class="article-item">
+                <span class="article-number">084</span>
+                <span class="article-title">今晚，天空的名字就是你--伊拉克！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0667_那一夜，他的体液喷了我一身（二十二、二十三）.md" class="article-item">
+                <span class="article-number">085</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（二十二、二十三）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0690_刚从北京著名的快刀之一回来.md" class="article-item">
+                <span class="article-number">086</span>
+                <span class="article-title">刚从北京著名的快刀之一回来</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0738_对不起，刚回来.md" class="article-item">
+                <span class="article-number">087</span>
+                <span class="article-title">对不起，刚回来</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0745_太累了，没时间写帖子，说两句闲话.md" class="article-item">
+                <span class="article-number">088</span>
+                <span class="article-title">太累了，没时间写帖子，说两句闲话</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0754_那一夜，他的体液喷了我一身（二十四）.md" class="article-item">
+                <span class="article-number">089</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（二十四）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0787_和谐世界的真义.md" class="article-item">
+                <span class="article-number">090</span>
+                <span class="article-title">和谐世界的真义</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0804_那一夜，他的体液喷了我一身（二十五、二十六、二十七）.md" class="article-item">
+                <span class="article-number">091</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（二十五、二十六、二十七）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0833_外面正下着雨，酒店里闲话.md" class="article-item">
+                <span class="article-number">092</span>
+                <span class="article-title">外面正下着雨，酒店里闲话</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0838_那一夜，他的体液喷了我一身（二十八）.md" class="article-item">
+                <span class="article-number">093</span>
+                <span class="article-title">那一夜，他的体液喷了我一身（二十八）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0849_毛泽东与周树人.md" class="article-item">
+                <span class="article-number">094</span>
+                <span class="article-title">毛泽东与周树人</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0856_毛大爷与蒋光头.md" class="article-item">
+                <span class="article-number">095</span>
+                <span class="article-title">毛大爷与蒋光头</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0862_2008年，谨防宏观调控过度.md" class="article-item">
+                <span class="article-number">096</span>
+                <span class="article-title">2008年，谨防宏观调控过度</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0883_你会起床吗？.md" class="article-item">
+                <span class="article-number">097</span>
+                <span class="article-title">你会起床吗？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0888_中国，需要的是中国式的全球化.md" class="article-item">
+                <span class="article-number">098</span>
+                <span class="article-title">中国，需要的是中国式的全球化</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0893_合格政府的第一标准：不给美国佬埋单.md" class="article-item">
+                <span class="article-number">099</span>
+                <span class="article-title">合格政府的第一标准：不给美国佬埋单</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0913_病从何来1.md" class="article-item">
+                <span class="article-number">100</span>
+                <span class="article-title">病从何来1</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0923_捍卫马克思8：马克思意义社会主义实现的唯一渠道.md" class="article-item">
+                <span class="article-number">101</span>
+                <span class="article-title">捍卫马克思8：马克思意义社会主义实现的唯一渠道</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0929_捍卫马克思9：共产主义需要被信仰吗？.md" class="article-item">
+                <span class="article-number">102</span>
+                <span class="article-title">捍卫马克思9：共产主义需要被信仰吗？</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0938_夜郎自大的中国大机构.md" class="article-item">
+                <span class="article-number">103</span>
+                <span class="article-title">夜郎自大的中国大机构</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0942_我们需要怎样的管理层.md" class="article-item">
+                <span class="article-number">104</span>
+                <span class="article-title">我们需要怎样的管理层</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0993_本ID部分CT扫描结果.md" class="article-item">
+                <span class="article-number">105</span>
+                <span class="article-title">本ID部分CT扫描结果</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0995_本ID病情现状的总体汇报.md" class="article-item">
+                <span class="article-number">106</span>
+                <span class="article-title">本ID病情现状的总体汇报</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1002_3656点上下的艰苦选择.md" class="article-item">
+                <span class="article-number">107</span>
+                <span class="article-title">3656点上下的艰苦选择</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1005_人体机器的一面.md" class="article-item">
+                <span class="article-number">108</span>
+                <span class="article-title">人体机器的一面</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1006_为地震死难者默哀.md" class="article-item">
+                <span class="article-number">109</span>
+                <span class="article-title">为地震死难者默哀</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1008_同体大悲.md" class="article-item">
+                <span class="article-number">110</span>
+                <span class="article-title">同体大悲</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1010_刚完成化疗.md" class="article-item">
+                <span class="article-number">111</span>
+                <span class="article-title">刚完成化疗</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1011_煎熬了两天.md" class="article-item">
+                <span class="article-number">112</span>
+                <span class="article-title">煎熬了两天</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1012_今天基本恢复.md" class="article-item">
+                <span class="article-number">113</span>
+                <span class="article-title">今天基本恢复</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1020_各位端午节好，说说本ID现在的情况.md" class="article-item">
+                <span class="article-number">114</span>
+                <span class="article-title">各位端午节好，说说本ID现在的情况</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1021_大病识人.md" class="article-item">
+                <span class="article-number">115</span>
+                <span class="article-title">大病识人</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1023_关于越南危机，中国责无旁贷该负起应有的大国责任！.md" class="article-item">
+                <span class="article-number">116</span>
+                <span class="article-title">关于越南危机，中国责无旁贷该负起应有的大国责任！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1034_报平安.md" class="article-item">
+                <span class="article-number">117</span>
+                <span class="article-title">报平安</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1057_通告一下.md" class="article-item">
+                <span class="article-number">118</span>
+                <span class="article-title">通告一下</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1064_这段时间不能保证帖子.md" class="article-item">
+                <span class="article-number">119</span>
+                <span class="article-title">这段时间不能保证帖子</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1066_有所恢复.md" class="article-item">
+                <span class="article-number">120</span>
+                <span class="article-title">有所恢复</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1068_明日放疗.md" class="article-item">
+                <span class="article-number">121</span>
+                <span class="article-title">明日放疗</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1090_终于接上头了.md" class="article-item">
+                <span class="article-number">122</span>
+                <span class="article-title">终于接上头了</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1099_病好后一定清算中国目前霸权的西医体系.md" class="article-item">
+                <span class="article-number">123</span>
+                <span class="article-title">病好后一定清算中国目前霸权的西医体系</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1121_请假一周.md" class="article-item">
+                <span class="article-number">124</span>
+                <span class="article-title">请假一周</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1124_结大概要到最坏时才解开.md" class="article-item">
+                <span class="article-number">125</span>
+                <span class="article-title">结大概要到最坏时才解开</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1127_真正的震荡还在后面.md" class="article-item">
+                <span class="article-number">126</span>
+                <span class="article-title">真正的震荡还在后面</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1131_病情纯分析.md" class="article-item">
+                <span class="article-number">127</span>
+                <span class="article-title">病情纯分析</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1132_要停几天.md" class="article-item">
+                <span class="article-number">128</span>
+                <span class="article-title">要停几天</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1133_报平安.md" class="article-item">
+                <span class="article-number">129</span>
+                <span class="article-title">报平安</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1135_无话可说.md" class="article-item">
+                <span class="article-number">130</span>
+                <span class="article-title">无话可说</span>
+                <span class="article-arrow">→</span>
+            </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+</body>
+</html>

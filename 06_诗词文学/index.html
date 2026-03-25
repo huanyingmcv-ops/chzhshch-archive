@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗词文学 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 20px 50px;
+            text-align: center;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--gold-light);
+        }
+        
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 6px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        
+        .desc {
+            font-size: 1em;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .stats {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stats span {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 0 5px;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .article-list {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .article-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-item:hover {
+            background: #f8fafc;
+            padding-left: 30px;
+        }
+        
+        .article-number {
+            font-size: 0.85em;
+            color: var(--gold);
+            font-weight: 600;
+            min-width: 50px;
+            font-family: monospace;
+        }
+        
+        .article-title {
+            flex: 1;
+            font-size: 1.05em;
+            color: var(--text);
+        }
+        
+        .article-item:hover .article-title {
+            color: var(--primary);
+        }
+        
+        .article-arrow {
+            color: var(--text-light);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .article-item:hover .article-arrow {
+            opacity: 1;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            .article-item { padding: 15px 18px; }
+            .article-number { min-width: 40px; font-size: 0.8em; }
+            .article-title { font-size: 0.95em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../" class="back-link">← 返回首页</a>
+        <h1>诗词文学</h1>
+        <p class="subtitle">诗词 · 创作 · 文学</p>
+        <p class="desc">古体诗、现代诗、歌词创作、文学评论。才华横溢，意境深远，不让古人。</p>
+        <div class="stats">
+            <span>共 94 篇文章</span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="article-list">
+            <a href="0001_新居落成，新春将至，聊赋《临江仙》以记之.md" class="article-item">
+                <span class="article-number">001</span>
+                <span class="article-title">新居落成，新春将至，聊赋《临江仙》以记之</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0021_一家之言----毛氏润之诗词简评.md" class="article-item">
+                <span class="article-number">002</span>
+                <span class="article-title">一家之言----毛氏润之诗词简评</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0029_一家之言----毛氏润之诗词简评.md" class="article-item">
+                <span class="article-number">003</span>
+                <span class="article-title">一家之言----毛氏润之诗词简评</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0046_严肃求助：希望实现一个愿望，但遇到法律和技术障碍！.md" class="article-item">
+                <span class="article-number">004</span>
+                <span class="article-title">严肃求助：希望实现一个愿望，但遇到法律和技术障碍！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0056_本女要为陈水扁的倒行逆施大力喝彩！.md" class="article-item">
+                <span class="article-number">005</span>
+                <span class="article-title">本女要为陈水扁的倒行逆施大力喝彩！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0065_回应本女七律“东南”的应和，以及律诗写作的一些问题.md" class="article-item">
+                <span class="article-number">006</span>
+                <span class="article-title">回应本女七律“东南”的应和，以及律诗写作的一些问题</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0066_七律三首：郑和、金沙、东南.md" class="article-item">
+                <span class="article-number">007</span>
+                <span class="article-title">七律三首：郑和、金沙、东南</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0073_《怨妇词》上：故事非故事，怨妇非怨妇，几人能懂.md" class="article-item">
+                <span class="article-number">008</span>
+                <span class="article-title">《怨妇词》上：故事非故事，怨妇非怨妇，几人能懂</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0074_《怨妇词》下：故事非故事，怨妇非怨妇，几人能懂.md" class="article-item">
+                <span class="article-number">009</span>
+                <span class="article-title">《怨妇词》下：故事非故事，怨妇非怨妇，几人能懂</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0090_白话诗三首：死亡、地铁、坟墓！.md" class="article-item">
+                <span class="article-number">010</span>
+                <span class="article-title">白话诗三首：死亡、地铁、坟墓！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0107_七律六首分赋：孙逸仙、蒋中正、毛润之等六人！.md" class="article-item">
+                <span class="article-number">011</span>
+                <span class="article-title">七律六首分赋：孙逸仙、蒋中正、毛润之等六人！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0144_从左派对“大救星”一词的信口雌黄看左派的气数已尽！.md" class="article-item">
+                <span class="article-number">012</span>
+                <span class="article-title">从左派对“大救星”一词的信口雌黄看左派的气数已尽！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0152_诗词十六首回顾911事件与阿富汗战争.md" class="article-item">
+                <span class="article-number">013</span>
+                <span class="article-title">诗词十六首回顾911事件与阿富汗战争</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0156_“拍左打右”范文三篇！.md" class="article-item">
+                <span class="article-number">014</span>
+                <span class="article-title">“拍左打右”范文三篇！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0157_台湾问题相关律诗四首！.md" class="article-item">
+                <span class="article-number">015</span>
+                <span class="article-title">台湾问题相关律诗四首！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0161_对“嫖客”大放厥词的都是无知之辈！.md" class="article-item">
+                <span class="article-number">016</span>
+                <span class="article-title">对“嫖客”大放厥词的都是无知之辈！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0174_五律三首：村居_山居_尘居.md" class="article-item">
+                <span class="article-number">017</span>
+                <span class="article-title">五律三首：村居_山居_尘居</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0182_七绝：京华_七律：林彪.md" class="article-item">
+                <span class="article-number">018</span>
+                <span class="article-title">七绝：京华_七律：林彪</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0192_律诗四首：天池_虎丘_泰山_望海台.md" class="article-item">
+                <span class="article-number">019</span>
+                <span class="article-title">律诗四首：天池_虎丘_泰山_望海台</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0193_孔庆东、北大，真丢人！.md" class="article-item">
+                <span class="article-number">020</span>
+                <span class="article-title">孔庆东、北大，真丢人！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0194_少年诗篇：死亡.md" class="article-item">
+                <span class="article-number">021</span>
+                <span class="article-title">少年诗篇：死亡</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0195_孔庆东、朝鲜，愚民左派的丑恶嘴脸！.md" class="article-item">
+                <span class="article-number">022</span>
+                <span class="article-title">孔庆东、朝鲜，愚民左派的丑恶嘴脸！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0196_少年诗篇：飯堂_寒鴉_太陽.md" class="article-item">
+                <span class="article-number">023</span>
+                <span class="article-title">少年诗篇：飯堂_寒鴉_太陽</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0198_少年诗篇：脑子进水的热恋.md" class="article-item">
+                <span class="article-number">024</span>
+                <span class="article-title">少年诗篇：脑子进水的热恋</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0204_少年诗篇：脑子缺水的失恋.md" class="article-item">
+                <span class="article-number">025</span>
+                <span class="article-title">少年诗篇：脑子缺水的失恋</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0207_七言古诗一首：人生是梦梦何如.md" class="article-item">
+                <span class="article-number">026</span>
+                <span class="article-title">七言古诗一首：人生是梦梦何如</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0214_惊天地泣鬼神古今第一快诗.md" class="article-item">
+                <span class="article-number">027</span>
+                <span class="article-title">惊天地泣鬼神古今第一快诗</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0224_七律：出差南昌恰逢中秋.md" class="article-item">
+                <span class="article-number">028</span>
+                <span class="article-title">七律：出差南昌恰逢中秋</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0235_本ID作曲作业录音，院士部级诗集闲谈.md" class="article-item">
+                <span class="article-number">029</span>
+                <span class="article-title">本ID作曲作业录音，院士部级诗集闲谈</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0245_摇滚歌词两首：生活的土地上長滿大米高粱_杀人！.md" class="article-item">
+                <span class="article-number">030</span>
+                <span class="article-title">摇滚歌词两首：生活的土地上長滿大米高粱_杀人！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0276_白话诗两首：十月_慣於手淫的人類.md" class="article-item">
+                <span class="article-number">031</span>
+                <span class="article-title">白话诗两首：十月_慣於手淫的人類</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0280_唐粉，本ID接受你“缠女士，礼尚往来，我要挑战你！”的挑战.md" class="article-item">
+                <span class="article-number">032</span>
+                <span class="article-title">唐粉，本ID接受你“缠女士，礼尚往来，我要挑战你！”的挑战</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0308_白话诗三首：碰撞_轮回_蠶豆.md" class="article-item">
+                <span class="article-number">033</span>
+                <span class="article-title">白话诗三首：碰撞_轮回_蠶豆</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0314_孔庆东，别给北大丢脸，让本ID教你写诗！.md" class="article-item">
+                <span class="article-number">034</span>
+                <span class="article-title">孔庆东，别给北大丢脸，让本ID教你写诗！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0319_强奸面前，男女一律平等！.md" class="article-item">
+                <span class="article-number">035</span>
+                <span class="article-title">强奸面前，男女一律平等！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0325_步韵朋友诗句恭贺双节.md" class="article-item">
+                <span class="article-number">036</span>
+                <span class="article-title">步韵朋友诗句恭贺双节</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0326_《怨妇词》：故事非故事，怨妇非怨妇，几人能懂！.md" class="article-item">
+                <span class="article-number">037</span>
+                <span class="article-title">《怨妇词》：故事非故事，怨妇非怨妇，几人能懂！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0327_鲁迅也能成大师的时代，有的只能是人屁大师！.md" class="article-item">
+                <span class="article-number">038</span>
+                <span class="article-title">鲁迅也能成大师的时代，有的只能是人屁大师！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0463_山中和友韵口占六言绝句恭贺新禧.md" class="article-item">
+                <span class="article-number">039</span>
+                <span class="article-title">山中和友韵口占六言绝句恭贺新禧</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0519_河之南，国之中.md" class="article-item">
+                <span class="article-number">040</span>
+                <span class="article-title">河之南，国之中</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0527_偶见湘火炬广告牌，口占五绝。.md" class="article-item">
+                <span class="article-number">041</span>
+                <span class="article-title">偶见湘火炬广告牌，口占五绝。</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0565_酒酣聊赋《水调歌头》.md" class="article-item">
+                <span class="article-number">042</span>
+                <span class="article-title">酒酣聊赋《水调歌头》</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0578_以黄河名字展开的绝地反击.md" class="article-item">
+                <span class="article-number">043</span>
+                <span class="article-title">以黄河名字展开的绝地反击</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0584_即席口占七律感言.md" class="article-item">
+                <span class="article-number">044</span>
+                <span class="article-title">即席口占七律感言</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0588_打油诗一首：反恐.md" class="article-item">
+                <span class="article-number">045</span>
+                <span class="article-title">打油诗一首：反恐</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0607_七律：醉夜.md" class="article-item">
+                <span class="article-number">046</span>
+                <span class="article-title">七律：醉夜</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0616_七律：新新人类.md" class="article-item">
+                <span class="article-number">047</span>
+                <span class="article-title">七律：新新人类</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0621_五律：席间口占（附几段闲言语）.md" class="article-item">
+                <span class="article-number">048</span>
+                <span class="article-title">五律：席间口占（附几段闲言语）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0625_七律：8月8日祭矿难冤魂.md" class="article-item">
+                <span class="article-number">049</span>
+                <span class="article-title">七律：8月8日祭矿难冤魂</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0638_全球化，没有市场可与世隔绝.md" class="article-item">
+                <span class="article-number">050</span>
+                <span class="article-title">全球化，没有市场可与世隔绝</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0643_七夕七律赠牛郎.md" class="article-item">
+                <span class="article-number">051</span>
+                <span class="article-title">七夕七律赠牛郎</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0651_七律：物理_五律：几何.md" class="article-item">
+                <span class="article-number">052</span>
+                <span class="article-title">七律：物理_五律：几何</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0665_七律：死水.md" class="article-item">
+                <span class="article-number">053</span>
+                <span class="article-title">七律：死水</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0673_七律：星灯.md" class="article-item">
+                <span class="article-number">054</span>
+                <span class="article-title">七律：星灯</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0691_七律：京洛.md" class="article-item">
+                <span class="article-number">055</span>
+                <span class="article-title">七律：京洛</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0697_忽闻台风可休市，聊赋七律说《风灾》.md" class="article-item">
+                <span class="article-number">056</span>
+                <span class="article-title">忽闻台风可休市，聊赋七律说《风灾》</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0730_终于要北大了.md" class="article-item">
+                <span class="article-number">057</span>
+                <span class="article-title">终于要北大了</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0758_借点酒力，来首七律：即事.md" class="article-item">
+                <span class="article-number">058</span>
+                <span class="article-title">借点酒力，来首七律：即事</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0781_酒醒步“牛、流、秋、愁”韵成五律六首.md" class="article-item">
+                <span class="article-number">059</span>
+                <span class="article-title">酒醒步“牛、流、秋、愁”韵成五律六首</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0811_没雪的日子，赋七律：雪域.md" class="article-item">
+                <span class="article-number">060</span>
+                <span class="article-title">没雪的日子，赋七律：雪域</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0822_再赋《临江仙》.md" class="article-item">
+                <span class="article-number">061</span>
+                <span class="article-title">再赋《临江仙》</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0829_真是无奈，越来越身不由己（七律一首）.md" class="article-item">
+                <span class="article-number">062</span>
+                <span class="article-title">真是无奈，越来越身不由己（七律一首）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0835_饭后无聊，将前夜所写草成五律一首.md" class="article-item">
+                <span class="article-number">063</span>
+                <span class="article-title">饭后无聊，将前夜所写草成五律一首</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0846_赋《沁园春》兼祝各位2008新年好.md" class="article-item">
+                <span class="article-number">064</span>
+                <span class="article-title">赋《沁园春》兼祝各位2008新年好</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0851_自古以来超第一英明神武的政治高手.md" class="article-item">
+                <span class="article-number">065</span>
+                <span class="article-title">自古以来超第一英明神武的政治高手</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0853_诗人画廊（一）：李煜_李商隐.md" class="article-item">
+                <span class="article-number">066</span>
+                <span class="article-title">诗人画廊（一）：李煜_李商隐</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0860_史上绝无仅有超第一的军事牛人.md" class="article-item">
+                <span class="article-number">067</span>
+                <span class="article-title">史上绝无仅有超第一的军事牛人</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0864_诗人画廊（2）：裴多菲_拜伦.md" class="article-item">
+                <span class="article-number">068</span>
+                <span class="article-title">诗人画廊（2）：裴多菲_拜伦</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0867_阅读律诗的一些基本知识.md" class="article-item">
+                <span class="article-number">069</span>
+                <span class="article-title">阅读律诗的一些基本知识</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0871_填词又见《临江仙》.md" class="article-item">
+                <span class="article-number">070</span>
+                <span class="article-title">填词又见《临江仙》</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0900_七绝：给大雪中国里的蛇虫鼠蚁.md" class="article-item">
+                <span class="article-number">071</span>
+                <span class="article-title">七绝：给大雪中国里的蛇虫鼠蚁</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0904_七绝一首恭贺新禧并告博客停业7天.md" class="article-item">
+                <span class="article-number">072</span>
+                <span class="article-title">七绝一首恭贺新禧并告博客停业7天</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0946_七律：二月.md" class="article-item">
+                <span class="article-number">073</span>
+                <span class="article-title">七律：二月</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0948_古典诗歌中的用典.md" class="article-item">
+                <span class="article-number">074</span>
+                <span class="article-title">古典诗歌中的用典</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0965_七律：兽语（可别对号入座）.md" class="article-item">
+                <span class="article-number">075</span>
+                <span class="article-title">七律：兽语（可别对号入座）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0966_漫画：七律--国朝公仆.md" class="article-item">
+                <span class="article-number">076</span>
+                <span class="article-title">漫画：七律--国朝公仆</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0975_五律：春沐.md" class="article-item">
+                <span class="article-number">077</span>
+                <span class="article-title">五律：春沐</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="0983_告示：以后的帖子可能极端没规律.md" class="article-item">
+                <span class="article-number">078</span>
+                <span class="article-title">告示：以后的帖子可能极端没规律</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1004_明天开始化疗.md" class="article-item">
+                <span class="article-number">079</span>
+                <span class="article-title">明天开始化疗</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1007_本ID依然站立，中国依然站立！.md" class="article-item">
+                <span class="article-number">080</span>
+                <span class="article-title">本ID依然站立，中国依然站立！</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1014_出院两天，旧词一首寄心情.md" class="article-item">
+                <span class="article-number">081</span>
+                <span class="article-title">出院两天，旧词一首寄心情</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1015_七律一首报平安.md" class="article-item">
+                <span class="article-number">082</span>
+                <span class="article-title">七律一首报平安</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1022_诗人画廊（三）：屈原_太白.md" class="article-item">
+                <span class="article-number">083</span>
+                <span class="article-title">诗人画廊（三）：屈原_太白</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1025_新鲜七律一首给吾国与吾民：晚望.md" class="article-item">
+                <span class="article-number">084</span>
+                <span class="article-title">新鲜七律一首给吾国与吾民：晚望</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1030_请帮忙选择本ID诗集出版写序跋的人及诗人画廊（四).md" class="article-item">
+                <span class="article-number">085</span>
+                <span class="article-title">请帮忙选择本ID诗集出版写序跋的人及诗人画廊（四)</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1037_诗人画廊（五)_：陶渊明_李贺.md" class="article-item">
+                <span class="article-number">086</span>
+                <span class="article-title">诗人画廊（五)_：陶渊明_李贺</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1044_二次化疗结束出院游玩三周（附录七律：晓坐_冷战）.md" class="article-item">
+                <span class="article-number">087</span>
+                <span class="article-title">二次化疗结束出院游玩三周（附录七律：晓坐_冷战）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1056_病情、朋友等.md" class="article-item">
+                <span class="article-number">088</span>
+                <span class="article-title">病情、朋友等</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1062_诗人画廊（六)：韩愈.md" class="article-item">
+                <span class="article-number">089</span>
+                <span class="article-title">诗人画廊（六)：韩愈</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1073_打针得一律_尘歌（兼说两句股市）.md" class="article-item">
+                <span class="article-number">090</span>
+                <span class="article-title">打针得一律_尘歌（兼说两句股市）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1075_短线关键2762点（附诗人画廊（七)：孟郊）.md" class="article-item">
+                <span class="article-number">091</span>
+                <span class="article-title">短线关键2762点（附诗人画廊（七)：孟郊）</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1092_武汉组诗之一_夜赴江城_南岸咀.md" class="article-item">
+                <span class="article-number">092</span>
+                <span class="article-title">武汉组诗之一_夜赴江城_南岸咀</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1096_华老挽诗：交城曲.md" class="article-item">
+                <span class="article-number">093</span>
+                <span class="article-title">华老挽诗：交城曲</span>
+                <span class="article-arrow">→</span>
+            </a>
+            <a href="1120_早到一天的中秋诗.md" class="article-item">
+                <span class="article-number">094</span>
+                <span class="article-title">早到一天的中秋诗</span>
+                <span class="article-arrow">→</span>
+            </a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+</body>
+</html>
