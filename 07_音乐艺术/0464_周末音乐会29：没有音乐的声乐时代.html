@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周末音乐会29：没有音乐的声乐时代 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 464</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/2/24 15:19:35</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>音乐艺术</span></div>
+        </div>
+        <h1 class="article-title">周末音乐会29：没有音乐的声乐时代</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>周末音乐会29：没有音乐的声乐时代</h1>
+<hr />
+<p>周末音乐会29：没有音乐的声乐时代</p>
+<p>2007/2/24 15:19:35</p>
+<p>在一个毫无冬天气息的冬日假期，游逛山间，疗治一下山水顽疾，即便没有明月清风，只有一场让北中国无处可逃的迷天大雾，也是一件无可抱怨的事。没有山水的山水，也会让人慵懒。一个几无收获的假期，除了一首以中国百年某些烂事为题的千言百韵长律，就只写了不到十首的艺术歌曲，歌词包括：穆旦写于1976年3月的《智慧之歌》、黄翔写于1962年的《独唱》、北岛的《宣言》、海子写于1989年2月2日的《黑夜的献诗》等。
+从十几岁就开始的艺术歌曲创作，最开始时，歌词用的多是外国的诗歌，包括莎士比亚、歌德等等，十八岁，就为哈姆雷特那著名的独白谱曲，现在唱来，还是那么令人激动。中国诗人，写的不多，10几岁时，谱过《再别康桥》之类二、三十年代的诗歌，当代诗歌基本很少涉及。当时，基本都在调性的范围内展开，总觉得用调性的东西处理当代诗歌，有点太单纯了。而当时，对无调性如何把握声乐线条，有点吃不准，而中国的艺术歌曲创作，基本停留在最原始的阶段，基本没有可借鉴的地方。
+后来，终于摸索出一套根据诗歌情绪，从调性到无调性之间顺畅转换的方法，这样音乐表现的能力与范围就可以无限扩展了，从那开始，才可以自由地处理现代的诗歌。但却又遇到一个暂时无法克服的困难，找不到适合的声音。本ID所写的艺术歌曲，都是极难演唱的，需要一种全能的声音，一种从低音到中音再到高音都能完全胜任的戏剧性声音，同时又是一种最明亮、温暖的抒情性声音，不同的声区、音色，都能自如地转换，在任何声区从最抒情的半声到最戏剧性的宣叙都能无缝地转换。这个时代，一个没有音乐的声乐时代，哪里去找这样的声音？其实，本ID自己也不断一直在摸索、训练。本ID一直都奇怪，怎么中国的美声训练就没弄出一个好一点的戏剧性声音来，满大街都是毫无力度、矫柔造作的伪抒情声音。自己的作品，最终大概只能自己来演唱了。
+其实，无论男声、女声，历史上都有一些伟大的声音是那么令人神往，可惜这个时代，无论中国、外国，都不再拥有。本ID最厌烦就是那商业乱炒的所谓三高，他们算个什么？比比卡罗索，他们不觉得自己丢人吗？现在的声音，所谓的戏剧性，都是闷在腔体里或是令人不快的挤压，而所谓抒情又毫无力度、厚度可言，为什么现在就没有卡罗索这样的声音？本来唱中音的他最终成为上世纪最伟大的男高音，而同时还可以出色地演唱男低音的角色，无论男声、女声，怎么这样的声音现在就都一下没有了？一个可怜的时代，一个靠着电声、技术处理还是鸭子嗓满大街晃悠的时代，一个人人唱歌而没有歌唱的时代，一个只适合叫床的声音时代。
+现在，就让我们听听那个伟大的声音在1902年到1903年留下的痕迹。能把这声音留下来，无论录音技术此后产生多少罪恶，都可以被赦免了。一个充满噪音的录音，一个伴奏乐器的声音都已变形的残留，但伟大的声音，穿越了时代、穿越了时间的腐蚀，依然那样无暇、那样熠熠生辉。
+上传音乐的时候才发现，该网站出毛病了，不能发新的文件，只能等等，晚上或明天再补上。抱歉。
+回复​
+缠中说禅 2007/2/24 15:22:09上传音乐的时候才发现，该网站出毛病了，不能发新的文件，只能等等，晚上或明天再补上。抱歉。刚从山里回来，又要重新一些不可少的应酬，晚上、明天都有些聚会，不能和各位多聊了。先下，再见。
+缠中说禅 2007/2/25 13:19:56刚上来发现那音乐播客网站依然不能上传，大概这假日综合症还要延续，只好请各位耐心等待。至于有人问如何把本ID播客里的音乐 放到自己的文章里，这很简单，每个音乐文件下都有播放器调用，按一下有引用通告，把该日志播放器HTML调用代码复制下来放到文章的源代码里就可以。不过，播放器调用必须在该播客里注册才行。下午还有应酬，不能上传，只能把背景音乐换一个新的，先下，明天下午收盘见。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/music/weekendconcert29" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0457_周末音乐会28：幻想.md" class="nav-link prev">← 周末音乐会28：幻想</a>
+            <a href="0470_歌唱技术.md" class="nav-link next">歌唱技术 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

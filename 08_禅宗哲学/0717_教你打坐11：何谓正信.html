@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你打坐11：何谓正信 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 717</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/10/7 9:55:19</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>禅宗哲学</span></div>
+        </div>
+        <h1 class="article-title">教你打坐11：何谓正信</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>教你打坐11：何谓正信</h1>
+<hr />
+<p>教你打坐11：何谓正信</p>
+<p>2007/10/7 9:55:19</p>
+<p>装修完工重新开张</p>
+<p>上面说了正念，现在说正信。信，大致上有两种：一、闻信；二、证信。人生在世，基本都在闻信状态。从最初的教育到日常知识的获得、理论的研讨，归根结底，都不离闻信。有人可能要 说，那么如果实践去检验了，那是否还是闻信？其实，这依然不离闻信。因为，任何时间检验的东西，有一个基本的前提，就是观察之于观察者与被观察对象的所谓同一问题。一个很简单的例子，例如，你看到天上的太阳，他也看到天上的太阳，你们两人之间是如何证明这两个不同人看到的太阳是同一的太阳？或者说，在探讨同一性问题的前提首先有一个同一性的假设。这个同一性的假设就是，两个不同的人的观察的基本前提是同一的，或者说是有着同一的起点。一个最基本的前提，是假设两个人的可观察的基本生理结构是一致或同构的。但是，又有什么观察能决定两个个人的可观察的基本生理结构是一致或同构的？显然，这里就涉及一个前提无限倒退的问题。那么，为什么所有的人都相信，只要是人，其观察的基本结构前提就是一致的？因为闻信。人构成的社会共同体的灌输，使得每一个人都闻信地相信，人和人观察的基本结构前提就是一致、同构的。人类的所有文化、哲学、艺术、科学、习俗、把戏，都不过从这个闻信的基础开始。所有的人，不过都是盲人，去摸一只像，但和通常所说的盲人摸象有点不同，或者是因为这像是一头怪象，鼻子和腿或是身子、耳朵都长得一模一样，因此什么盲人摸都得出同样的结论，因此所有的盲人就都宣称，我们摸的东西是同一的，我们去的摸也是同一的，我们是同类，我们如何如何；或者，所有的人，在发生摸像这个动作的时候，都出现同一的怪病，摸到不同的鼻子、腿、身子、耳朵，感觉都被突然同一了。这就如同，在计算机程序了，放了一条绝对的转向指令，一发生摸象这动作，就绝对地转向同一输出。但这个程序中无聊的绝对转向指令，可能只是一个黑客的恶  作剧，就如同所有人的死，不过是一个无聊的绝对转向恶作剧，其实，哪里有什么死的绝对转向。死，不过是一种病毒感染而已。但当这种病毒被无限传播后，所有人都闻信地相信，死是绝对的，是不可解毒的。更可笑的是，这个病毒的编写者与传播者，就是每个人自己。而生，是另一种病毒感染。这病毒、那病毒，其实哪里有什么病毒，自生分别而已。同样，你听说有佛，然后就产生的信和不信的反应。但无论信还是不信，都不过是闻信地信或不信，不过都是说食而已，岂是真食？所谓号称自己信佛的人，其实和所谓号称自己不信佛的，都一样，就如同两个根本没吃过佛跳墙的人，在争论佛跳墙究竟的色香味，都不过是说食之辈。三人成虎，人类的所有文化、哲学、艺术、科学、习俗、把戏，都过是三人成虎而已。有时候，一些不同的N人构成子类后，就成出不同的虎，形成不同的学派、学说、理论、阶级、利益，然后互相攻击、撕杀、折腾、批判，忽悠，诸如此类，不过如此。闻信，归根结底就是迷信。科学，同样是一种迷信。无论是假设观察的可重复性与同一性基础，还是假设可证伪性的可证性，都不过是一种闻信地迷信罢了。人类社会的所谓发展，不过是一个个迷信的破除然后又一个个新迷信诞生过程而已，如果说，曾经的地球中心、太阳中心，变成物质中心、宇宙中心、人类中心、自然中心，是一种迷信的延续、变种，那么有一个不变的中心从来没变过，就是自我的中心，一切不过是那个“我”的无聊把戏而已。所有闻信、迷信，一个最基础的结构，就是以“我”信为基础，而这“我”信，又非从“我”而得，而是从非“我”而得。最大的闻信、迷信之一，就是这闻信、迷信的“我”所  裂分出来“我”与“非我”的二元结构。有一种最可笑的闻信与迷信，就是把“我”大而化之，搞出“大我”、“无我”的无聊把戏，似乎“大我”、“真我”、“无我”以后，这“我”就忽悠大了，忽悠无了，就世界了、就宇宙了、就真理了。“大我”正是“我”之至小，“真我”正是“我”之大假，“无我”正是“我”之有根，所有修炼、寻找所谓“大我”、“真我”、“无我”的把戏，都是所有把戏中最恶臭、腐败的无聊玩意。如果有人让你信佛，那这人肯定是大恶魔，为什么？无佛可信，可信非佛。如果你就是佛，又有什么佛需要你去信？如果你不是佛，你信的都是闻信、迷信，你信的所谓佛都是臭狗屎。佛魔最难除，佛就是最大的魔怪，见佛必杀，杀尽所有佛与非佛，才有证信的样子。而证信又何曾有样子，佛且不证、何况非佛？佛且不信，何况非佛？不证不信，是为证信。有人问，那些没有信仰的、杀人如麻的，难道就是不证不信？难道就是证信？且慢，你说那些没有信仰的、杀人如麻的，哪个没有信仰，哪个不证着点什么？信着点什么？有信仰、没有信仰，都依然是闻信、迷信，非佛尚不能透过，何况佛魔？有人问，人要在现实中生存，怎么可能不证不信？时间、宇宙、历史、现实的一切，都不过是闻信、迷信的共业制造的空中楼阁，被此闻信、迷信共业牵引，而生幻业相续相缠，由此而被游戏，透过此，才能不生生、不死死而游戏其中。有人问，不证不信，是不是要成仙、或者把自己的一切感觉、见闻灭掉？问这种问题的，都是痴人。佛犹不成，成什么破烂神仙？神仙难道不在六道轮回里？而即使你灭尽见闻觉知，犹是闻信、迷信中，犹是自生影尘分别。不证不信，不生不灭，不出不入，又有什么需要灭、需要出的呢？</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/zen/zazen11" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0716_步友四言四韵.md" class="nav-link prev">← 步友四言四韵</a>
+            <a href="0740_教你打坐12：如何呼吸.md" class="nav-link next">教你打坐12：如何呼吸 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

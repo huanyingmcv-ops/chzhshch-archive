@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你炒股票62：分型、笔与线段 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 567</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/6/30 9:49:51</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>108课教程</span></div>
+        </div>
+        <h1 class="article-title">教你炒股票62：分型、笔与线段</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>教你炒股票62：分型、笔与线段</h1>
+<hr />
+<p>教你炒股票62：分型、笔与线段</p>
+<p>2007/6/30 9:49:51</p>
+<p>在宾馆里闲着等着10点开始的腐败，半个小时，找个面首来面首有点时间紧张，还不如给各位写个主贴，来个课程，耗费一下各位周末腐败的时间。
+瞧了一下，有位叫石猴的网友写了帖子来解释什么是线段，他的理解还行，但不够严密。其实，本ID的线段是可以最精确定义的，本ID的理论，本质上是一套几何理论 ，其有效性就如同几何一般，本ID理论当然有失败不严谨的时候，但这前提是几何的基础失败不严谨，不明白这一点，就不明白本ID的理论。这里，就把本来是后面的课程提前说说。
+下面的定义与图，都适合任何周期的K线图。先看图中的第1、2，图中的小线段代表的是K线，这里不分阳线阴线，只看K线高低点。</p>
+<p>像图1这种，第二K线高点是相邻三K线高点中最高的，而低点也是相邻三K线低点中最高的，本ID给一个定义叫顶分型；图2这种叫底分型，第二K线低点是相邻三K线低点中最低的，而高点也是相邻三K线高点中最低的。看不明白定义的，看图就明白了，这么直观都不明白，那去和孔男人为伍吧。
+顶分型的最高点叫该分型的顶，底分型的最低点叫该分型的底，由于顶分型的底和底分型的顶是没有意义的，所以顶分型的顶和底分型的底就可以简称为顶和低。也就是说，当我们以后说顶和底时，就分别是说顶分型的顶和底分型的底。
+两个相邻的顶和底之间构成一笔，所谓笔，就是顶和底之间的其他波动，都可以忽略不算，但注意，一定是相邻的顶和底，隔了几个就不是了。而所谓的线段，就是至少由三笔组成。但这里有一个细微的地方要分清楚，因为结合律是必须遵守的，像图3这种，顶和底之间必须共用一个K线，这就违反结合律了，所以这不算一笔，而图4，就光是顶和底了，中间没有其他K线，一般来说，也最好不算一笔，而图5，是一笔的最基本的图形，顶和底之间还有一根K线。在实际分析中，都必须要求顶和底之间都至少有一K线当成一笔的最基本要求。
+当然，实际图形里，有些复杂的关系会出现，就是相邻两K线可以出现如图6这种包含关系，也就是一K线的高 低点全在另一K线的范围里，这种情况下，可以这样处理，在向上时，把两K线的最高点当高点，而两K线低点中的较高者当成低点，这样就把两K线合并成一新的K线；反之，当向下时，把两K线的最低点当低点，而两K线高点中的较低者当成高点，这样就把两K线合并成一新的K线。经过这样的处理，所有K线图都可以处理成没有包含关系的图形。
+而图7，就给出了经过以上处理，没有包含关系的图形中，三相邻K线之间可能组合的一个完全分类，其中的二、四，就是分别是顶分型和底分型，一可以叫上升K线，三可以叫下降K线。所以，上升的一笔，由结合律，就一定是底分型+上升K线+顶分型；下降的一笔，就是顶分型+下降K线+底分型。注意，这里的上升、下降K线，不一定都是3根，可以无数根，只要一直保持这定义就可以。当然，简单的，也可以是1、2根，这只要不违反结合律和定义就可以。
+至于图8，就是线段的最基本形态，而图9，就是线段破坏，也就是两线段组合的其中一种形态。有人可能要说，这怎么有点像波浪理论，这有什么奇怪的，本ID的理论可以严格地推论出波浪理论的所有结论，而且还可以指出他理论的所有不足，波浪理论和本ID的理论一点可比性都没有。不仅是波浪理论，所有关于股市的理论，只要是关系到图形的，本ID的理论都可以严格推论，因为本ID的理论是关于走势图形最基础的理论，谁都逃不掉。
+不能再废话了，下面车来了，腐败开始，大家也腐败去吧。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/stocks/062" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0558_教你炒股票61：区间套定位标准图解（分析示范六）.md" class="nav-link prev">← 教你炒股票61：区间套定位标准图解（分析...</a>
+            <a href="0569_教你炒股票63：替各位理理基本概念.md" class="nav-link next">教你炒股票63：替各位理理基本概念 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

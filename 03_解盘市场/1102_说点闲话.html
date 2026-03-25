@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>说点闲话 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 1102</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2008/8/27 8:15:37</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>解盘市场</span></div>
+        </div>
+        <h1 class="article-title">说点闲话</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>说点闲话</h1>
+<hr />
+<p>说点闲话</p>
+<p>2008/8/27 8:15:37</p>
+<p>下午有事，并不一定有时间写帖子，晚上没睡安稳，起早了，所以不妨闲话几句。最近确实比较麻烦，最麻烦的是最近几个月，躺坐太多，弄得腰间出现神经压迫，也就是还远未到中老年的本ID竟然出现中老年人常出现的症状，神经压迫引发的持续疼痛是最讨厌的，严重时双脚发麻，很不爽。 所以，现在每天可能要去牵引一下，否则再严重下去，那就大麻烦了。现在的问题就是，治疗那大病，很多削下来的东西需要排出，注意，不能通过排泄之类的渠道，那些渠道最多排点比较粗的东西，现在削出来的可精细多了，因此一些身体上的压力的就很大，而前面过长时间的折腾，使得身体本来就虚，因此有些本不明显的毛病都明显了，如上面说的神经压迫。说实在，单纯治疗那病本身并不难，但如何平衡因此引发的其他毛病而不至于影响治疗的延续，这才是难点。这就如同股市，出一个底分型不容易但还经常能出现，但最终站住上沿延伸出笔，就难太多了。很多的效果，在时间之下，都变得毫无用处，这是一切治疗的麻烦所在。奇人一开始就隔两天治一次的节奏是对的，其实应该是搁三天，只是本ID坚持说能熬住，才改了两天。现在看来，这坚持可能还是有点心急。所以，现在本ID只能在这自我选择的可能有点快的节奏下来坚持了，既然这样，本ID也没什么可抱怨的，毕竟如果隔三天，那治疗10次就要一个半月以上，也太慢了，本ID苦点也希望节奏快点。现在，基本没有思考的兴趣，脑子就不好动了，身体内部却变化迅速，按奇人的说法，代谢基本快了几倍，感觉上也是。弱弱地说一句，例如很快就饿，像锝了甲亢一样，对疼痛等反应敏感又持续，以前不觉得有问题的都问题起来了，晕。看到有朋友说耳朵有变化，这千万要注意了，耳聪目明身体好，耳朵开始有变化，就是一个很明显的信号，请去找一些好一点的中医，先行调理一下，至于能不能找到，就看缘分了。可怜呀，以前的教育里，正式的儒家教育里，中医是必须知道而且要特别认真学的，因此一些小毛病，都能自己搞好。可惜， 中华文明早就不知道去哪里了，从教育开始，就有了大问题，你说一个人，连医学人体都没搞点明白，明白其他又有什么意义？就算站在最科学化的角度，人是观察者，你对观察者本身都一无所知，后面的把戏真只能是把戏了。本ID现在的精力确实不适合开写中医，太费心，等恢复一点再说。现在写帖子，其实有经验的人，从本ID所写就知道精力有问题，就是那最内在的绵绵不断的生力弱了，这和文章的外显形态无关，而是一种只可感受的东西。低手，在外在情感冲击下，可以外显出很好形态的文章，但高手见之，依然能分辨出其中最内在的那股绵力等级，那才是决定最终成就的关键。所以，高手就算写得最垃圾的东西，只要那绵力还在，魂就在，水平就垃圾不到哪里。李白最垃圾的诗，让那些二、三流诗人，可能一生都写不出来，道理如此。没力了，不写了，洗洗不睡，等股票演戏，等下午治疗，然后又一天，无聊不？如此缘分如此局，何时才能了结？该了就要了，不了了之才是屁话。二祖高龄后还是去玩那闹剧，然后了缘而逝，这才是大慈悲大担当，此缘本无可了，而了之而结缘无量，此无量众生皆了而化去无穷冤业，修行人随缘而行，岂真为己？世界本空，业缘非有，正好大战梦里魔军，与众生演无量镜花水月缘，岂不快哉？</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/zen/somewords" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="1098_说说现状与病情.md" class="nav-link prev">← 说说现状与病情</a>
+            <a href="1106_超短线就看周一及2403点.md" class="nav-link next">超短线就看周一及2403点 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

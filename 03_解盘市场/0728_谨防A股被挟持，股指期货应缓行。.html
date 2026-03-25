@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谨防A股被挟持，股指期货应缓行。 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 728</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/10/12 8:20:11</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>解盘市场</span></div>
+        </div>
+        <h1 class="article-title">谨防A股被挟持，股指期货应缓行。</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>谨防A股被挟持，股指期货应缓行。</h1>
+<hr />
+<p>谨防A股被挟持，股指期货应缓行。</p>
+<p>2007/10/12 8:20:11</p>
+<p>在股指期货已经呼之欲出时，还写这样的题目，可能确实有点不合时宜。但是，不合时宜的话如果是正确的，为什么不能说呢？因此，问题的关键在于，股指期货在目前情况下推出，是否真的合时宜了？要讨论期货推出是否合时宜，关键又在于，目前现货市场的成熟度是否满足期货推出的  基本客观要求，显然，在这一点上，依然有着诸多值得商榷的地方。虽然已经被人多次引用，但依然不得不再次引用的事例，还是那令人无法忘怀的1995年国债期货悲剧。这一悲剧产生的因素太多，但有一点是不容忽视的，就是当时的国债现货流通量太小，几个机构联手，就足以控制相应期货的走势。至于最终形成两大集团对赌局面，那不过是这种控制走势分化演变的必然结果。那么，对于现在的A股市场，其可控制性就如同1995年的国债市场，问题的核心就在于，超级大盘股流通比例过小，而该流通量却能控制住一个超大规模的市场，这里的投机收益与风险成本完全不成比例。在本ID前面关于“港股直通车”的文章里已经明确指出，没有合理的流通量就没有合理的价格，目前中国股市最大的问题就是超级大盘股的流通量过小，普遍达不到证券法要求10%的最低流通比例要求，这样条件下的股市必然是一个能被轻易操纵的市场。一个能被轻易操纵的现货市场一旦出现期货交易，那么，这种交易必然导致极端投机行为的出现。目前没有任何的现货卖空，也就是现货中，本质上只能做多才能赚钱，而实际的流通筹码又极端不足，可以断言，在这样的流通量条件下，指数期货的推出，将极大地有利于疯狂的做多行为，任何在期货中的空头头寸，最终都会被疯狂的逼空走势所吞没。筹码就那么少，资金又那么多，任何的空头头寸最终都是死路一条。而极端的疯狂做多行为，将把A股短时期内推向难以控制的高度，将A股长期发展的精气神耗尽，最终导致难以收拾的局面。有一种观点认为，目前红筹、H股大量回归后，股指期货所需要的流通量条件就能达到。但这种回归，并没有改变超级大盘股流通比例过小的状况。最近回  归的中国神华，其A股流通比例是6.33%，而建设银行更是只有可怜的2.7%，请问，这不等于火上浇油吗？这样低流通比例的超级蓝筹回归，必然是来一个被炒飞一个。至于借助A股的超低流通比例，通过控制A股走势去操纵港股相应股票走势进而两头套利，就更不是新鲜事了。本ID前面的文章已经指出，要使得A股有一个合理的价格，达到与H股接轨的目的，一个最简单的办法，就是让超级蓝筹的流通量与H股接轨。可以断言，在超级蓝筹的A股流通比例未被调整到合理水平前，股指期货的推出都是不合时宜的，必将蕴藏着巨大的后续风险。甚至不排除这种情况，就是A股因此被挟持，让后续的监管与调控陷入难以解决的困局。按照最正常的资本市场层次设计，必然是先完善现货市场，再开始期货市场。而目前A股分为深沪两个市场，一个横跨两个市场的现货标的设计，在以后会面临诸多不便。本来，一个最理想的思路，就是先发展创业板市场，等该市场发展到一定规模后，再让主板都合并到沪市，而让深市成为创业板，最后在沪市的基础上开展开指数期货，当然，相应地，深市也可以有创业板的指数期货。当然，以上思路，在目前已经错过了实施的机会，但并不能因此让期货过早推出而留下严重隐患。一个最简单的道理，期货是现货充分发展后的产物。而目前A股这现货市场，依然有着诸多不完善的地方，急忙推出其指数期货交易，是否有点拔苗助长了？至于那种认为期货可以对冲风险的说法更不值一驳，世界证券历史一再证明，最大的风险从来都不在现货市场，而是高比例透资以及期货等衍生品。期货能否降低现货风险暂且不论，期货自身的风险如何防范，这绝对是比应付现货风险更为棘手的问题。而这问题，不光 对于所有的参与者，更对于市场的监管者。说白了，现在期货被市场热切期待，不过是现货市场的投机资金有了最终锁定投机利润的绝好机会，更看到了加大这种利润空间的新的投机机会。目前，反而应该逆投机资金的意向而行，釜底抽薪，将主动权把握在监管者自己手里，按照市场健康发展所需要的节奏去完善市场，而不是被国际性投机资金牵着鼻子走，为国际性投机资金的兑现、出逃制造世纪大机会。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/economics/stockindexfutures" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0727_一团三战神.md" class="nav-link prev">← 一团三战神</a>
+            <a href="0729_刚忙完回酒店,就说上两句.md" class="nav-link next">刚忙完回酒店,就说上两句 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

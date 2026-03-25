@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你打坐18：你，来自一对发情男女？ | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 812</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/12/9 12:51:20</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>禅宗哲学</span></div>
+        </div>
+        <h1 class="article-title">教你打坐18：你，来自一对发情男女？</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>教你打坐18：你，来自一对发情男女？</h1>
+<hr />
+<p>教你打坐18：你，来自一对发情男女？</p>
+<p>2007/12/9 12:51:20</p>
+<p>后面的内容，越来越难。之所以难，并不是说道理上有什么难的，而是纯粹的道理上、语言上的谈论，甚至连黄叶止啼都算不上。请问：没有拐杖，没有双脚，没有轮椅，没有一切，你如何行走？没有舌头，没有辅助发声装置，没有一切，你如何语言？没有手，你如何握拳？后面的一切，就是要无舌人言语、无手人握拳，没有一切依傍而打坐一切。请问，还记得打坐的真义吗？我们不妨这样设想一下，从这个散乱的轨道向另一轨道的跳跃，能被科技化吗？如果哪一天，我们只要按两个键，这轨道就跳跃了，这不更省事？可惜，科技、科学都依然在散乱的轨道之中，科技、科学不过是人的共业而已，没什么大不了的。如果你相信进化论，那么科技、科学不过是人的进化过程中出现的一种能力，和变色龙那种著名的能力的出现没有任何本质的区别。科技、科学的发展，不过是这种能力的不断拓展，能力就是业力的一种。在别的业力构成的世界里，有一种人，自然都可以活八万劫，一劫大概相当于我们现在人类观念中的四十三亿二千万年，而且自然没有任何病痛、饥寒等等不如意的地方，而且自然具备各种以我们的世界看来绝对神通的事情，例如，我们想去月亮，还要造什么火箭、飞船的，但在那种世界里，只要想一下，就可以办到。在这种世界里，大概比什么共产主义还要共产主义了，可惜，这不过都是业力所为，业力尽了，这个幻梦也就尽了。现在人类的科技、科学，即使发展到让每个人自然都可以活八万劫，自然没有任何病痛、饥寒等等不如意，按一个键就可以周游宇宙，那还不过是在业力之中，幻梦而已。即使在那样的世界里，依然不过是在某种业力所成的轨道中。很多人很喜欢谈论所谓的神通，其实，科技、科学，也是我们这世界人类的神通之一，别把神通想得有多奇怪，例如，有一个世界，人都随便可以穿墙而过，那么，不能穿墙而过的就是大神通了。对于蚂蚁来说，我们的原子弹当然是神通得不得了了，但整个宇宙，不过是一个蚁蛭一  般，里面的人类，对于宇宙，不过就如同蚂蚁之于蚁蛭，甚至都不如，那破烂科技、科学，不过如同蚂蚁在蚁蛭中折腾所进化出的各种玩意，又有什么可值得炫耀神通的？我们所被散乱所业力的世界里，没有任何东西能帮助我们跳出这散乱的轨道。而打坐之所以难，就是要完成这不可能完成的任务。没有任何东西你可以依靠，因为任何你可以依靠的，都在散乱的业力之中。这就如同在一个封闭的数域中，无论你如何折腾，你依然在数域里面，曾学点抽象数学的，都应该明白。那么，谁把你扔到这个封闭的数域中呢？谁在其中呢？好，即使你相信所谓医学生物学的鬼话，你就是来自一对发情男女的淫乱，而且以后也可以来自某些诸如试管之类的玩意，也逃不出这样的一个论断：你来自造成你来的某种业力。先不要争论你究竟来自何方，这个问题不需要争论，机缘成熟了，自然呈现，否则争论根本毫无意义，这就如同和一个瞎子争论太阳的形状，有意义吗？一个最基本的前提就是，你来自造成你来的某种业力。这种业力，是生死的轮回，还是某对男女的淫乱，还是试管、基因的游戏，这都不重要，这个问题先悬置起来，到时候自然就知道了。关键是，从这个前提开始，你需要面对什么？你需要面对的，就是你所面对的一切。你面对的一切，就是那如同封闭数域一样的一切封闭，一个业力所构成的轨道状态，一个散乱的状态。你任何的思想、行为、言语、所见、所闻、所感，你的一切都在这个封闭之中。但在这个封闭之中，你可以感受到无限，永恒等等，就像蚂蚁也会觉得蚂蚁窝是无限永恒的。你这个封闭，永远当下地呈现在你的六识境界中。你的世界、你的宇宙、你的时间、你的  身体、你的思想、你的情感、你的事业、你的荣誉、你的亲人、你的信仰、你的生存、你的死亡、你的一切，都在这个封闭之中。你的打坐，也在其中。你被建立了，你被立足点了，你被轨道了，你无处可逃。这业力的封闭，就如同一个引力场，引力场中的一切都无处可逃。而打坐，就是要在这无处可逃中打破这业力的封闭。那你能有什么工具？你不可能依靠业力圈里的任何东西，因为任何东西，就如同封闭数域里的一些元素，无论如何搞闹，都只能把你继续封闭其中。你也不可能依靠业力圈外的任何东西，因为这个业力圈就是你的一切，即使还有一样东西在其外的，也和你没有什么关系，你又如何能依靠？当你打坐时，你面对的就是这样一个困局。如果你不直面这样的困局，那就是偷心不死。这里，没有任何东西你可以依靠，没有任何超越东西的东西你可以依靠。直面这样的困局，真正直面而不是偷心不死地研究、谈论，这才有可能真正打坐。
+回复​
+缠中说禅 2007/12/9 23:39:55[匿名] 新浪网友 删除此人所有评论2007-12-09 23:32:50 
+后面的内容，越来越难。之所以难，并不是说道理上有什么难的，而是纯粹的道理上、语言上的谈论，甚至连黄叶止啼都算不上。
+＝＝＝＝＝＝＝＝＝＝＝
+报告！明白！
+“人儿”是要一对男女在发情状态中实际“干”出来的！！！绝不是空谈出来的、理论出来的！
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝大错！
+当晚我妈是被一个不知名  的男猿人强奸，我妈当时并没有发情！不存在一对共同发情的情况！所以我很特别！
+缠中说禅 2007/12/9 23:58:40
+SB小狗们,快来舔我吧</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/zen/zazen18" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0806_一场酒，一场恨。.md" class="nav-link prev">← 一场酒，一场恨。</a>
+            <a href="0818_也来歌功颂德一番.md" class="nav-link next">也来歌功颂德一番 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

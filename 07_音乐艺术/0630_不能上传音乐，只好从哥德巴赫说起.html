@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不能上传音乐，只好从哥德巴赫说起 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 630</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/8/12 11:56:07</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>音乐艺术</span></div>
+        </div>
+        <h1 class="article-title">不能上传音乐，只好从哥德巴赫说起</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>不能上传音乐，只好从哥德巴赫说起</h1>
+<hr />
+<p>不能上传音乐，只好从哥德巴赫说起</p>
+<p>2007/8/12 11:56:07</p>
+<p>本来要上来开音乐会，结果该网站上传总是失败，只好说说数学，说说哥德巴赫猜想。
+对于中国人来说，该猜想是最熟悉不过了。但其实，该猜想在数学中并没有太大的位置，与黎曼猜想、朗兰兹纲领等根本无法相比，不过，在娱乐化的中国，能证明哥德巴赫的肯定是大明星，而搞掂朗兰兹纲领  的，估计没几个人知道。这就是业余与专业的区别。专业上，从来都是严肃的，没有任何娱乐可言。
+像朗兰兹纲领，别说一般人，就算是一般的数学家，基本连命题都看不懂，就别说去搞掂了。而哥德巴赫，由于命题表述连小学生都明白，所以就被很多业余忽悠者所忽悠着，但历史却证明着，在现在数学如此高难度的游戏中，业余者有希望的概率比明天地球撞太阳的概率都小。费马猜想命题够简单了，而那英国人的证明，一般人连一行都看不明白，即使要看懂一行，也要读N年的书。当然，如果真能看懂一行，那至少能看懂N行了，但要完全看懂，全世界估计超不过1000人。
+关于哥德巴赫，最出名的是陈的结论，但本质上说，那证明和哥德巴赫没多大关系，用他们那方法去证明哥德巴赫，本ID觉得能成功的几率比明天地球撞太阳的也大不了多少。陈，其实已经把那种方法用到极限了，这几十年来，那种方法基本没有任何实在进展，本ID基本可以断言，那是死路一条。
+用陈的方法还可以证明，E（X）是不大于X、不能表示为两素数之和的偶数个数，那么E（X）将远小于X^Y，其中Y的一个小于1的正数。关于Y的上限不断被往下修正，最近不知道有没有更新的结果。但这种方法，同样不能实质去证明定理本身，Y无论多少，都不可能去证明当X趋向正无穷时，E（X）的有限。如果哥德巴赫成立，那么一个偶数能表示成素数之和的对数D（n)的渐近公式是T（n）*n/(logn)^2,但这绝对不能保证没有n使得D（n)=0。
+本ID昨天所说的对偶数分类的那对象，和具体的素数、分布、筛法等等都无关，是一个复杂的系统给出的不变数学结构，具体什么，当然不能说了，这是本ID方法的核心。本ID这套方法研究的那一对象，就如同群、环、域等等一样，是一个本ID新发现的抽象数学结构，可以应用于无穷的范围里，刚好偶数的素数分解是属于这个结构，因此，如果通过对该结构的研究能最终解决哥德巴赫，就如同那年轻的法国天才，用群、域等抽象结构解决了5次以上代数方程的根式解问题一样，对该抽象结构起着最大的宣传作用。而该结构本身，比那些具体的问题有意义得多。所以，本ID搞哥德巴赫并不是为了哥德巴赫本身，而是为了本ID发现的那新的抽象结构。
+如果用该结构的研究而解决了哥德巴赫，那么，就如同现在无数人在研究群、环、域、模、拓扑、纤维丛等等一样，以后也会有无数人去研究本ID发现的这个新的抽象结构的，这才是本ID的本意所在。
+说实在，本ID有点后悔昨天太兴奋了，当然，这也无可厚非，毕竟多年的努力有了阶段性成果。后来本ID用股票的观点观照一下，发现本ID还是机心太少，生性纯良。本ID完全可以这样，把那两个不定方程经过等价变形后，给一个悬赏，例如，1000万人民币一个方程，然后全世界无数的人来解这两个方程，估计比本ID一个人去研究，最终的结论会早早得出。这两个方程肯定都只有有限解，只是暂时不知道怎么去证明，一旦证明出来。根据这证明的结论，本ID马上就可以解决哥德巴赫。但现在，这事情已经说出来，都知道这两个方程后面对应着更大的家伙，那肯定不行，本ID的利益无法最大化了。
+大概很多数学家看到本ID上面的话都要吐血，他们会反问：“搞科学怎么能这样算计？”但没办法，本ID身上可不单流着数学、科学的血液，本ID身上的经济、市场血液同样不少，而且从来不屑于掩藏这一点。或者得一大苹果，或者什么都不要，这就是本ID科学研究中的经济与市场原则。这就如同在股票市场中，只能 本ID抽庄家的血，而绝对不能相反，这就是原则。这确实比较抠门、变态，但这就是原则。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/math/goldbach" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0629_宣布：本ID于哥德巴赫猜想取得重大进展.md" class="nav-link prev">← 宣布：本ID于哥德巴赫猜想取得重大进展</a>
+            <a href="0642_本ID十八岁写的第一首无调性音乐《寂》.md" class="nav-link next">本ID十八岁写的第一首无调性音乐《寂》 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

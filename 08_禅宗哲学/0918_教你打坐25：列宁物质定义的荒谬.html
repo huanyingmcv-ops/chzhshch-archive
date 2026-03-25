@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你打坐25：列宁物质定义的荒谬 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 918</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2008/2/23 11:30:21</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>禅宗哲学</span></div>
+        </div>
+        <h1 class="article-title">教你打坐25：列宁物质定义的荒谬</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>教你打坐25：列宁物质定义的荒谬</h1>
+<hr />
+<p>教你打坐25：列宁物质定义的荒谬</p>
+<p>2008/2/23 11:30:21</p>
+<p>列宁本质上与马克思无关，列宁式的社会主义更和马克思无关，那不过是一个反资本主义的民族主义的资本主义过程，必然导致权力资本主义。列宁的社会主义，不过是以马克思的名义进行的一场上帝化、基督教化的人性闹剧，最终只证明了马克思结论的无比正确 ：社会主义不可能在一国单独实现。社会主义，只可能是资本主义全球化后的一个全球化事件，之前是一切所谓社会主义的闹剧，都不过是闹剧而已。当然，列宁无疑是二十世纪最伟大的人物，正因为他无比天才的误读，才使得二十世纪如此地二十世纪了，没有列宁，整个二十世纪的历史将彻底被改写，因此，列宁的伟大是不用说明的，因为列宁就是整个二十世纪世界历史的源泉。但历史的伟大，并不能改变其思想与哲学水平的低下，这里只说相关的物质定义问题，因为现在那些所谓的唯物主义者还在继续口淫这无比幼稚的定义，然后从这个定义出发，演绎出无数语言与现实的闹剧。列宁的物质定义如下：“物质是标志客观实在的哲学范畴，这种客观实在是人通过感知感觉的，它不依赖于我们的感觉而存在，为我们的感觉所复写、摄影、反映。”这个定义是一个典型的同语反复，因为，按照唯物主义的观点，人的感知感觉等都是物质的功能，这样，物质的定义里面，首先就隐含了一个物质的潜在前提，也就是用物质去定义物质的问题，这样的定义，无论如何都是失败的。从欧几里德开始，最弱智的哲学家都知道，一个理论体系中的概念系统的定义，必须有一些不被定义的原始概念，否则将必要陷入循环定义的陷阱。因此，如果唯物主义要坚持所谓的物质第一性，那么这个物质就是不能被定义的，否则必然陷入循环定义。用人的感知感觉来定义物质，那么究竟谁是第一性的？这不明摆着承认人的感知感觉在概念上比物质要更靠前，更本原吗？这不是自打嘴巴吗？好，且不说这定义的循环定义问题，就算这定义本身，也是充满矛盾。首先，什么叫我们的感觉？这世界上哪里存在着我们的感觉的玩  意？感觉都是个体的，你的感觉和我的感觉不同，例如两人玩SM，显然感觉不同才能玩得起来，否则虐待的和受虐的感觉一样，那怎么玩？站在个体感觉的角度，那么请问：你的感觉对于我的感觉来说是物质的吗？显然，你的感觉是一个客观实在，是我可以通过感知感觉的，它不依赖我的感觉而存在，为我的感觉所复写、摄影、反映。也就是说，你的感觉对于我来说，完全符合列宁的所谓物质定义，然后，所有非我的感觉，也可以如此符合。因此，我们可以创造这样一个哲学范畴，就是非我的感觉，这个哲学范畴，完全符合那所谓的物质定义，请问，这定义又定义了什么？因此，如果列宁的所谓定义要成立，必须假设一种超个体的、上帝式的，所有人统一的我们的感觉的存在，这才是列宁物质定义的真正潜台词。所以，一切列宁式的社会主义闹剧就有了一个真正的哲学基础，就是一种超个体的、上帝式的，所有人统一的我们的感觉的存在，这种存在如果被假设了，那么，所有人就该有一个统一的理想、统一的社会蓝图、统一的革命，而为了这个所谓的理想、目标、蓝图，所有人都该统一地去牺牲、去为这个所谓的理想去卖命。对于这种理想，个体是不存在的，因为真正存在的是超个体的、上帝式的，所有人统一的我们的感觉。这就是所有列宁式社会主义闹剧的真正思想根源。这样，我们就不难理解文革中十亿人共同进入一个节奏、一种疯狂闹剧了。所有的根源，都在列宁的所谓物质定义中了。好了，列宁的哲学闹剧就不说了，但这个问题很重要，“你”、“你的”名、相、妄想，这一切究竟如何去展开，不戳穿类似闹剧的荒谬，你就永远在这语言的陷阱中打转，永无出期。那么，真正的东西在哪里 ？下周告诉你。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/zen/zazen25" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0909_教你打坐24：“你”、“你的”名、相、妄想.md" class="nav-link prev">← 教你打坐24：“你”、“你的”名、相、妄...</a>
+            <a href="0927_教你打坐26：基于你与你的完全分类.md" class="nav-link next">教你打坐26：基于你与你的完全分类 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

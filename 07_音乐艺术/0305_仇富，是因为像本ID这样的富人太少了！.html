@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仇富，是因为像本ID这样的富人太少了！ | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 305</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/9/13 10:54:37</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>音乐艺术</span></div>
+        </div>
+        <h1 class="article-title">仇富，是因为像本ID这样的富人太少了！</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>仇富，是因为像本ID这样的富人太少了！</h1>
+<hr />
+<p>仇富，是因为像本ID这样的富人太少了！</p>
+<p>2006/9/13 10:54:37</p>
+<p>这又是一个招所有人恨的题目，一个富人非富人都不乐意、两边不讨好的题目。但用财富把人分类，本来就忒无聊。财富，生不带来，死不带走，典型人类YY的产物。如果连这点都看不明白，真是白活了。当然，非富人会说这都是便宜话，如果连病  都看不起、饭都吃不上，说这些有意义吗？人首先要活着，如果社会的贫富对立已使得部分人的生存都出问题，“打土豪分田地”就绝对不是一个不可能的事情。写这，当然不是为了去填平贫富的鸿沟，一个客观的东西是不可能靠主观去填平的，只是用这个题目来引出富人应该采取的态度问题。
+很坦白，无论按哪国的标准，本ID都属于富人了，这没有什么可害羞的，从来没觉得富人就一定要有什么原罪，那种认为富人就一定满手鲜血的想法是很无聊的。除了小量的资产是北京、上海、广州、深圳等地自住的房子，本ID所有资产都配置在股票和期货上，本ID所有的财产都是从股票和期货上得到的，交易是要自动交税的，想偷税都没机会，如果说这种资产都有原罪，那原罪大概是一个褒义词。本ID认识很多别人千方百计想认识的人，但本ID从来没有想过去利用他们的权力，因为本ID根本不需要：本ID又不搞房地产、又不搞实业、又不想当官员，股票和期货，特别在外盘上，靠的是智力和经验，权力是没用的。
+本ID在资本主义制度下可以如鱼得水，但本ID会写“捍卫马克思”的帖子，因为社会制度的变迁不是一个喜好问题，而是一个客观的历史现象，资本主义必然灭亡就像熊市的尽头是牛市一样自然。本ID并不觉得捍卫“资本主义必然灭亡”与大赚资本主义的钱之间有什么矛盾，大家都去大赚资本主义的钱了，资本主义的灭亡才会早日到来！要灭亡资本主义，就要大力发展资本主义，让资本主义精尽人亡，资本主义自然就灭亡了！你连资本主义的游戏都玩不好，天天叫嚣资本主义灭亡只能显示你的无能和YY！
+富人里面，最下贱的就是把钱画在脸上，天天围着钱转，成了钱奴才的一群。现在的富人，这种人太多了。包二奶 、玩二爷，飞扬跋扈，还养一群如主流经济学家般的狗腿子狂吠“富人的天下到了”，正因为这种人的泛滥，才有打土豪分田地的轮回。这世界上，大概没有比在封建劣根上的资本积累更能制造恶心事的了。“打土豪分田地”是一个客观的可能，因为这群最下贱的富人的主观能动性，在历史上已经足够多次地把这可能发挥成现实了。
+还有一种富人，就是所谓有钱才有闲的一群，这群人玩的是文化之类的所谓高雅的东西，要包二奶、玩二爷也是往梨园里玩。现在能玩的东西更多了，古玩、服装、电影、流行音乐等等，制造一个个流行热点，制造各种资本主义的麻醉剂，让穷人为了诸如所谓的“美国梦”之类的YY而有了盼头。资本主义社会的稳定，这帮人居功至伟。如果说上一种人是制造仇富情绪的一群，这种人就是制造财富幻想的一群，但有一个事实是永远掩盖不了的：买鸦片是需要钱的！资本主义的鸦片也不例外，站在这个意义上，后者比前者更可恶！
+在资本主义社会，钱不过给了你一种自由的可能，至少你不需要像马克思一样为吃饭而犯愁。而即使站在社会、政治之外，单纯探求个体生命的意义，生命也和贫富无关。人，首先是人，也只是人，而不是什么穷人、富人。如果真要说什么人性的废话，一个使得“首先是人，也只是人”分化出穷人、富人的社会一定不是什么符合人性的社会，因为即使有所谓的人性，人性也是没有贫富的。资本主义社会是非人的，一切阶级社会都是非人的，一个富人，如果不能超越财富，不能超越贫富，只不过是被财富绑着的奴才。站在这个意义上，任何基于贫富的慈善都不过是为了维护贫富制度的伪善，因为真正的慈善，就是消灭所有制造穷人和富人的制度！
+回复​
+缠中说禅 2006/9/14 12:00:39
+[匿名] 士敏 2006-09-14 10:54:42 
+楼主要“消灭所有制造穷人和富人的制度！”？估计也就说说，几千年都干不成的事情，楼主你就有辙了？一样没戏！===========
+地球几十亿年都没死过，但地球是要死的！</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/economics/antirich" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0301_周末音乐会8：见证---萧斯塔科维奇.md" class="nav-link prev">← 周末音乐会8：见证---萧斯塔科维奇</a>
+            <a href="0307_周末音乐会9：键盘上的天鹅之歌.md" class="nav-link next">周末音乐会9：键盘上的天鹅之歌 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《怨妇词》上：故事非故事，怨妇非怨妇，几人能懂 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 73</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/3/6 11:27:24</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>诗词文学</span></div>
+        </div>
+        <h1 class="article-title">《怨妇词》上：故事非故事，怨妇非怨妇，几人能懂</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>《怨妇词》上：故事非故事，怨妇非怨妇，几人能懂</h1>
+<hr />
+<p>《怨妇词》上：故事非故事，怨妇非怨妇，几人能懂</p>
+<p>2006/3/6 11:27:24</p>
+<p>一​秋露，秋露，秋去冬来难住。
+星明星暗雾凝，三处四处鸟鸣。
+鸣鸟，鸣鸟，闲愁万般不了。
+《调笑令》二​窗前月，独上柳梢头。
+夜寂风来将起念，秋凉烬灭欲回眸。
+门外响箜篓。
+《梦江南》三​风，弄影分香水榭东。
+人闲在，露湿纸芙蓉。
+《十六字令》四​春风逐梦洗春城，翠染春江柳色青。处处春花处处鸣。入春亭，梦里残阳雪后晴。
+《忆王孙》五​落红细说斜阳暮，碧波缱绻愁深诉。
+云鬓为谁开，三春燕子来。寄思青雪路，影乱辨前度。
+心懒恨难回，寒炉玉镜台。
+《菩萨蛮》六​杏腮黄，孤枕恨，似把铅华闷损。
+鸦送日，目伤怀，困眠丝雨来。凋绿鬓，淡红粉，浴出千峰瘦尽。
+花洒泪，乱琴台，见春不胜哀。
+《更漏子》七​断肠初，无际恨，唯叹与春不近。
+残照里，暮云开，忽惊燕子回。春坠泪，旧楼台，香鬓红颜暗损。
+还似梦，滴空阶，宵深恨未裁。
+《更漏子》八​云荡空际霜影乱，更鼓风吹散。
+灞桥一别柳千丝，滴绿摇青春似翠帘垂。情酣幽梦飘几片，芳径横孤馆。
+尘波细算去非迟，怎奈红愁莺泪妒娥眉。
+《虞美人》九​慵懒，为负春光，花开人醒晚。
+片片吐枝头，尽化清商怨。更恨东风吹难断，晓卷雨丝牵愁乱。
+去梦何曾入霄汉，树树山山见。
+《甘草子》十​细理残妆不为春，初阳疏懒欲撩人。
+万树红桃今又发，别离津。漫把东风撕片片，半投流水半投云。
+泪眼何堪偏再见，旧时痕。
+《摊破浣溪纱》十一​伫倚蓝桥，一湖相思水，叠浪纹波。
+遥山云簇，春阳懒散如酡。
+烟红影绿，俏双双，燕语莺歌。
+朝晚尽，吟花笑柳，瑶衣玉眼穿梭。十载忧迷痴怨，付寒年冷岁，不为情多。
+人间问谁念我，惹泪成河。
+流星带月，恨无涯，枉试飞柯。
+凉雨泼，急风骤起，尘寰乱蚁惊蝌。
+《汉宫春》十二​愁萦丝，惜分时。
+狂风凋尽百花枝，夜阑眉黛低。今又鸦啼月，朦胧掠岸飞。
+梅溪乡梦玲珑地，只是人未归。
+《蝴蝶儿》十三​灼灼花如故，弯环一水清。
+淡云缥渺晚天晴，白鸟翩翩帘外自欢鸣把酒无人伴，调弦泪早倾。
+举眉何物不关情，风叶沙沙忽作老秋声。
+《南歌子》十四​风静月凝眉，星溅长河水，
+梦锁高台恨已疲，夜白凋红翠。碧海赴前盟，冷雾清如泪。
+暂泊云沙问影梅，拂面空相对。
+《卜算子》十五​窗尘锁，竹影拂香闱。
+月在碧天云散后，花飘深院梦回时。
+白鸟度南池。
+《梦江南》十六​更漏滴，月倾霜。
+高楼风弄笛，吹落小梅香。
+风霜难落愁中白，曾倚朱栏千夜长。
+《江南春》十七​孤灯莫记当年事，高台霜暗星垂地。
+杜宇声声寒，梦凋花影残。纷纷 丹桂子，飘落银河水。
+人醉木兰船，风吹血满天。 
+《菩萨蛮》十八​燕斜穿，杏花梢。
+红楼风日晚吹萧，酒消情未消。眉乱青山瘦，春愁带雨飘。
+相思难补肠中裂，化作蓝火烧。
+《蝴蝶儿》十九​不倚西楼残月，愁绝，更怕五更风。
+隔窗摇梦搅魂寒，孤枕总难眠，恨杀邻鸡催晓，烦扰，呆坐日三竿。
+两行清泪透单衫，滴滴自心尖。
+《荷叶杯》二十​倦柳牵愁，空波流恨，晚来闷雨蒸丝。
+云端沙际，邈缈燕双归。
+岸草微红暗杂，风飘絮，摺水纹衣。
+粘花气，寻香惟见，点点乱深泥。相思，
+肠数裂，春残又是，昔日今时。
+叹寒魂独影，骨冷心凄。
+画阁高楼难倚，银钗坠，断梦长堤
+何处问，年年开谢，端的为缘谁。
+《满庭芳》二十一​云缝雾织，月坠星河失。
+向晓东风更无力，不送杏花消息。梦阑一枕青霜，寒炉半缕残香。
+忽记兰舟系处，乱红正满池塘。
+《清平乐》二十二​兰舟载影，弦月云边淡。
+漾水寒星三四点。
+不似离人泪滴，犹把风魂默然减。已无感。
+何人自凄黯。
+飞霜笛，袭肝胆。
+怕心儿又被相思占。
+转棹惊回，乱荷花舞，乍见芙蓉皱脸。
+《淡黄柳》二十三​情如流水匆匆去，月透高枝，
+露冷单衣，空絮庭前逐梦飞。飘飘何处清商送，蝶舞风丝，
+人落相思，却又青溪照影时。
+《采桑子》二十四​东风皱，
+眉山瘦，
+落红争把春心锈。
+罗衣薄，
+青垂幕，
+何堪朝雨，对窗犹昨。
+落，落，落。难回首，
+江亭柳，
+冷绵吹雪新成旧。
+廊桥约，
+焚幽阁，
+梦灰飞影，万千柔弱。
+缚，缚，缚。
+《钗头凤》二十五​不堪愁，镜中眉。
+难舒心裂酒阑时，恨如紫燕飞。花曳知渐近，笙寒馆梦回。
+相思占得琼苞碎，碧海无尽期。
+《蝴蝶儿》二十六​半篙溪水碧纤纤，瑶池酿锦岚，
+天风吹去雨巫岩，烧痕青又添。熬此恨，捣心浆，人痴酒不酣。
+云山晚绿透重帘，玉颜衰岂堪。
+《阮郎归》二十七​窗锁梨花碎影，烟结梅庵幻境。
+残烛对无眠，最是柔情惹病。
+幽冷，幽冷，长梦难消夜永。
+《如梦令》二十八​未倚朱栏泪已昏，凉烟绕阁更消魂。
+醒来犹是梦中身，假还真。无语忍听风削影，举头怕见月撩人。
+一片痴心何处去，纵如尘。
+《摊破浣溪纱》二十九​一入红尘愁自满，病眼衰容，怕被鸳鸯见。
+待得残霞天外断，蟾光又照深深院。空对金樽情更乱，烛影摇魂，炉上青烟软。
+今夕无风过阆苑，游丝寸寸谁人剪。
+《蝶恋花》三十​云凝颜，月流辉。
+魂牵湘馆闭珠扉，碧苔人未归。花落铅华缺，情如急雨催。
+寒林烟淡无人地，月破湖上堆。
+《蝴蝶儿》三十一​淫雨乱风魂，最是恼人天气。
+满院浅红深绿，把空樽痴对。芳心一寸老枝头，芙蓉为春死。
+来日无寻踪迹，见杨花新坠。
+《好事近》三十二​乱絮高低一水凉，云侵日蚀旧池塘。
+春魂早在花前落，夕雨朝风何太狂。
+《采莲子》三十三​蛙鼓敲寒，微光偶刮三更露。
+影荷烟树，满眼相思绪。梦醉方知，此恨逃无处。
+魂疑去，逐霞追雾，又化春秋雨。
+《点绛唇》（共五十首，太长，分两部分）</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/poems/housewife1" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0066_七律三首：郑和、金沙、东南.md" class="nav-link prev">← 七律三首：郑和、金沙、东南</a>
+            <a href="0074_《怨妇词》下：故事非故事，怨妇非怨妇，几人能懂.md" class="nav-link next">《怨妇词》下：故事非故事，怨妇非怨妇，几... →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

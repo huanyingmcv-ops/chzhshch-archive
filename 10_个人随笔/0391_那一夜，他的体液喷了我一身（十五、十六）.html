@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>那一夜，他的体液喷了我一身（十五、十六） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 391</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/11/28 12:05:08</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>个人随笔</span></div>
+        </div>
+        <h1 class="article-title">那一夜，他的体液喷了我一身（十五、十六）</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>那一夜，他的体液喷了我一身（十五、十六）</h1>
+<hr />
+<p>那一夜，他的体液喷了我一身（十五、十六）</p>
+<p>2006/11/28 12:05:08</p>
+<p>十五</p>
+<p>血，清晰地纵横在蒸汽萦绕的镜面。喧嚣的风，无声地涌没。玫瑰，时间的私处，血红地绽裂。昆仑山，鲜血淋漓；太平洋，血浪翻涌。雷电，划过血色的天空；流星，血滴般坠落。</p>
+<p>原始的气味疯狂着疯狂，凄厉了夜半的无声。一片片，一丝丝，一点点 。天地，不断坠落。时空的碎片，血红的鬼眼，曳着青白的烟，晃着幽蓝的火，静止地飞驰。
+一滴血的天地，星河灿烂。七亿亿亿颗巨大恒星组成的血臂，自由地舒张。巨大的蜘蛛，巨大的蛛网，七十七亿亿的恒星黏附其上，一颗颗，血滴般晶莹。
+轻轻地，穿过无边的蒸汽，天地在指间碎裂，蜘蛛的嘶叫荡不出一丝的风，只拖着淡红的弧线，滑过最后的凝寂。明亮的镜面上阡陌纵横，血红地熄灭。
+十六</p>
+<p>“我喝纯的，你加雪碧？”
+“不！”
+“好酒要醒，先说事儿。”
+“行，我认识几个玩红酒的，其中有两个牌子还挺出名，王总喜欢红酒？”
+“哈，还行，平时白的多，你看，中午又喝了！”
+“那现在还行？”
+“哈哈，没问题。”
+大概中午喝多了，他不断走神，对谈的事儿一直无法集中。
+“王总，酒该好了，事儿就这样，余下的让下面的人继续吧！”
+“好，先喝酒。”
+他唤来服务生，斟酒、上菜。
+（待续）
+回复​
+缠中说禅 2006/11/28 12:12:33
+不能光写股票和孔二爷，今天，关心一下体液。
+缠中说禅 2006/11/28 12:15:13
+今天走势很正常，关键还是这两天一直强调的5日线，目前最稳妥的走法就是让5日线和10日线来个接吻的前戏，然后再次高潮。但必须再次指出，这次高潮过后，相应的不应期要比这次长。
+缠中说禅 2006/11/28 12:23:05[匿名] 蕃茄2006-11-28 12:20:56 
+按楼主的说法，深沪两市继续背离呀，这前戏难度大点===========难度不大就不叫前戏了。前戏是难度最大的，有前戏，高潮可待，连前戏都没有，只能喝西北风了。
+缠中说禅 2006/11/28 12:25:31[匿名] 破缠悟禅2006-11-28 12:22:06 
+禅师，现在大盘的走势和你说的基本一致，请教个问题，你预测下一波中哪个版块应该可以先达到高潮？谢谢指点！==========所有板块都会动一次的，如果从力度上看，还是中低价股的补涨上，特别是强势板块的补涨股。毕竟目前人都很谨慎。新板块的大面积高潮，要等待下一次大的不应期结束之后。
+缠中说禅 2006/11/28 12:32:45[匿名] 希望你比我过得好2006-11-28 12:27:40 
+楼主：我最几天拿了点路桥建设，到昨天为止，已经收了七连阳，天天担心调整，今天早上终于把我洗出去，您看此股走势怎样，如果可以我还想接进来，不知有没有机会！（害怕越等成本越高）===============这种股票短线最好操作了，5日线不破就拿着，万一它玩小阳后长阳的着数怎么办？
+缠中说禅 2006/11/28 12:37:43和各位说说银行股，不是让各位现在买，只是银行股是大盘风向。目前最重要的是招商，他突破历史天价后回试。整个大盘和银行股的走势与之极为密切，一旦他能真正突破历史天价，所有银行股都会进一步扩展上升空间。所以他的走势对短、中线大盘的力度十分关键。试想，一个站在25-30元的招行，为所有股票打开了多大的上升空间。更别说50元的了。招行最终能否上50元，这点本ID不愿意预测。但本ID只知道，每次大行情，深发展都上50元。招行也是深圳的，他的行长姓马。
+缠中说禅 2006/11/28 12:39:49[匿名] 不应期2006-11-28 12:31:37 
+请楼主看看600508、000959、000630，哪个更适合中长线呢？谢谢！==============中线都没问题，至于长线，本ID只对4N9感兴趣，对天长地久的谎言没兴趣。
+缠中说禅 2006/11/28 12:43:24[匿名] 蕃茄2006-11-28 12:35:18 
+缠中说禅难度不大就不叫前戏了。前戏是难度最大的，有前戏，高潮可待，连前戏都没有，只能喝西北风了。 </p>
+<hr />
+<p>楼主自研的这套东东还真的满贴切，看来沪市要接吻还是要靠银行呀============吻有几种：如果是飞吻，太轻飘，以后的走势不稳。唇吻：这要小心骗线，只要不是骗线，其后走势都较好。湿吻：骗线几率太大，但如果不是，那走势反而比较火暴。
+缠中说禅 2006/11/28 12:45:16[匿名] 新手2006-11-28 12:33:58 
+麻烦LZ看看600010、601398，多谢。===============中线都没问题。
+缠中说禅 2006/11/28 12:46:32[匿名] 蕃茄2006-11-28 12:44:21 
+缠中说禅 
+招行最终能否上50元，这点本ID不愿意预测。但本ID只知道，每次大行情，深发展都上50元。招行也是深圳的，他的行长姓马 </p>
+<hr />
+<p>他要让他的票票天马行空吗:))=============这样最好，皆大欢喜
+缠中说禅 2006/11/28 12:48:41[匿名] 爱你——数女2006-11-28 12:44:58 
+请教：深圳还能炒房地产吗？我问的是买房子，谢谢！==============本ID好几年没买过房子了，不熟悉。炒房子还不如炒造房子的股票，就像汽车，你肯定对夏利没兴趣，但对夏利股票就不一定了。
+缠中说禅 2006/11/28 12:49:33[匿名] CCTV2006-11-28 12:47:03 
+爱你``````======
+别，现在还是爱玩、爱学玩股票比较实际。
+缠中说禅 2006/11/28 12:59:36[匿名] 数女粉丝2006-11-28 12:43:02 
+请问002037，我8块进的，近期能否解套？
+谢谢！=========
+不要在所有均线都向下发散时买股票，风险太大。最近中小版的面首们扩张的也太快了，大家都有喜新厌旧的毛病，而且还有小非的压力，所以老的只好委屈一下了，等等吧。
+缠中说禅 2006/11/28 13:00:37[匿名] 数女粉丝2006-11-28 12:43:02 
+请问002037，我8块进的，近期能否解套？
+谢谢！=========
+不要在所有均线都向下发散时买股票，风险太大。最近中小版的面首们扩张的也太快了，大家都有喜新厌旧的毛病，而且还有小非的压力，所以老的只好委屈一下了，等等吧。
+缠中说禅 2006/11/28 13:02:30[匿名] 你的样子2006-11-28 12:54:13 
+呵呵，好久没跟新这个了。
+这两天听缠女的教导，先学习。可是发现股  票这个东西什么时候能学通了啊？又没有缠女的领悟力，什么东西一看就是最高境界。恐怕待自己学明白点，大牛市都过去了，于是决定缩小学习目标，只看缠女的股票文章。翻来覆去的看。看看能不能悟出什么点东西来。
+缠女能说说目前是入市时机么？=======
+学好了，永远有机会，熊市里都不缺机会。关键是股票，你入的是股票，所以只要是好的股票，符合你指定的能搞标准就可以入，不入白不入。
+缠中说禅 2006/11/28 13:02:57
+开盘，下了。再见。
+缠中说禅 2006/11/28 13:18:31[匿名] yhfly2006-11-28 13:16:19 
+lz，能大致说说能搞的标准吗？=======================
+每个人搞的标准不一样，有的喜欢丰满，有的喜欢苗条，有的喜欢高，有的喜欢矮，挑自己喜欢的搞！
+缠中说禅 2006/11/28 14:56:17这大盘够有表演欲的，中午本ID说最稳妥的走法就是让5日线和10日线来个接吻的前戏，结果下午就来了一次表演，把那些装纯情的吓了一跳。上面还说了，吻有三种：如果是飞吻，就这一下就没了，明天直接攻上5日线，扬长而去；如果是唇吻，那今天下午的表演还会有的。5日线是压力。如果是湿吻，10日线一定要破的，那种火辣辣的镜头会不断出现，把所有纯情分子羞跑了，高潮才会出现。是什么吻，判断很简单，看住5日线就行了。下午马上有应酬，晚上不一定能上来，尽量争取吧。各位，看多点AV，不纯情了，股票自然能做好。纯情的人，连吻都怕看的，是股票不好的。
+缠中说禅 2006/11/29 9:36:47
+大盘受外围影响选择湿吻方式，短线急跌，选择好不跌的股票，有机会。技术不好的，就等最近反复强调的5日线站稳以后再说了。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/fluid/1516" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0350_为鲁迅摆一擂台：所有挺鲁迅的男人进来！.md" class="nav-link prev">← 为鲁迅摆一擂台：所有挺鲁迅的男人进来！</a>
+            <a href="0417_那一夜，他的体液喷了我一身（十七）.md" class="nav-link next">那一夜，他的体液喷了我一身（十七） →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于“所有人类思想都可以存放进二进制的计算机”的最后总结 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 270</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/8/8 12:01:09</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>禅宗哲学</span></div>
+        </div>
+        <h1 class="article-title">关于“所有人类思想都可以存放进二进制的计算机”的最后总结</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>关于“所有人类思想都可以存放进二进制的计算机”的最后总结</h1>
+<hr />
+<p>关于“所有人类思想都可以存放进二进制的计算机”的最后总结</p>
+<p>2006/8/8 12:01:09</p>
+<p>左派开始提出“从数学理论上讲，一分为二，也就是采用二进制数，可以表达全部的人类思想，运动规律，因为这些思想都可以存放进二进制的计算机。”显然，“因为这些思想都可以存放进二进制的计算机”这句话是逻辑的起点，否则就无所谓因为了。而“这些思想”在中文语法中  指代前面的“从数学理论上讲，一分为二，也就是采用二进制数，可以表达全部的人类思想，运动规律，”中的“全部的人类思想”，因为这句话就是以“所有人类思想都可以存放进二进制的计算机”为前提。
+这个前提的荒谬其实根本不需要用任何数学方法来论证，因为能存放进计算机的前提是可以语言化，但人类的思想显然不可能完全语言化，例如“盈盈一水间，脉脉不得语”请问这种思想如何语言化？还有道家的思想，是否定语言的，道是离开一切语言的，请问道是不是思想，如果道不是思想，那么中国文化就是零了，中国文化最高范畴就是这个离开一切语言的道，请问这个“道”如何输入计算机，千万不要说输一个“道”字就是“道”了，这样连老子那头牛都会笑话你的！也就是说，这个可以输入计算机的思想与中国文化的精髓都无关，这些能输入的思想有什么意义？研究一下中国传统文化中“道”和“术”的区别就明白了，企图用西方科技化的计算机之“术”来掩埋中国传统文化之“道”，是何居心？听到庄子变的那只蝴蝶在大笑吗？
+当然，这个错误如此明显，左派也就说要修改成““所有人类思想”指的是“所有用文字，声音或者图象表现出来的人类思想””，显然这个理由是不充分的，为什么原话中的“所有人类思想”就被特指成后面的“所有用文字，声音或者图象表现出来的人类思想”，当然，左派能承认人类思想是不能全部语言化的，这也算个进步，那么本ID也就不追究了，就把原来的命题按左派的意思修改成“所有语言化的人类思想都可以存放进二进制的计算机”，这个语言化就指代着上面的“文字，声音或者图象”等，然后，本ID就继续证明，连这个弱化、修改的命题也是一个谬论！
+ 原来本ID过高估计左派的数学水平，所以就用数学的方法来说明这个问题，后来发现左派的数学水平不高，因此，这里就用一个构造性的论证来说明这个问题的荒谬，其实道理是一样的，都是用到数学上的对角线法。还要说明一下，对角线法并不一定要找对角线，这只是一个通俗的说法，这个方法有很多推广和变化，如果不告诉你这都来自对角线法，一般人可能根本看不出两者的联系。而且即使在数字排列中用对角线法，其实根本就不必要一定要取对角线数，任何满足某种条件的函数给出的数就可以，这点大概也不是一般人所知道的，就不详说了。
+因为左派假设“所有语言化的人类思想都可以存放进二进制的计算机”，那么这些思想就构成一个集合A，里面的思想用an表示，n代表自然数。由于宇宙是会灭亡的，而人类每产生一个思想的时间间隔是不可能无限短的，否则就违背量子力学的原则，那么就可以知道，这个集合A中的元素是有限的，当然数量可以很大。那么我们构造这样一个思想：U（这个思想的表述不同于思想an),其中U代表逻辑并的意思，an是所有集合A中元素，那么这个思想显然不在集合A中，而且它不可能简化成任何A中的思想，因为这个思想说的是表述，任何逻辑的简化把戏都没用了。由于集合A是有限的，因此这个思想的表述也是有限，而这个思想显然是人类的思想，那么这个矛盾只可能来自那个“所有语言化的人类思想都可以存放进二进制的计算机”的左派假设，也就是说这个假设是荒谬的。
+其实，功利化语言的局限性在哥德尔不完全定理中就有了很深刻的研究，计算机语言，不过是人类公理化语言的一种，20世纪的语言哲学转向最终宣告人类思维的一般语言化的失败，这本来就是一个常识，看点后现 代主义的哲学书都知道。而人类语言的计算机化的必然失败，其实也是一样的，因为计算机语言的本质是一个公理化的逻辑结构，在数学中，对公理化方法的反思早就出现了，哥德尔不完全定理是其中的一个方向的努力。人类语言是不可能完全公理化的，当然就更不可能完全计算机化，这里的哲学含义，有兴趣的可以自己去研究。特别可以看看西方哲学中对科学主义的反思，这是后现代主义思潮中一个很重要的部分，科学主义的危害是必须警惕的，就更不要说科学主义中的一个小分支：计算机主义了。上面的构造论证，不过是以子之矛破子之盾，但对科学主义的反思才是这个讨论应该引申的方面。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/math/finalsumup" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0263_云谷子，让本ID替无能的左派教育一下你！.md" class="nav-link prev">← 云谷子，让本ID替无能的左派教育一下你！</a>
+            <a href="0277_唐粉，你对马克思劳动价值论的解释有很大问题。.md" class="nav-link next">唐粉，你对马克思劳动价值论的解释有很大问... →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

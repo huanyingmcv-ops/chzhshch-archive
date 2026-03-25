@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（18） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 363</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/10/31 12:01:30</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>论语详解</span></div>
+        </div>
+        <h1 class="article-title">《论语》详解：给所有曲解孔子的人（18）</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（18）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（18）</p>
+<p>2006/10/31 12:01:30</p>
+<p>子曰：好勇疾贫，乱也。人而不仁，疾之已甚，乱也。
+详解：这一章的解释，朱熹《论语集注》是这样的：“好勇而不安分，则必作乱。恶不仁之人而使之无所容，则必致乱。”也就是说：“一个人既好勇又怨贫不安于本分，就一  定要作乱。指责不仁之人而使之无地自容，也一定会引发乱子。”通常的解释，都和这大同小异。
+这种解释之下，就意味着定义一群人，一旦他们具有“好勇疾贫”或者“人而不仁，疾之已甚”的性质，就可以带上“动乱分子”的高帽了。且不说这种一竹竿打倒一群人的说法有多大的意义，连指责“不仁之人”使他们“无所容”也怕出乱子，这样是否意味着都要当老好人？见到这好勇斗狠、为富不仁的主是否都要躲着走？如果不仁之人是“暴君恶吏”，是否对“暴君恶吏”也让他们继续暴虐？有人对此引申解释为“小人作乱，往往演为世间大祸。防祸之端，必须对待不仁之人不疾之太甚，进而长期以道德威化，促其自新。”这就把儒者当成耶教的传教士了，而“防祸”的说法更可笑，所谓是“祸”躲不过，人，顶天立地，岂能委顿如此？这类的解释都是腐儒之见，由此而败坏儒家、《论语》、孔子。
+实际上，这一章是上一章“子曰：放于利而行，多怨。”的延伸。何谓“好勇疾贫”？好于勇而疾于贫也。疾于贫，即“贫者”之相，其“贫”而好于勇，所谓好勇斗狠。“好勇疾贫”，“贫者”，好勇斗狠。何谓“人而不仁，疾之已甚，”“已”，通假“以”，“甚”，“斟”的初文，本义是用勺舀酒等喝，引申为“过分享乐”。“疾”，病、得病、特指传染病，因此引申出“急速”等意思。“之”，指代前面的“人而不仁”，就是不仁之人，特指为富不仁之人。“人而不仁，疾之已甚”，为富不仁之人被“过分享乐”之病急速传染。“乱”，乱相也。“好勇疾贫，乱也。人而不仁，疾之已甚，乱也。”说的是“人不知”社会中同时存在的两种乱相：“贫者”，好勇斗狠；“富者”，为富不仁，被过分享乐之病急速 传染，所谓纸醉金迷、醉生梦死。对这一章最好的、所有人都熟悉的典型例子就是：“十里洋场上海滩”。其实，这种例子简直太多了，是“人不知”社会的通病。
+但正像前面反复提到的，“贫富”不单单是指财富上的，只要有人参与其中的一切社会现象，都会有其“贫富”之相。例如某精英团体或个人有某种理想或特长，精英团体或个人外的被诱惑者、FANS们又具有特别狂热的情绪，这时候就是典型的“好勇疾贫，乱也。人而不仁，疾之已甚，乱也。”了，66年开始的所谓十年动乱，就是一个最典型的例子。其实，除了那些极端的例子，这种乱相，无论何时何地，都是司空见惯，没有人会觉得陌生，只是太熟悉反而麻木了。举一个日常的例子，且不说报纸、杂志、电视上天天看到的偶像粉丝闹剧，就算在目前的名人博客江湖，名人以名卖名如传染病，而FANS、跟贴骂人的草根们又特别的狂热，如此，也就绘出了“好勇疾贫，乱也。人而不仁，疾之已甚，乱也。”的典型图景。
+为什么会这样？明白了上一章“子曰：放于利而行，多怨。”的“人不知”社会总规律，就知道，之所以出现“好勇疾贫，乱也。人而不仁，疾之已甚，乱也。”的乱相，就是因为“放于利而行”。由于“富者”的强势地位，使得对“富”者“利”的放纵成为了“人不知”社会的常态，这就相应意味着对“贫”者“利”的违背，而“利”的诱惑又是客观存在的，在“人不知”的社会，单纯的道德说教是没意义的，在“利”面前，所有的道德说教都苍白无力。这种“利”的“贫富”之相的严重对立，使得“富者”因得其“利”而放纵无度，而“贫者”因不得其“利”而不平。就算是一个懦夫，当“利”的“贫富”之相严重对立形成的落差储备到了足够大势能后，懦夫也会成为“勇夫”的。这样，自然就有了“好勇疾贫，乱也。人而不仁，疾之已甚，乱也。”。这种图景在“人不知”的社会随处可见、无处不在，《论语》早在两千多年前就已总结出来了。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/10/31 12:14:18
+本ID的解释，是以曾至少接受高中教育为标准的，所以有些地方未免有点跳跃，否则这书至少要出五卷了。所以确实理解上有问题，欢迎提出，本ID也就此修改、补充，虽然不可能像白居易写诗那样，但也尽努力用最小的篇幅让更多的人的阅读理解困难减少。
+缠中说禅 2006/10/31 12:22:06
+本ID还会相应出一文言文版本的，那个是为后世流传的，不能让如朱熹的论语集注那种错漏百出的书为祸人间。本ID所论所语，只为世道人心，各位阅读，也应该只为世道人心，而不是争个人之意气。如果真觉得本ID的解释值得传播，也请尽可能让更多人知道来阅读。世道，非一人之世道，人人有责，这也是论语的精神所在。
+缠中说禅 2006/10/31 12:45:59[匿名] uuu2006-10-31 12:38:37 
+子曰：放于利而行，多怨</p>
+<hr />
+<p>利有阶级性,利有界性,知道你的 违反、放纵 意思相反是多么的白了吗?==============利，不是一个抽象的概念，当阶级性、有界性成为一个抽象概念时 ，就斯大林了。所有的阶级性,有界性都是有其现实基础的，也就是现实的逻辑关系，这点请去看本ID的捍卫马克思系列。儒家，或者说中国的传统思维从来都只根据现实的逻辑，也就是当下、具体的关系，利也一样。用西方的概念化思维来套，南辕北辙。
+缠中说禅 2006/10/31 12:49:19[匿名] uuu2006-10-31 12:44:16 
+利是什么还未懂?胡扯什么违反、放纵,白痴.信佛的人不白痴的没有.孔子就一白疮 胡说八道.==============你用自己的行动证明了，你已没资格让本ID继续回你任何的帖子，但本ID不会删你任何的帖子，这里是不删帖子的，就让你挂在上面让所有人参观。
+缠中说禅 2006/10/31 12:56:07公告由于最近来本博客的人越来越多，水平参差不齐，几条原则必须明确：一、本博客不删帖子，爱干什么都可以。但帖子如果有链接字等，新浪是会自动删除，这和本ID无关。二、本ID有时间可以和各位讨论，但对于喜欢用上下两个口跑马的，本ID没兴趣管他们，让他们自己跑马爽去，但本ID也不会删他们的帖子。三、虚拟空间众生百态，欢迎各位尽性而为，本ID这里来者不拒。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/confucius/18" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0362_《论语》详解：给所有曲解孔子的人（17）.md" class="nav-link prev">← 《论语》详解：给所有曲解孔子的人（17）</a>
+            <a href="0364_《论语》详解：给所有曲解孔子的人（19）.md" class="nav-link next">《论语》详解：给所有曲解孔子的人（19） →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

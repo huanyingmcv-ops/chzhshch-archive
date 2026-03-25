@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你炒股票44：小级别背驰引发大级别转折 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 502</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/4/10 15:23:46</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>108课教程</span></div>
+        </div>
+        <h1 class="article-title">教你炒股票44：小级别背驰引发大级别转折</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>教你炒股票44：小级别背驰引发大级别转折</h1>
+<hr />
+<p>教你炒股票44：小级别背驰引发大级别转折</p>
+<p>2007/4/10 15:23:46</p>
+<p>有了上一课，对“背驰级别等于当下的走势级别”这最一般的情况，应该是很好把握了，唯一可能出现困难的，就是“背驰级别小于于当下的走势级别”这种情况，也就是所谓的小级别转折引发大级别转折，对这种情况，还要进行进一步的分析。
+还是用上次的例子，向上30分钟级别的a+A+b+B+c，如果c是一个1分钟级别的背驰，最终引发下跌拉回B里，这时候，c里究竟发生了点什么事情？
+首先，c至少要包含一个5分钟的中枢，否则，中枢B就不可能完成，因为这样不可能形成一个第三类的买点。不妨假设c<code>是c中最后一个5分钟的中枢，显然，这个1分钟的顶背驰，只能出现在c</code>之后，而这个顶背驰必然使得走势拉回c<code>里，也就是说，整个运动，都可以看成了围绕c</code>的一个震荡，而这个震荡要出现大的向下变动，显然要出现c`的第三类卖点，因此，对于那些小级别背驰后能在最后一个次级别中枢正常震荡的，都不可能转化成大级别的转折，这个结论很重要，所以可以归纳成如下定理：
+缠中说禅小背驰-大转折定理：小级别顶背驰引发大级别向下的必要条件是该级别走势的最后一个次级别中枢出现第三类卖点；小级别底背驰引发大级别向上的必要条件提是该级别走势的最后一个次级别中枢出现第三类买点。
+注意，关于这种情况，只有必要条件，而没有充分条件，也就是说不能有一个充分的判断使得一旦出现某种情况，就必然导致大级别的转折。小级别顶背驰后，最后一个次级别中枢出现第三类卖点并不一定就必然导致大级别的转折，在上面的例子里，并不必然导致走势一定回到最后的该级别中枢B里。
+显然，这个定理比起“背驰级别等于当下的走势级别”必然回来最后一个该级别中枢的情况要弱一点，但这是很正常的，因为这种情况毕竟少见点而且要复杂得多。因此，在具体的操作中，必须有更复杂的程序来对付这种情况。而对于“背驰级别等于当下的走势级别”，如果你刚好是该级别为操作级别的，只要在顶背驰时直接全部卖出就可以。
+对于“背驰级别小于当下的走势级别”的情况，为了简单起见，不妨还 是用上面的为例子。如果一个按30分钟级别操作的投资者，那么，对于一个5分钟的回调，是必然在其承受的范围之内，否则可以把操作的级别调到5分钟。那么，对于一个30分钟的走势类型，一个小于30分钟级别的顶背驰，必然首先至少要导致一个5分钟级别的向下走势，如果这个向下走势并没有回到构成最后一个30分钟中枢的第三类买点那个5分钟向下走势类型的高点，那么这个向下走势就不必要理睬，因为走势在可接受的范围内。当然，在最强的走势下，这个5分钟的向下走势，甚至不会接触到包含最后一个30分钟中枢第三类买点那5分钟向上走势类型的最后一个5分钟中枢，这种情况就更无须理睬了。如果那向下的5分钟走势跌破构成最后一个30分钟中枢的第三类买点那个5分钟回试的5分钟走势类型的高点，那么，任何的向上回抽都必须先离开。
+以上这种是全仓操作的处理方法，如果筹码较多，那么当包含最后一个30分钟中枢第三类买点那5分钟向上走势类型的最后一个5分钟中枢出现第三类卖点，就必须先出一部分，然后在出现上一段所说的情况时在出清。当然，如果没有出现上一段所说的情况，就可以回补，权当弄了一个短差。
+有人可能问，为什么那1分钟背驰的时候不出去，这是与你假定操作的级别相关的，而走势不能采取预测的办法，这是不可靠的，由于没有预测，所以不可能假定任何1分钟顶背驰都必然导致大级别的转折，其实这种情况并不常见，你不可能按30分钟操作，而一见到1分钟顶背驰就全部扔掉，这就变成按1分钟级别操作了。如果你的资金量与操作精度能按1分钟操作，那就没必要按30分钟操作，而按1分钟操作，操作的程序和按30分钟的是一样的，不过相应的级别不同而已。
+当然，对于有一定量的资金来说，即使按30分钟操作，当见到1分钟的顶背驰时，也可以把部分筹码出掉，然后根据后面的回调走势情况决定回补还是继续出，这样的操作，对一定量的资金是唯一可行的，因为这种资金，不可能在任何一定级别的卖点都全仓卖掉。至于底背驰的情况，将上面的反过来就可以。
+（待续）
+回复​
+缠中说禅 2007/4/10 15:25:20昨天说了，由于中石化等业绩很好，大盘股是压不住了，那些说现在市赢率如何如何的人，算一下中石化现在是多少？且不说今年依然可以高速增长。其实探讨这些没什么意义，只是汉奸总是拿这些说事，不妨也说说。今天的震荡，就是对昨天缺口压力的一个反应，这在技术上很简单的情况，没什么特别的。现在，以前说的深圳1万点已经在眼前，当然，现在主要考验管理层智慧的时候，一个连深圳1万点都接受不了的管理层，绝对是历史性的笑话，谁愿意当这个笑话的主角，请便。纯操作上，1根5日线，反复强调，看好这就足够了，至于那些喜欢测顶的人，从2000点就测到现在，劝一句，千万别玩期货，否则死都不知道怎么死的。不过，即使在最有利于多头时，也绝对不能得意忘形，任何时候都不能追高，在这种走势中，如果技术不好，用均线控制持有，这是最简单且有效的办法。如果要换股操作，一定要注意节奏，必须在某级别顶背驰抛了，然后盘中回跌确实站稳后再换，这样才风险小。一般情况下，技术不好的，最好别随便换股，轮动走势，只要是本ID反复强调的优质二线成分股以及那  些业绩、送配优良的二线股票，肯定都会启动的。
+缠中说禅 2007/4/10 15:32:00
+[匿名] 小丸子 2007-04-10 15:26:41 
+缠主，今天节奏全错了，802和600961被洗出来了，惭愧--技术不好就看5日线，如果是短线，就看60分钟的5均线，这些线不破，根本不用理会。
+缠中说禅 2007/4/10 15:32:55
+[匿名] dliss 2007-04-10 15:31:03 
+缠主说的太对了
+我换股总是太差，现在回头一看，
+现在和不换股的收益差不多，
+还费力把火的浪费不少时间和精力不过，不操作又不能长技术，和练心态
+两难，两难==
+持有不是一种操作？持有不练心态？
+缠中说禅 2007/4/10 15:33:58
+[匿名] 乐土 2007-04-10 15:32:55 
+很刺激的一天,满仓收益16%!哈哈.谢谢老师的提醒,有了心理准备.才敢于操作. 
+=
+一定要自己真看明白图形，这样才是真工夫。
+缠中说禅 2007/4/10 15:37:11
+[匿名] 缠心雕龙 2007-04-10 15:30:44 
+博主好，请教盘整背驰的问题：三段走势“上下上”，设为A0A1A2，假如A0最短，A1最长，A2中等长度，且A2高点大于A0低点但低于A0高点，同时看MACD指标，A2的面积比A0大，这时能说A2对A0未盘背吗？感觉A2回中枢的力度比A0离开中枢的力度要大得多，虽然A2没创新高，严格说这不能叫盘背吧？==这在中枢震荡那节里都有，请去看看。
+缠中说禅 2007/4/10 15:41:00
+[匿名] 后知后觉 2007-04-10 15:34:34 
+禅主：
+昨天最后的提问探讨，您没看到：大象按照各自的属相，分别过本命年。今天的走势似乎有些这样的意思。
+感觉今天空方稍微有些技术含量，在时间上，节奏上控制的很到位，而多方反倒有些猴急。
+现在散户心理浮躁，多方也有些急功近利。
+问：1，联通是否可以挑逗了？
+2，大象是否会真的分别过本命年？这样的剧本幼稚可笑吗？
+谢谢了。==
+为什么跌就一定是空方弄出来的？多头就不可以洗盘？今天在石化出来前先跌，就是剧本里出彩的一笔，好好体会吧。
+缠中说禅 2007/4/10 15:51:41
+[匿名] 新浪网友 2007-04-10 15:44:33 
+老师辛苦了 10.44元进的600782，希望老师帮我看一下。谢谢！==
+这种股票不是不可以玩，但如果你买了以后还要问的，证明你的技术还达不到玩这种股票的程度。所以最好别养成追高的坏毛病，这股票中线没什么大问题，短线涨太快，等均线上来。
+缠中说禅 2007/4/10 15:54:23太对不起了，马上要外出，晚上回来早，9点30左右再上来半小时。先下，再见。
+缠中说禅 2007/4/10 22:22:42十分抱歉，刚回来，太晚了，回答不了各位的问题，明天再说。先下，再见。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/stocks/044" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0499_教你炒股票43：有关背驰的补习课.md" class="nav-link prev">← 教你炒股票43：有关背驰的补习课</a>
+            <a href="0504_教你炒股票45：持股与持币，两种最基本的操作。.md" class="nav-link next">教你炒股票45：持股与持币，两种最基本的... →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -223,7 +223,9 @@ def generate_category_index(category_dir, category_info):
     
     # 添加文章列表
     for i, article in enumerate(articles, 1):
-        html += f'''            <a href="{article['filename']}" class="article-item">
+        # 链接到HTML文件
+        html_filename = article['filename'].replace('.md', '.html')
+        html += f'''            <a href="{html_filename}" class="article-item">
                 <span class="article-number">{i:03d}</span>
                 <span class="article-title">{article['title']}</span>
                 <span class="article-arrow">→</span>

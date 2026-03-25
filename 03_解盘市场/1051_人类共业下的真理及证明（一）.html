@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人类共业下的真理及证明（一） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 1051</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2008/7/8 8:43:12</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>解盘市场</span></div>
+        </div>
+        <h1 class="article-title">人类共业下的真理及证明（一）</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>人类共业下的真理及证明（一）</h1>
+<hr />
+<p>人类共业下的真理及证明（一）</p>
+<p>2008/7/8 8:43:12</p>
+<p>今天下午，有N个楼盘需要去看，一收盘车子就过来接，所以写不了帖子，只能一大早起来先把任务完成，也是为了兑现诺言。之所以要去看楼盘，主要是价格出现很大松动，而更重要的是，最近国家方面大概还是被银行系统给套住了，所以也出现松动，这两个不同方向的松动是否制造出楼市的短线最后一跌，需要去观察观察。不过，有一点不用观察，后一个松动如果真的大面积成为现实，那么，那些最后一口气的炒家就有了救命稻草，而本ID总觉得，这次死的人太少了，教训不够深刻，如果这样喊几下疼就可以让管理层低头，那真是悲剧，有些事情，不从根子上解决，只能是永远的轮回，如果是这样，2008年和1994年是一回事，还是被同一东西套住，这不是悲剧又是什么？不说那些无聊事，股票走出目前的形态，说少一天也没什么大事，关键看好原来说那些点位就可以。此外，昨天写的歌唱帖子，必须再提醒一句，很多人唱歌，声区变动一大，位置就变，这主要是发出坚定基音的位置没固定住，例如，随着声音的向上就往上跑了，这是绝对不行的。其实，只要你能在声区变动中把持位置的稳定（注意，声乐界有一个很错误的观念，就是所谓的喉头稳定，稳定的不是喉头，而是那不声而声的位置），那自然就训练了相应器官的灵活性与可调节性，一切都不需要刻意的。正确的操作，往往就是最简单的方式实现的，股票如此，唱歌也一样。唱歌且不说了，说点貌似高深的问题，这问题，可是最真切地关系到每一个人，时间关系，今天只能写第一部分。
+如果真理就是基督教化的那种上帝式的玩意，那这种玩意从来不曾存在过。当然，你可以把“基督教化的那种上帝式的真理从来不曾存在过”作为一个命题，同时，你当然也可以严重地反对这个命题，为此，你必须至少找出一个例子去否认这样一个命题，也就是说你必须至少找出一个“基督教化的那种上帝式的真理”来，而实际 上，世界上没有人能找出这样的玩意。有人可能反驳，能量守恒，这就是上帝式的真理。而实际上，我们的世界之所以能量守恒，归根结底，不过是我们的共业恰好让我们存在于一个曾经并依然表现为能量守恒的世界里；有人可能要说，数学里的1+1=2是上帝式真理，而实际上，这个所谓的上帝式公式，不过是人类共业所体现出来的自然数系统的一个虚拟性约定，和上帝式真理毫无关系。同样，一个共业表现为人不会死不需要吃饭的世界里，人要死人要吃饭的所谓本ID经济理论前提就要破产，这所谓的公理也不是上帝式的真理，不过是共业而已。所谓的真理，本质上都是共业。而共业，本质上不过是一个生死游戏暂时的前提，我们所谓对真理的探求，本质上不过是对我们现有的恰好被扔进来的生死游戏的前提进行的追问，无所谓真理，更无所谓上帝式的。以上结论，适用于人类一切的把戏，包括科学、宗教、经济、政治、艺术、文化、黑社会、反叛、堕落、升华等等，无一例外。有人可能要说，你需要证明你的这个结论。对这些头脑有水的人，本ID只能说，你需要本ID去证明什么？如果要去证明这结论的上帝式，那是废话，因为这结论反对的恰好是上帝式的真理，除此之外，这个结论没有任何需要证明的，因为这个结论恰好是人类最大的共业，也就是说，包括证明这种人类的把戏在内，所有的人类把戏都以此为前提，反而是反对这个结论的，最有力的反对就是找出一个例子，证明该结论不是人类的共业，而这，并不是本ID的任务，有这癖好的就慢慢去找吧。显然，证明同样是人类共业下的一种把戏。所有的证明，无一例外地不过是在人类共业前提下假设共业中的世界存在同一的逻辑结构，如果没有这个假设前提，一切证明都是废话，因为没有证明在丢弃这个前提后能证明这证明具有的共业前提下的有效性。上面这句话有点绕，有点平白的语言，一个最简单的例子，本ID曾多次强调，科学的前提是可观察性，而可观察性，其实就隐含着这样的假设，就是观察者与被观察现象之间有着最基础的逻辑同构对应关系，否则，观察就是不可现实的。其实，不用说得太高深，用一个最日常的例子就可以明白可观察性实现需要的前提。我们总是说太阳每天照常升起，不说全人类了，就说两个人看同一个太阳。科学的可观察性，就要求对不同的人在任意时刻对同一现象的观察都有同一的结果。显然，这里隐含着N多的逻辑假设，用两人看太阳的例子。首先，不能存在如下类似的情况，就是其中一人，他的视觉系统的逻辑是，被苹果砸到就马上呈现出太阳，不被苹果砸到就算头上有太阳也看不到；而另一人的视觉逻辑是当且仅当第一人被苹果砸到并看到有太阳就马上出现出太阳，否则，太阳就算跑到手上也视而不见。对于这两人来说，他们的观察太阳的结果总是一样的，就是两人都是同时看到或看不到，但这种观察能被科学吗？因此，这观察能被科学的前提之一，必须是这两人的视觉系统有同一至少是同构的逻辑，两人是这样，全世界的人的道理是一样的。其次，太阳出现这现象的逻辑必须和人的视觉系统的逻辑相同构对应，否则，人的视觉逻辑系统万一是这样的，就是不管太阳是否出现，都随机地出现出太阳来，这样，所谓的可观察性又成了空话。最后，太阳出现这现象的逻辑至少具有稳定的时间性，否则，一天一个样，那所谓的可观察也就没意义的，因为不可重复检验，例如当你很兴奋地向全世界公布太阳是方的这结论时，第二天，全世界的相关人员都对这天空，发现哪里有什么方的物体，明明只有一条毛毛虫，那这游戏就没法玩了。当然，实际上可观察成立的逻辑前提还有很多，这里只需要说明，这所谓的科学性，是有着诸多逻辑假设的，科学不过是这些逻辑假设下的一种游戏罢了。共业，本质上就是某种被选择的逻辑假设的集合。我们为什么出现在同一共业的世界，就是因为我们在无限的轮回中的这一段，因为自我业力的显现而选择了共同的逻辑假设集合。而一选择，就被世界。同一选择，同一世界，一切都是你自己选择的结果，正如本ID的诗句里说的“意画心描自主奴”。哪里有什么客观的、上帝式的世界？世界不过是被你选择的结果，世界不过是某一被选择的逻辑假设集合的一种幻现，至于你在世界中的生生死死，更是如梦幻泡影。以上语言，当然会让唯物主义特别是那斯大林式或毛式的辨证的那类十分恼火，可惜，这让他们恼火的物理与生理基础，依然不过是某一逻辑假设集合的呈现。唯物主义蠢人，自以为抓住所谓的客观世界就抓住了通往所谓真理天堂的救命稻草，可惜，这除了增加他们肚子的含草量，不过是在某种逻辑假设集合幻影下的自渎罢了。同样的语言，可以送给所谓的唯心主义者，就凭你们那意识中打转的蠢劲，和唯物主义者不过是五十步与一百步的关系，世界和什么鸭屁唯物唯心都毫无关系，如果说一定有什么关系，那不过是幻影般的逻辑假设游戏下的呓语而已。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/math/mankindkarma" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="1050_唱歌其实是很简单的事情.md" class="nav-link prev">← 唱歌其实是很简单的事情</a>
+            <a href="1054_说说股票和咒语.md" class="nav-link next">说说股票和咒语 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

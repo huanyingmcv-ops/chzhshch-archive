@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（六） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 343</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/10/17 12:07:07</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>论语详解</span></div>
+        </div>
+        <h1 class="article-title">《论语》详解：给所有曲解孔子的人（六）</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（六）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（六）</p>
+<p>2006/10/17 12:07:07</p>
+<p>《论语》二十篇，实为一大文章，而首章三个“不亦”，为文章之纲领，也是儒学之总纲。世人皆说《易》难解，实则，《易》是隐而难，《论语》是显而难，是难上加难。《论语》书成后，真能解首章的，千古以来，未曾见也。而首章都不能解，  后面就更是以盲引盲。
+本ID所写，皆发前人所未发，余人从其字句中求《论语》之真精神，不过是啃尸之徒。《论语》不死之真精神，岂在区区字句间。神会，则字句之纠缠自然顿明，下面将解释一个千古无人能解的问题：为什么《论语》首章是三个“不亦”，不是二个，也不是四个或其它？
+对于以前所有解《论语》的人，对这三个“不亦”，连这些人自己都是囫囵吞枣，又怎么可能解释好？上面为什么是三个“不亦”的问题，这些人连提都不敢提，或者根本就没想到，就更不要说解答了。这个问题的答案，本ID在前面的解释中其实已有所透露，在（四）中就有“圣人者，必圣其时、必圣其地、必圣其人，复圣它时、复圣它地、复圣它人也。”也就是说，这三个“不亦”，基于儒家最基本的信念，即儒家思维最基本的结构：天、地、人。
+“学而时习之”，言“天”，在儒家思维的基本结构下，天与天时，“天、天时”是一而二、二而一的。与“天、天时”紧密联系的就是所谓的“天命”了。参照前面对“时”的解释，就不难知道，《论语》对天时、天命的态度就是“与天其时而天与其时”、“与天其命而天与其命”，儒家对“时运”、“命运”的态度是十分积极的。“学而时习之”就是要成就这“与天其时而天与其时”、“与天其命而天与其命”。
+“有朋自远方来”，言“地”。地，包括土地等，但不单指土地，甚至地球之类的玩意，而是指大道流行的场所、空间等。地是离不开天的，有其天时，必成就其地，其地，包括一切的现实客观条件。通常所说的“地运”、“国运”等，就属于“地”的范围。一般人更熟悉的，就是所谓的“地利”了，儒家对“地利”的态度也是“与地其利而地与其利”。“  有朋自远方来”就是要成就这“与地其利而地与其利”。
+“人不知而不愠”，言“人”。人，天地之心也。张载所言“为天地立心，为生民立命，为往圣继绝学，为万世开太平”，说的就是这“人不知而不愠”。那么天地之心在哪里？天地之心就在人的心里，人心立，则天地立其心。西学讲人化自然，后来又有了所谓的人择原理，但对这“天地人”的关系，还是没有儒家、《论语》讲得透彻。“人不知而不愠”，就是要成就“与人其和而人与其和”，最终成就真正的“人和”。
+这三个“不亦”，讲的就是君子如何“与其天时、与其地利”，最后“成其人和”，什么才是真正的“人和”？就是“人不愠”的世界，“没有郁结的世界”，就是世界大同。只有“与人其和而人与其和”，最终成就真正的“人和”，君子才算是真正行成“圣人之道”。离开这三个“不亦”，一般所说的“天时、地利、人和”，实不知何谓“天时、地利、人和”也。
+明白了上面，就不难明白这三个“不亦”，为什么是按“说、乐、君子“的顺序来安排。“说”，就是“悦”，对于忧郁症等大流行的现代社会，这个“悦”太罕见了，而连“悦”都没有，就不要侈谈诸如幸福感之类的废话。那么，何谓真“悦”？“闻、见、学、行”“圣人之道”也。“闻、见、学、行”“圣人之道”，才是真正快乐的事，令人心情舒畅的事，如果个体的心情都不能“悦”、不能“不愠”，怎么可能成就“不愠”的世界？所以要“修身”，“学而时习之”地“修身”，其结果就是“悦”，“悦”也就是个体的“不愠”。那么，“修身”为什么和“天时”挂钩？所谓“修身”不是一个人的盲修瞎练，“闻、见、学、行”“圣人之道”要“与天其时而天与其时  ”，其中的关系是密不可分的。
+“修身”，然后要“齐家”。这“家”，不是一般所谓的家庭，那是“小家”，一个地区是家，一个国家也是家，那是“大家”。齐家才能“乐”，这读yue，箫韶九成，盛世之象。家不齐，国不齐，怎么可能有“箫韶九成，盛世之象”？所以要“齐家”，“有朋自远方来”就是要“齐家”，其结果就是“乐”，“乐”也就是“家”的“不愠”，只有“不愠”才可能“箫韶九成，盛世之象”，才可能“乐”。那么，“齐家”为什么和“地利”挂钩？家、国都属于“地”的范畴，通常有所谓的“家运”、“国运”等，要“齐家”，改变“家运”、“国运”，就要“与地其利而地与其利”，这样才能最终成就“箫韶九成，盛世之象”，其中的关系是密不可分的。
+“齐家”，然后要“平天下”。而只有“天下平”了，世界“不愠”、没有郁结了，世界大同了，才算是“平天下”，才算是“人和”，才算是君子行“圣人之道”，才算是“不亦君子乎？”上面的“说”、“乐”，都是“不愠”的特殊形式，分别对应着个体和家，但真正的“不愠”是全天下的，这个天下不单单指人类社会，按现代术语，至少是包括了整个人类社会和自然界。天下万物都要和谐、都要“不愠”，这才是真的“不愠”，也才是真的“平天下”，只有这样，才是真的“人和”了。所以，“平天下”与“人和”是密不可分的！
+综上所述，可以清楚地看到，“学而时习之”、“有朋自远方来”、“人不知而不愠”与“说、乐、君子”以及“天、地、人”或“天时、地利、人和”之间的关系密不可分，《论语》的首章是站在这样的高度立论的，而不是如千古以来那些盲人的瞎解释所说那样。只有这样，才算初步明白“  子曰：学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？”的意思，也才算初步知道《论语》说了点什么。但这只是一个大纲，只是一个框架，更重要的东西还在后面。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/10/17 12:16:57
+现在抄袭剽窃之风大盛，本ID所写皆发人所未发，如果以后有人抄袭剽窃，请各位帮忙收集证据。这个问题，绝对不能乡愿。《论语》不长，但弄成垃圾白话文就太长了，估计要写一年半，以后尽量保持每天一篇，周末要休息。其它文章也要写，有点量大，尽量坚持。
+缠中说禅 2006/10/17 21:44:03
+[匿名] 窗外 2006-10-17 21:35:00 
+经济学还写
+===============写！也请你好好看看《论语》。
+缠中说禅 2006/10/19 15:50:22公告</p>
+<p>本ID所写“《论语》详解-----给所有曲解孔子的人”皆发人所未发，已联系好写完后要出版，所以有关连载将只在本ID博客进行。请最好不要转载，如要转载，务必注明，免得以后要打版权官司。严禁抄袭，违者必究</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/confucius/06" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0342_《论语》详解：给所有曲解孔子的人（五）.md" class="nav-link prev">← 《论语》详解：给所有曲解孔子的人（五）</a>
+            <a href="0344_孔庆东，不要乡愿------回复孔庆东对本ID的评价。.md" class="nav-link next">孔庆东，不要乡愿------回复孔庆东对... →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

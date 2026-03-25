@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《论语》详解：给所有曲解孔子的人（25） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 371</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/11/8 12:01:57</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>论语详解</span></div>
+        </div>
+        <h1 class="article-title">《论语》详解：给所有曲解孔子的人（25）</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>《论语》详解：给所有曲解孔子的人（25）</h1>
+<hr />
+<p>《论语》详解：给所有曲解孔子的人（25）</p>
+<p>2006/11/8 12:01:57</p>
+<p>子曰：为政以德譬，如北辰居其所而众星共之。
+详解：通常的断句是“为政以德，譬如北辰，居其所而众星共之。”“共”，通假“拱”，环绕的意思。全句一般被大致解释成“以德行来治理国家，就像北极星一样安坐在自己的位置上，其它的星辰便会自行在周围旋转运行。”这类解释都是以“ 道本位”为前提的，实际上把这句当成所谓行“仁德之政”的鲁模式基石。一个历史的事实就是，孔子之后的儒家，行的都是这种所谓“仁德之政”的鲁模式，而完全背离了孔子的“齐一变，至於鲁；鲁一变，至於道”。这种“道本位”的鲁式“仁德之政”模式，惯用的伎俩无非是先编造一些抽象的“仁德”法则，然后以此为标准立其本，再将之推广到社会的各个方面，进而改造人、塑造人，企图让所有的人都成为这“仁德”模子制造出来的统一产品，这样，就成就了一种以同一性为基础的所谓大同。而真正的大同，只能是不同成其大而大同，让世界成为统一产品集中营的大同，只能是这种“道本位”的鲁式“仁德之政”模式所制造的怪物。
+正确的断句应该是“为政以德譬，如北辰居其所而众星共之。”“为”，设置、建立，也就是立其本、立其位；“以”，使、令；“德”，得，行“圣人之道”、“善人之道”所得。“譬如”不能像白话文那样当成一个词，而是“譬”+“如”，分属前后分句。“譬”，晓谕、使人知晓，引申为彰显。“如”，像；“居”，处在；“所”假借为“处”，处所的意思； “共”，通假“拱”，执持的意思。“北辰居其所而众星共之”，字面意思就是北极星处在其处而其它的星星执持着它。而深层的意思就是，人把北极星的位置确定后，执持这位置相应定出其他星星位置。但北极星位置不是先验的，例如，说北极星在北边，只是因为相应的社会文化系统把那叫“北边”，而实际上，北极星的位置不是固定不变的，甚至被称为北极星的那星星，也是会随着时间的改变而改变的。北极星位置的确定，只是一个人参与其中的当下、现实的具体结果，而其他星星根据北极星位置定出相应位置，也同 样是一个人参与其中的当下、现实的具体结果。
+“为政以德譬”，设置、建立“政”使行“圣人之道”、“善人之道”所得彰显，就像“北辰居其所而众星共之”的道理一样，并不能把“政”的原则先验地确立。其确立，也只是一个社会上所有的人参与其中的当下、现实的具体结果，那种把某种特殊的国体、政体等当成先验的、四海皆准的原则而上帝化的玩意，都不是“为政”之道，只不过是一些根据私利而制造的谎言。有人可能说，这不就是“具体问题具体分析”吗？错！这至少不是通常所说的“具体问题具体分析”。一般意义上的“具体问题具体分析”，只不过是用一套通用的法则在具体问题上套用，根本不是马克思意义上的“具体问题具体分析”。马克思意义上的“具体问题具体分析”，其实就是马克思任何理论前提只能从分析现实逻辑出发的等价说法，并没有任何先验的逻辑是先于具体问题的，具体分析不是用一些先验的法则去分析，而是从具体问题中找出其现实的逻辑关系来。站在这个意义上，马克思和孔子又一次握手了。
+而这一章，其实就是上一章所说““圣人之道”、“善人之道”是大道，更是现实之道，无位可本，又何来“本位”？正因为无位可本，才可以无所位而生其本、无所本而生其位。这，才是真正的大道、现实之道。”的进一步展开。何谓“为政以德譬，如北辰居其所而众星共之。”？就是“无所位而生其本、无所本而生其位”，只有明白了这句话，才可能真正明白马克思意义上的“具体问题具体分析”，也才可能真正明白何谓“为政以德譬，如北辰居其所而众星共之”。
+（待续）
+严禁抄袭，违者必究
+回复​
+缠中说禅 2006/11/8 12:05:58生劏五四犬，活剥宋明驴狗肉煲，驴肉火烧继续开张营业各位吃好了
+缠中说禅 2006/11/8 12:12:32说些闲话，看到评论里争论很激烈，本ID这里是门户开放,利益均沾，左中右、鸡鸭鹅，爱干什么干什么。本ID有时间就回回帖，没时间就算了，各位之间的争论，爱打架、爱捣乱，都可以。不开心的可以先离开，心情好了再回来，不回来也可以。总之，来去自由，不用发愁。各位，请了。
+缠中说禅 2006/11/8 12:28:22[匿名] 朗月无花2006-11-08 12:23:41 
+没想到能坐沙发，关注了你一段时间，很有才，今天第一次留言，希望以后对男同胞好点，何必那么吝啬啊----------------按“打是疼”的逻辑，你不觉得本ID对男同胞很好？
+缠中说禅 2006/11/8 12:29:32[匿名] 朗月无花2006-11-08 12:23:41 
+没想到能坐沙发，关注了你一段时间，很有才，今天第一次留言，希望以后对男同胞好点，何必那么吝啬啊----------------谢谢！不过，按“打是疼”的逻辑，你不觉得本ID对男同胞很好？
+缠中说禅 2006/11/8 12:37:43
+开盘了，先下。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/confucius/25" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0370_《论语》详解：给所有曲解孔子的人（24）.md" class="nav-link prev">← 《论语》详解：给所有曲解孔子的人（24）</a>
+            <a href="0372_《论语》详解：给所有曲解孔子的人（26）.md" class="nav-link next">《论语》详解：给所有曲解孔子的人（26） →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教你打坐12：如何呼吸 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 740</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/10/20 13:45:19</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>禅宗哲学</span></div>
+        </div>
+        <h1 class="article-title">教你打坐12：如何呼吸</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>教你打坐12：如何呼吸</h1>
+<hr />
+<p>教你打坐12：如何呼吸</p>
+<p>2007/10/20 13:45:19</p>
+<p>生死，就在一呼一吸间，呼吸问题不解决，谈什么生死问题，都是口头缠。呼吸，谁都会，不会的，早死了。但实际上，真正会呼吸的，并不多见。我们日常的呼吸状态，与不日常的呼吸状态，不过是呼吸的不同状态，这都是呼吸之树的根以上的玩意，花开花落，枝荣枝枯，都是这类玩意。因此  ，根性灵敏者，就不需要在那枝条花叶上浪费工夫，而是直取其根，连根拔起，然后才真的自由于呼吸。所谓自由于呼吸，不是不呼吸，而是如天天吃饭，不咬着一颗米，天天呼吸，而不碰着一口气。以上利根者所行，不是现代人能一下达到的，因此，只能从最琐碎的花枝弄起，先学学最简单的呼吸问题。对于一般人来说，最容易分清楚呼吸状态的，就是唱歌了。一听歌声，其呼吸状态就无所遁形。最恶劣的一种，就是颈部肌肉充分紧张的呼吸状态；其次，是锁骨附近肌肉为支持的呼吸状态；再其次，是胸腔下部肌肉为支持的呼吸状态；最后一种，是腹部肌肉为支持的呼吸状态。用不大严格的术语，可以分别称为：颈式、锁骨式、胸式、腹式呼吸。首先要学会的，就是腹式呼吸。注意，所有的呼吸，都必须是通过鼻腔，而不是口腔。如果最后光用口腔呼吸了，那么离死也不远了。不信，去医院看看，那么病重的，临去前，是不是用口狂抽气？鼻腔通畅，呼吸自如，这是一个人是否健康的重要标志。别以为这是很简单的事情，实际上，很多人，鼻腔以及上呼吸道，都存在各种问题，这些问题，必须通过呼吸的训练来解决。这问题解决了，然后是下呼吸道、肺部等等的通畅，这些都通畅、而且肌肉协调了，才有可能进行完美的腹式呼吸。后者，使得整个上半身都能充分舒展，各种器官、组织等等都处于一种协调自如的状态，然后才能为进一步的参究打下基础。而且，这里有一个更深一点的问题，人的中脉的贯通，必须由此下手。因为左右两脉的开口，就在鼻腔。中脉不贯通，一切关于身体的修行都是瞎掰。注意，这里和什么小周天、大周天没什么关系，那只是一些因为某种特定的意守而导致的某些状态，其实都包括在中脉的贯通里。中脉贯通，所谓小周天、大周天、N花聚顶都自在其中。其实，中脉贯通，也没有什么神秘的，不过是人体自身就具有的，谁都可以达到。而且就算贯通了，也才是基础的基础，连禅定最基础的粗住都达不到。本ID这里说一句很严肃、很严重，自古以来没人说过的话，就是一切道家之类的人体修行，最高的状态，连禅定最基本的粗住状态都没达到，就更不用说所谓的气功之类的无聊玩意。注意，呼吸和人的体液协调很有关系，呼吸有问题，人的体液就肯定出问题。人的体液，包括很多种类，最简单的，你看你有没有病，有没有问题，你就现在吞一下唾液，一个健康的，没问题的人体，其唾液应该是清爽、如玉露、略带清甜的。如果不是这样，那身体肯定有毛病。而通过呼吸的训练，达到道家所有小周天贯通的状态，那么人的体液质量才会有较大的改变。当然，这都是些无聊玩意，如果真是立足于参究生死，这些呼吸、体液什么的，都是些中间的必经状态，没什么大不了了。只是，这里给出一个客观的判断标准，就是作为禅定前的基础训练，必须有以下三个基本的阶段：1、呼吸问题的解决。2、体液问题的解决。3、中脉问题的解决。每个问题的解决，对任何人，都有统一的验收标准，没有人可以打马虎眼，如果说科学，这就是科学的标准，所有人，任何情况下的实验，都必须满足。对于第一个问题，腹式呼吸达到后，保持这种呼吸状态，尽一步下去，可以进行所谓的龟吸、脚踵式呼吸等等非一般性的呼吸状态，但这都是在枝条上玩花样，没有任何特别的地方。不同的花样，制造出不同的特殊状态，如此而已。因此，当自如地达到腹式呼吸，是否进入其他都非一般性呼吸状态，只是一个游戏问题，而一个非游戏的问题就是：无论最终采取任何的呼吸状态，其目的都是，挖出其根。不管是哪根枝条开始，一直上溯，都是归于根、达其源。而问题的关键在于，破其根源而无所破，无所往而生其根，这样，才能达到关于呼吸问题的解决可能。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/zen/zazen12" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0717_教你打坐11：何谓正信.md" class="nav-link prev">← 教你打坐11：何谓正信</a>
+            <a href="0741_北京旅游指南三：京秋红叶.md" class="nav-link next">北京旅游指南三：京秋红叶 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

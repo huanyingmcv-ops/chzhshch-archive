@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>少年诗篇：脑子缺水的失恋 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 204</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/6/20 15:30:08</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>诗词文学</span></div>
+        </div>
+        <h1 class="article-title">少年诗篇：脑子缺水的失恋</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>少年诗篇：脑子缺水的失恋</h1>
+<hr />
+<p>少年诗篇：脑子缺水的失恋</p>
+<p>2006/6/20 15:30:08</p>
+<p>无论是13岁的脑子还是83岁的脑子，进了水就有所谓的热恋，缺了水就有所谓的失恋，下面继续的是一个13岁左右的脑子缺水后幻化出的情景。</p>
+<p>一
+雕殘的舊夢中，閉上回憶的睡眼
+逝去年華的幻影浸漬著冰結之心
+海中的巨石，凝重的你依然深深地
+沈澱在我澎湃的心潮下，默然不動
+微笑著、微笑著令人心醉的眼
+無情地、金鏈般把我靈魂緊鎖
+愛！——愛對我究竟又有何用
+我鍾情的只是你那幸福的冷峻
+浩瀚大海上，高高矗立一座大理石雕像
+靜靜地、悠然忘卻著大海的哀歎與跪請
+在石像所鄙棄的腳下，大海正用無邊的
+眼淚擁抱著她心愛的、永遠沈默的人兒
+然而，借著太陽的餘輝，石像將長長灰影
+灑向遠方，無情地破碎著大海幸福的淚光
+二
+曾經
+我的心是這樣的陰鬱，就象一潭從未
+被陽光拜訪過的腐水，漾著無數枯枝
+的水面上散出了腥味。
+然而
+在那月隱星稀的靜夜，你竟涉足潭邊
+望著閃現的幾點星光，深情地忘卻了
+這潭兒的腐臭與汙穢。
+不久
+晨光劃破灰暗的天幕，震詫的你猛然
+從飄渺的幻夢中驚醒，憤然離開了這
+曾使你妄戀過的死水。
+從此
+悲哀的潭兒低下頭來，默默地接受著
+一切汙物無私的奉獻，在每一靜夜中
+用淚隱去那點點星輝。
+三
+湖邊長著年老的松樹，
+在那金色的五月清晨，
+我倆曾把這名字
+深深刻入灰皺的樹皮。
+道旁有片狹長的空地，
+在那蕭瑟的秋日黃昏，
+顆顆離別的淚珠
+無聲灑遍裸露的黃土。
+如今，刻著名字的
+樹皮早被頑童剝去，
+灑下熱淚的黃土
+早已長出芳草如鋪。
+噢，當幸福剝落了，
+悲哀總會長得茂盛。
+四
+啊，從前的知友，昔日的良朋，
+時光流逝，並未使我改變絲毫，
+曾兩心相印、攜手同行的你我，
+如今爲何互爲路人，苦苦煎熬？
+曾幾何時，我撐開絕望的淚眼凝望，
+從那輕柔的眼波中貪婪地吸取溫存；
+伸出無力的雙臂緊緊把你擁抱，
+讓那生命的熱流頃刻傳遍全身。
+現在，春光下的繁花變成秋風中的黃葉，
+盛夏如火的豔陽化作了隆冬刺骨的寒氣。
+這溫柔的雙眼，曾給我多少撫慰，
+此刻竟變成利刃兩把，向我直刺。
+來吧，就讓我的心去磨鈍你的刃，
+莫讓它再去傷害那顆顆如我的心。
+五
+日日夜夜，夜夜日日，
+淡不了的一段舊情，
+理不清的一束愁絲，
+苦酒一杯，永喝不停。
+往昔不期的相遇，
+碎石一塊墜入湖裏，
+寧靜的心靈深處
+激起了層層的漣漪。
+我這皺褶的心啊，
+額上蒼老的標記，
+無情的流光不斷
+刻上難言的回憶。
+情感的痛苦終能用淚水平服，
+這理智的悲哀，又如何背負？
+六
+懷著熱情，將心來揭示，
+希望得到理解、同情，
+但在你那高傲的臉上，
+只看到平靜，令人窒息。
+月亮的清輝，總是寒冷著靜夜，
+即使反射著世上最燦爛的光芒。
+那熾熱的太陽——就是我啊，
+眼前的你卻令我，如此心涼。
+七
+哦，愛人，我並不曾想你、夢你，
+你的容顔、身影，從未在我心頭留下一絲痕迹；
+你的傲慢、無情，也從不曾令我感到半點心傷，
+你的一切，對我來說都毫無意義。
+我沒有心，也失去了靈魂，只剩下麻木的身軀。
+一切曾屬我的都沒有了，再不會有任何的失去，
+一切可以失去的，都已奉獻給你，只剩下死亡！
+難道你也需要，我的死亡？——
+拿去吧，拿去！這是我最後的奉獻，
+沒有心，沒有靈魂，也失去了死亡。
+八
+星星，你這小不點，
+究竟有什麽的心事？
+爲什麽要閃動不停，
+仿如我那顫動的心。
+你也失去良朋、知友 ，
+也爲往昔痛苦、憂傷？
+啊，同病相憐的人兒，
+請告訴我：“爲什麽？”
+你要走了，永遠離去，
+爲追尋失去的一切，
+跪在那狠心的人面前
+哭訴你無邊的悔恨與哀歎？
+你要走了，永遠離去，
+爲追尋知友的足迹，
+在行行的腳印上灑下
+傷心淚水，種上藍色花兒？
+噢，同病相憐的人兒，
+快用你寒冷的清輝，
+把所有的痛苦都深深
+刻進我這一顆無力的心靈。
+九
+我能喝什麽？一壺淡酒、一杯
+清茶，還是一碗毒人的濃藥？
+我能想什麽？一陣秋風、一場
+春雨，還是一段未了的舊情？
+我能寫什麽？一首小詩、一闋
+短歌、還是一部蒼涼的悲劇？
+確實——我能喝、能想、能寫，
+喝的濃藥、想的舊情，寫的悲劇！</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/poems/youngpoems4" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0198_少年诗篇：脑子进水的热恋.md" class="nav-link prev">← 少年诗篇：脑子进水的热恋</a>
+            <a href="0207_七言古诗一首：人生是梦梦何如.md" class="nav-link next">七言古诗一首：人生是梦梦何如 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

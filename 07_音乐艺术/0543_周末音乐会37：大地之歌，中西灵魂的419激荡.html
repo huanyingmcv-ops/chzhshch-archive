@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周末音乐会37：大地之歌，中西灵魂的419激荡 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 543</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2007/6/3 11:42:41</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>音乐艺术</span></div>
+        </div>
+        <h1 class="article-title">周末音乐会37：大地之歌，中西灵魂的419激荡</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>周末音乐会37：大地之歌，中西灵魂的419激荡</h1>
+<hr />
+<p>周末音乐会37：大地之歌，中西灵魂的419激荡</p>
+<p>2007/6/3 11:42:41</p>
+<p>在中西文化的交流中，马勒的《大地之歌》占有很特殊的地位。当然，可以很宏大叙事地说，西方的古典音乐与东方的古典诗歌，都是两者文化中最精粹的，而两者的结合，就有了这马勒的《大地之歌》。但本ID不大喜欢这种说法，按这种说法，马勒的《大地之歌》只不过是一个419的产物，因为这样的作 品，在东西方艺术文献上极为罕见，在马勒自己的作品中也绝无仅有，就如同一次419的燃烧，如此而已。
+419之所以能419，其基础绝对不会是任何宏大叙事的玩意，419的点燃，从来都是个人且碎片的。马勒，作为一个个体，从来都是复杂的，中国的古典诗歌点燃其热情，但绝对不能说，马勒在生命的终结处就完全于中国的古典诗歌心心相应了。马勒，一个没有家园的游魂，只不过在其生命的流浪中进行了一次419的激情，如此而已。
+419都是平等的，马勒让西方的古典音乐把东方的古典诗歌419了一把，并不是说西方的古典音乐就比东方的古典诗歌要强了。东方的古典诗歌，同样可以把西方的古典音乐419一把，问题的关键在于，419这419的人能否如马勒般马勒。
+现在，不妨先看看马勒这六乐章作品中所选取的唐诗原作，注意，这里的原作是否都是这些，有些还是有争论的，不过这问题不大，有一个大问题是，这里的诗歌，没有任何杜甫之类所谓现实主义的，李白，然后是王孟诗派（钱起归于此），由此不难明白，真正心灵的东西，最容易相通，最容易419式激发的，都不可能是太现实的。
+比起现实的苦难，心灵的苦难才真是人之大患，这是中西一脉的。放开你的心灵，去倾听这马勒的苦难，人类心灵苦难的激荡。
+马勒《大地之歌》的唐诗原文第一乐章：尘世苦难的饮酒歌李白《悲歌行》悲来乎，悲来乎。
+主人有酒且莫斟，听我一曲悲来吟。
+悲来不吟还不笑，天下无人知我心。
+君有数斗酒，我有三尺琴。
+琴鸣酒乐两相得，一杯不啻千钧金。悲来乎，悲来乎。
+天虽长，地虽久。金玉满堂应不守。
+富贵百年能几何，死生一度人皆有。
+孤猿坐啼坟上月，且须一尽杯中酒。悲来乎，悲来乎。
+凤凰不至河无图，微子去之箕子奴。
+汉帝不忆李将军，楚王放却屈大夫。悲来乎，悲来乎。
+秦家李斯早追悔，虚名拨向身之外。
+范子何曾爱五湖，功成名遂身自退。
+剑是一夫用，书能知姓名。
+惠施不肯干万乘，卜式未必穷一经。
+还须黑头取方伯，莫谩白首为儒生。第二乐章：秋天里的孤独者钱起《效古秋夜长》秋汉飞玉霜，北风扫荷香。
+含情纺织孤灯尽，拭泪相思寒漏长。
+檐前碧云静如水，月吊栖乌啼鸟起。
+谁家少妇事鸳机，锦幕云屏深掩扉。
+白玉窗中闻落叶，应怜寒女独无衣。第三乐章：青春颂李白《宴陶家亭子》曲巷幽人宅，高门大士家。
+池开照胆镜，林吐破颜花。
+绿水藏春日，青轩袐晚霞。
+若闻弦管妙，金谷不能夸。第四乐章：咏美人李白《采莲曲》若耶溪旁采莲女，笑隔荷花共人语。
+日照新妆水底明，风飘香袂空中举。
+岸上谁家游冶郎，三三五五映垂杨。
+紫骝嘶入落花去，见此踟蹰空断肠。第五乐章：春天里的醉汉李白《春日醉起言志》处世若大梦，胡为劳其生。
+所以终日醉，秃然卧前楹。
+觉来盼庭前，一鸟花间鸣。
+借问此何时，春风语流莺。
+感之欲叹息，对酒还自倾。
+浩歌待明月，曲尽已忘情。第六乐章：告别孟浩然《宿业师山房待丁大不至》夕阳度西岭，群壑倏已暝。
+松月生夜凉，风泉满清听。
+樵人归欲尽，烟鸟栖初定。
+之子期宿来，孤琴候萝径。王维《送别》下马饮君酒，问君何所之？
+君言不得意， 归卧南山陲。
+但去莫复闻， 白云无尽时。
+回复​
+缠中说禅 2007/6/3 11:47:43各位周日好，北京今天依然多云，但阳光已能穿过云层。先下，明早见。
+缠中说禅 2007/6/3 11:53:39再补充一句，为某位为证券市场的大发展作出巨大贡献的老先生默哀。没有他，股改都可能中途夭折，他对这两年市场的贡献，虽然不为一般人所知，但历史会记住他的。为他念“往生咒”，阿弥陀佛。拿摩阿眯搭巴呀，达塔嘎达呀，达得压他，阿弥利兜、巴威，阿弥利达、悉眈巴威，阿弥利达、威哥兰谛，阿弥利达、威哥兰达、嘎弥尼，嘎嘎那、给地、嘎利，司哇哈。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/music/weekendconcert37" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0537_倾听的人文与历史.md" class="nav-link prev">← 倾听的人文与历史</a>
+            <a href="0554_周末音乐会38：没有艺术的世界，我们SPA去！.md" class="nav-link next">周末音乐会38：没有艺术的世界，我们SP... →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

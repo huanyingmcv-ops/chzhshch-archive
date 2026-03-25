@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平常心非道（附步临济偈韵四首） | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 1040</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2008/6/25 18:47:38</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>解盘市场</span></div>
+        </div>
+        <h1 class="article-title">平常心非道（附步临济偈韵四首）</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>平常心非道（附步临济偈韵四首）</h1>
+<hr />
+<p>平常心非道（附步临济偈韵四首）</p>
+<p>2008/6/25 18:47:38</p>
+<p>股市没太多要说的，站在2700点上有所反弹，本就是最正常不过的事情。本周，纯技术上最大的任务就是高点能突破2945点以形成周的底分型形态，能高收当然是最好的，即使不行，只要本周不再破底，那这形态成立就是必然的。从时间上看，这 可能性还是很大的，关键就是剩下两天，多头不要前功尽弃了。
+最近，在挨骂方面能赶超股市的，大概也只有北大历史系了。但即使是历史系，北大的鸟人比例也一定在水平线下，企图以一范一王就来摧毁北大，那是太天真了。至于有些人，借此压北大，捧清华，这种马屁花招最终也只会拍到马蹄子上。北大有鸟人，难道清华、哈工大就没鸟人？哪天本ID有心情，八卦一下清华、哈工大等等学校的鸟人，那些破事还不是一箩筐一箩筐的？有人，不一定有鸟；没鸟，就一定没人。如此平常的生物学常识就不用多说了。但说起这平常，反而让本ID生出了兴趣。且不管那鸟人人鸟的破事，这平常却实在不平常，是人生中一大事矣。写帖子前刚打完肌肉注射，来这里快一月了，每天都有这同一种针，比起化疗，给本ID制造的压力甚至更大。化疗是非平常的，不是每天都要面对，而这所谓增强免疫力的肌肉注射，却每天都需要面对，一个暂时看不到尽头的每日轮回，这轮回的压力，确实潜在而巨大。而实际上，最消磨人的不是危机、不是厄困，却是平常。对于一般人来说，朝九晚五的上班轮回，就足以消磨最坚强的意志了。每个人大概都曾有梦想，但一入红尘人易醉，在这钟摆般的轮回中，多少伟大的梦想就此消磨？平常才是最杀人的刀子，重复可以消磨一切，这对于资本主义游戏的制造者来说，就是他们战无不胜的秘籍。资本主义游戏的萌生，与所谓机械化思潮的膨胀密切相关。在物理上，关于机械运动的研究是与此同时迅猛发展的，这种思潮，曾企图把整个宇宙的所有运动都纳入其中，最后，在理论上彻底失败。但这种疯狂的梦想却深深注入资本主义的肌体里，成为其统治阶级御民之术的关键所在。社会生产的严密分工，必然导致人的零件化，而零件化的人必然面对的就是平常与重复的轮回，而这足以耗尽最顽强的生命。非资本主义体系的，诸如儒家的整体人、完人或圣人的修身培育，在资本主义社会中是不被鼓励的。而传媒制造的愚乐，更加强了这种零件人的存在。人，在资本主义社会，彻底失去了整体性与完整性。因此，当一个所谓的高端人士干出些非人行为，这在资本主义的社会结构中，是最正常不过了。在资本主义社会里，一切的高端都是以经济效益为衡量的，这就是市场的力量，市场把人碾成粉末，然后再按市场的原则粘合成一个个市场人，市场成了真正的女娲。资本主义，真正的创世纪，一切圣经无法实现的东西，都以资本主义的包装现实了。那飘荡在水上的圣灵，那市场经济的无形之手，一切的一切，就如此地旧约又新约了。因此，任何人都不难理解，为什么在市场经济最发达的美国，基督教反而几乎成为全民性宗教，这不过是资本主义创世纪游戏中一个小小的同构性看点而已。因此，当经历高等教育也全民地经济化之后，我们更容易理解，资本主义式御民之术的无孔不入。再没有比从教育开始就零件化、竞争化更消耗人的生命的了，一家子，为了一小子，足以耗尽所有的有闲生命，这样，市场经济能不发达？国能不泰民能不安吗？人的全面发展，在资本主义社会永远是一个禁忌，所有的制度，归根结底，就是阻止人的全面发展。让人失去整体性，让人零件化，资本主义才能长治久安，这就是一切资本主义秘密中最大的秘密之一了。一个只能够革命的社会是一个悲哀的社会，一个只能够市场的 社会同样的悲哀。回到中国历史，中国文化与社会的沉沦，归根结底，就在于统治阶级利用所谓的儒教对禅宗进入剽窃改装后形成的所谓程朱理学。中国沉沦于宋朝，是有着深刻的文化因由的。宋以后，断无禅宗可言，有的不过是儒化的谎言。而统治阶级暗中引导的禅净合一、三教合流诸多劳什子破事，也一一粉墨登场，中国也如此中国了。而“平常心是道”,也就是诸多被歪曲的禅宗语录中经常被口淫的一句。而在人非人的社会，一句平常心是道，就成了统治阶级最好的迷幻药。请问：何心不平常？心，非有非无，非一非二，如何又被裂成平常非平常两撅？本ID今天就要告诉各位“平常心非道”,道非平常非非平常。那种道在矢溺之类道家弱智言论，说的不过是众生的共业，道家以此为至言，还庄子老子的，典型的脑子有矢溺。当然，“平常心亦是道”，此道非彼道亦非彼道，究竟如何？参！本ID股东的一PE公司的总经理发来短信，用临济“沿流不止问如何?真照无边说似他。离相离名人不禀,吹毛用了急须磨。”代赠祝康，本ID边输液边步韵了四首，转录如下：
+步临济偈韵四首
+缠中说禅
+一何国人来复姓何，无分照用我犹他。金毛狮子无穷网，八角磨盘谁转磨。二梦幻泡影奈天何，非我非神非是他。默照守中人可悯，身心皆附鬼推磨。三红尘老醉梦如何，八万烦劳皆我他。滚滚时轮谁可歇，无穷帝网古今磨。四无端生死问伊何，四相空翻你我他。醒醉百年三万日，梦中犹赴梦煎磨。
+八卦一句，“他”，古字“佗”，押的是平水下平五歌韵 。</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/poems/usualmind" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="1039_王先生，能虚竹否？.md" class="nav-link prev">← 王先生，能虚竹否？</a>
+            <a href="1041_告全体中国人书.md" class="nav-link next">告全体中国人书 →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

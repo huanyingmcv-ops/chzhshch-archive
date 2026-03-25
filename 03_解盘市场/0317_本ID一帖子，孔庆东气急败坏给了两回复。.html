@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本ID一帖子，孔庆东气急败坏给了两回复。 | 缠中说禅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #334155;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, serif;
+            line-height: 1.9;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 */
+        .top-nav {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        /* 文章头部 */
+        .article-header {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        
+        .article-meta-bar {
+            display: inline-flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .meta-item .icon {
+            color: var(--gold);
+        }
+        
+        .article-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+        
+        /* 文章正文 */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .article-content h1 {
+            font-size: 1.8em;
+            margin: 1.5em 0 0.8em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.3em;
+        }
+        
+        .article-content h2 {
+            font-size: 1.5em;
+            margin: 1.5em 0 0.7em;
+            color: var(--primary);
+        }
+        
+        .article-content h3 {
+            font-size: 1.3em;
+            margin: 1.3em 0 0.6em;
+            color: var(--secondary);
+        }
+        
+        .article-content p {
+            margin: 1em 0;
+            text-align: justify;
+        }
+        
+        .article-content blockquote {
+            margin: 1.5em 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--gold);
+            background: var(--bg);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        
+        .article-content pre {
+            background: var(--primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        .article-content pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+        
+        .article-content li {
+            margin: 0.5em 0;
+        }
+        
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+        }
+        
+        .article-content th, .article-content td {
+            padding: 12px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        
+        .article-content th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gold);
+        }
+        
+        .article-content a:hover {
+            border-bottom-style: solid;
+        }
+        
+        /* 原文链接 */
+        .source-link {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .source-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        
+        .source-link a:hover {
+            color: var(--gold);
+        }
+        
+        /* 底部导航 */
+        .article-nav {
+            max-width: 720px;
+            margin: 40px auto 0;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+        
+        .nav-link.prev {
+            justify-content: flex-start;
+        }
+        
+        .nav-link.next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        
+        .nav-link .label {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link .title {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .nav-link:hover .title {
+            color: var(--gold);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        
+        .footer-curator {
+            color: var(--gold-light);
+            font-family: 'Noto Serif SC', serif;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.6em; }
+            .article-content { padding: 30px 20px; font-size: 1em; }
+            .article-nav { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="../" class="nav-brand">缠中说禅</a>
+            <div class="nav-links">
+                <a href="./">← 返回分类</a>
+                <a href="../index.html">首页</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="article-header">
+        <div class="article-meta-bar">
+            <div class="meta-item"><span class="icon">◈</span><span>编号 317</span></div>
+            <div class="meta-item"><span class="icon">◷</span><span>2006/9/24 9:55:02</span></div>
+            <div class="meta-item"><span class="icon">◉</span><span>解盘市场</span></div>
+        </div>
+        <h1 class="article-title">本ID一帖子，孔庆东气急败坏给了两回复。</h1>
+    </header>
+    
+    <main class="article-container">
+        <article class="article-content">
+            <h1>本ID一帖子，孔庆东气急败坏给了两回复。</h1>
+<hr />
+<p>本ID一帖子，孔庆东气急败坏给了两回复。</p>
+<p>2006/9/24 9:55:02</p>
+<p>本ID一帖子：“孔庆东，别给北大丢脸，让本ID教你写诗！”，孔庆东气急败坏给了两回复，引用如下：
+孔庆东 于2006/09/23 00:41:06 回复到:
+你的诗文字功底不错，但没有真情，都是概念堆砌，不过是合乎格律的假大空文字。特别是你的语气，一副典型的小人嘴脸，你也配谈历史？但我并不因此骂你给谁丢脸，你只不过是个会写诗的败类！我写诗到你这个水平的时候，你全家都没出生呢？你也敢跟我谈诗？无耻！
+2006-09-23 00:51:53
+那位假禅宗真小人：
+你的诗文字功底不错，但没有真情，都是概念堆砌，不过是合乎格律的假大空文字，你的诗什么都没说。你对律诗的理解完全是初中生水平的，说得根本不对。你懂什么是合掌么？你也根本没有读懂我的诗。特别是你的语气，一副典型的小人嘴脸，你也配谈历史？但我并不因此骂你给谁丢脸，你只不过是个会初步写诗的败类！我写诗到你这个水平的时候，你全家都没出生呢？你也敢跟我谈诗？无耻！
+倒，北大中文系，你怎会堕落成这样？快把你前面北大两字抹了吧！看看你那所谓风云人物码出的丑陋中文。本ID曾有名言“你是流氓你怕谁？流氓最怕女流氓！”，对于那些耍流氓的，无论他是中文系还是终刎兮，结果都一样，都是本ID的手下败酱。
+两回复，前后相差10分钟，表面上，后者是前者的2. 0版本，但不能只看后者，前后的差异更能暴露其人心底秘密。前者，如青蛙受刺激后的直接反应，和网上专门以骂街为乐的马甲无区别，基本都是“你垃圾，我牛人”模式，而表达一律直接粗暴。这类回复，主要来自下腹部的不自主抖动。
+后者，应该是下腹部以上有了点活动，从而多出了如下内容：“那位假禅宗真小人：”+“你的诗什么都没说。你对律诗的理解完全是初中生水平的，说得根本不对。你懂什么是合掌么？你也根本没有读懂我的诗。”+“但我并不因此骂你给谁丢脸，你只不过是个会初步写诗的败类！”。这里最大特点是增加了许多专业特色，或者说是卖弄了许多专业特色。这些 专业化润色使得后者的惺惺作态比前者的粗暴直接更能诱发地球人的胃部反应。
+逐一分析：
+那位假禅宗真小人：
+===============
+禅，非假非真，不假心物，岂尔所识？至于“真小人”，某人喜欢当“伪君子”，当然不屑“真小人”，就这么回事，大家看明白了！
+你的诗文字功底不错，但没有真情，都是概念堆砌，不过是合乎格律的假大空文字，你的诗什么都没说。
+=====================
+本ID诗文字功底，还用你说？这临屏所写就够你吃一壶了！不像某些人连格律都搞不掂只好号称打破格律束缚来出丑！格律对杜甫怎无束缚？格律对本ID怎无束缚？至于本ID临屏步韵所写“乾坤有泪不成诗，血沃山河神鬼驰。百里犹盈新死骨，千年又损欲生肌。舟能载覆呼民贵，天与阴晴醒国卑。大野无风沉永夜，孤星如月气凌眉。”是否“没有真情，都是概念堆砌，不过是合乎格律的假大空文字”，自有公论，前提是你能看懂。对于那些根本没看懂的人，当然只能说“你的诗什么都没说。”而自爆其丑！
+你对律诗的理解完全是初中生水平的，说得根本不对。你懂什么是合掌么？你也根本没有读懂我的诗。
+======================
+杜甫从来不理解律诗，只写，本ID也一样，作品决定一切。孔副教授“寿逢廿五欲涂诗，百转枯肠笔不驰。旧恨如疮痛风雨，新仇似割裂肤肌。秦琼能咽千行泪，叶挺何吟一字卑？白日点灯斗长夜，暂收宝剑待扬眉。”这类文革口号式的东西，连粗豪都算不上，写出来就让人笑话。请注意：你写的，本ID步韵中都写了；你想写而写不出的，本ID也写了；你连想都没想到的，本ID都写了。你不知道？可怜呀！
+特别是你的语气，一副典型的小人嘴脸，你也配谈历史？但我并不因此骂你给谁丢 脸，你只不过是个会初步写诗的败类！
+=====================================
+历史不是用来谈论的，历史是用来强暴的。而历史不断在证明，那些有着君子嘴脸的人，是最危险的。至于后面那句“但我并不因此骂你给谁丢脸，你只不过是个会初步写诗的败类！”，按照那种君子嘴脸的人喜欢标榜的“礼尚往来”，当然要回送给孔副大教授！
+我写诗到你这个水平的时候，你全家都没出生呢？你也敢跟我谈诗？无耻！
+=====================
+孔副大教授果然不愧是孔二大先生的后代，终于还是知道说点真话。孔副大教授现在40来岁，在孔副大教授存在的40多年中，本ID全家都没出生的情况是不存在的，因此孔副大教授“我写诗到你这个水平的时候，你全家都没出生呢”只是意味着一件从未发生过的事情，也就是说，孔副大教授承认：他写诗从未达到本ID的水平，即使像这次，本ID随意临屏步韵的水平，他一生就从未达到。诚实是值得鼓励的，对孔副大教授最后的“你也敢跟我谈诗？无耻！”，如同对所有中年男人惯有的撒娇，就让他去吧！
+最后，请孔副大教授带领大家齐声高诵：“你是流氓你怕谁？流氓最怕女流氓！”368遍！谢谢！
+回复​
+缠中说禅 2006/9/24 10:05:05附录：孔庆东，你给中文系丢脸，但别给北大丢脸！缠中说禅最近大概临近秋天，天气开始干燥，地球人都希望能湿就湿一点，闹得这诗也热门起来。赵湿人一湿惊天下，引得口水汹涌，地球湿度大幅增加。但比起孔庆东副教授，赵湿人就不算什  么了，孔湿人一出，温室效应立马湿室效应，连太阳都成了太阴，流水不止。虽然孔湿人有这样牛的贡献，但本ID还是要断喝：孔庆东，别给北大丢脸！看看你都写的什么，竟然还写古诗，你以为你能湿就能诗？你以为你的祖先说过“不学诗、无以言”，你就能诗？各位看看这位写的诗，真丢人呀！引用如下：二十五岁自寿诗孔庆东寿逢廿五欲涂诗，百转枯肠笔不驰。 
+旧恨如疮痛风雨，新仇似割裂肤肌。 
+秦琼能咽千行泪，叶挺何吟一字卑？ 
+白日点灯斗长夜，暂收宝剑待扬眉。这都是些什么呀，又合掌，格律又不对，“白日点灯斗长夜”是律句吗？“千行泪”竟然敢对“一字卑”？至于诗句本身，不仅直白无味，更是幼稚无比，韵脚的安排更是杂乱，连基本的遣词造句都成问题。如果本ID25岁还写这样的东西，本ID一定不好意思说自己是北大的，如果说了，只有一条路，就往未名湖去了。中文系，还好意思再号称自己是北大最牛的系吗？北大，虽然旁边的期货行情正激烈地变动着，但本ID还是要为你痛哭，谁让你在本ID的生命中如此重要！为了北大，本ID现在临屏为这所谓中文系孔庆东副教授的“二十五岁自寿诗”步韵一首，高下自见。步韵孔庆东“二十五岁自寿诗”一首：缠中说禅乾坤有泪不成诗，血沃山河神鬼驰。 
+百里犹盈新死骨，千年又损欲生肌。 
+舟能载覆呼民贵，天与阴晴醒国卑。 
+大野无风沉永夜，孤星如月气凌眉。倒，原诗韵脚简直太垃圾了，孔副教授基本就是凑韵，当然，这么垃圾的韵脚安排也是难不住本ID的。孔副教授，学着点，你可以给中文系丢脸，但请别给北大丢脸！</p>
+            
+            <div class="source-link"><a href="https://chzhshch.blog/timeline/poems/kongqdreply" target="_blank">查看原文链接 →</a></div>
+        </article>
+        
+        <nav class="article-nav">
+            <a href="0201_鄙视所有对N中工15元不敢买50元就吃醋的人！.md" class="nav-link prev">← 鄙视所有对N中工15元不敢买50元就吃醋...</a>
+            <a href="0390_经典回放：G股就是G点，市场的原理和性的原理是一样的.md" class="nav-link next">经典回放：G股就是G点，市场的原理和性的... →</a>
+        </nav>
+    </main>
+    
+    <footer>
+        <p>本站所有内容版权归原作者（缠中说禅）所有</p>
+        <p>仅供学习交流使用，如有侵权请联系删除</p>
+        <p class="footer-curator">全库整理 · 元白</p>
+    </footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+    
+    <script>
+        // 返回顶部按钮显示/隐藏
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
